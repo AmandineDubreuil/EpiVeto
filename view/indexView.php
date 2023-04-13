@@ -17,7 +17,8 @@
             <p class="bienvenue">Bienvenue, <?= $_SESSION['prenom'] ?> !</p>
         <?php endif ?>
         <nav>
-
+            <a href="index.php">Accueil</a>
+            <a href="clinique.php">La Clinique</a>
         </nav>
     </header>
     <main>
@@ -56,21 +57,21 @@
                 <p>Uniquement sur rendez-vous</p>
             </div>
 
-<div class="reassurance">
-    <div>
-        <div><img src="./assets/img/Image.jpg" alt=""></div>
-        <p>Chiens / Chats / Lapins</p>
-    </div>
-    <div>
-        <div><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>
-        <p>Conseils</p>
-    </div>
-    <div>
-        <div><img src="./assets/img/animaux/chien-pekinois-stethoscope-isole.jpg" alt="chien stéthoscope"></div>
-        <p>Qualité des soins</p>
-    </div>
+            <div class="reassurance">
+                <div>
+                    <div><img src="./assets/img/Image.jpg" alt=""></div>
+                    <p>Chiens / Chats / Lapins</p>
+                </div>
+                <div>
+                    <div><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>
+                    <p>Conseils</p>
+                </div>
+                <div>
+                    <div><img src="./assets/img/animaux/chien-pekinois-stethoscope-isole.jpg" alt="chien stéthoscope"></div>
+                    <p>Qualité des soins</p>
+                </div>
 
-</div>
+            </div>
 
         </section>
 
