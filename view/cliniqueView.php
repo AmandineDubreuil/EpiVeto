@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epi-Véto</title>
+    <title>La clinique - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -17,8 +17,14 @@
             <p class="bienvenue">Bienvenue, <?= $_SESSION['prenom'] ?> !</p>
         <?php endif ?>
         <nav>
-            <a href="index.php">Accueil</a>
-            <a href="clinique.php">La Clinique</a>
+        <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li> <a href="clinique.php">La Clinique</a>
+            <ul>
+                <li><a href="outils.php">Les Outils</a></li>
+            </ul>
+            </li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -57,7 +63,7 @@
         <section class="side">
             <div class="trouver">
                 <h2>Nous trouver</h2>
-                <p class="gras">EPI-VETO clinique vétérinaire La Chaussée d'Ivry</p>
+                <p class="gras">ÉPI-VETO clinique vétérinaire La Chaussée d'Ivry</p>
                 <p>L'Épine de Nantilly</p>
                 <p>681 rue de Paçy</p>
                 <p>28260 La Chaussée d'Ivry</p>
@@ -91,7 +97,7 @@
 
     </main>
     <footer>
-        <p>2023 - Epi-Véto Clinique vétérinaire la Chaussée d’Ivry</p>
+        <p>2023 - Épi-Véto Clinique vétérinaire la Chaussée d’Ivry</p>
         <div class="legal">
             <p><a href="#">Mentions légales</a> - <a href="">Politique de confidentialité</a></p>
         </div>
