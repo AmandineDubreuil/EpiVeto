@@ -32,4 +32,22 @@ function error404(): void
     die();
 }
 
-// fonctions sur BDD employés
+// fonctions session start
+
+function isConnected(): bool
+{
+    if (isset($_SESSION['login']) && $_SESSION['login'] == true) :
+        return true;
+    else :
+        return false;
+    endif;
+}
+
+function isAdminConnected(): bool
+{
+    if (isset($_SESSION['login']) && $_SESSION['login'] === 'admin') :
+        return true;
+    else :
+        return false;
+    endif;
+}
