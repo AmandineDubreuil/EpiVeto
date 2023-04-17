@@ -11,6 +11,7 @@
                         <li><a href="equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
+                <li><a href="register/index.php">Inscription</a></li>
             </ul>
         </nav>
 </header>

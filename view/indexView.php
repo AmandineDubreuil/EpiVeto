@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<?php include_once 'headerView.php'?>
+<?php include_once 'structure/headerView.php'?>
     <main>
         <h1>Épi-Véto</h1>
 
@@ -29,25 +29,11 @@
             </div>
             <p>Que vous ayez besoin d'une simple consultation de routine, d'une intervention chirurgicale complexe ou de conseils sur la santé de votre animal, nous sommes là pour vous aider. N'hésitez pas à nous contacter pour en savoir plus sur nos services ou pour prendre rendez-vous avec l'un de nos vétérinaires experts.</p>
         </section>
-        <?php include_once 'sideView.php' ?>
+        <?php include_once 'structure/sideView.php' ?>
 
 
     </main>
-    <footer>
-        <p>2023 - Épi-Véto Clinique vétérinaire la Chaussée d’Ivry</p>
-        <div class="legal">
-            <p><a href="#">Mentions légales</a> - <a href="">Politique de confidentialité</a></p>
-        </div>
-        <p></p>
-        <?php if (isConnected()) : ?>
-            <?php if (isAdminConnected()) : ?>
-                <a class="btn" href="./adminEpiVeto/index.php" role="button">Admin</a>
-            <?php endif ?>
-            <a class="btnInput" href="./login/deconnexion.php">Se déconnecter</a>
-        <?php else : ?>
-            <a class="btnInput" href="./login/">Administration du site</a>
-        <?php endif ?>
-    </footer>
+    <?php include_once 'structure/footerView.php' ?>
 
 </body>
 
