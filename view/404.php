@@ -15,6 +15,8 @@
 </head>
 
 <body>
+<?php include_once 'headerView.php'?>
+
     <main class="container">
         <h2>Page non trouvée</h2>
         <p>La page que vous cherchiez ne semble pas être là. Elle a peut-être été déplacée ou supprimée, ou il est possible que l'URL que vous avez saisie était incorrecte.</p>

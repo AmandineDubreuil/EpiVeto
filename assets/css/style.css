@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "raleway";
+    src: url(../font/raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: "lora";
+    src: url(../font/lora/Lora-Regular.ttf);
+}
+
+/* mise à 0 */
+:root {
+    --color-one: #000;
+
+    --color-two: #7d7d7d;
+    --color-twolight: #c9c9c9;
+    /*ou 8a8a8a*/
+    --color-twodark: #636363;
+
+    --color-three: #f5f5f5;
+
+    --color-four: #ffffff;
+
+    --color-five: #861a22;
+    --color-fivelight: #9b4c51;
+    /* ou 941c24 ou d42834*/
+    --color-fivedark: #541015;
+    /*ou 470e11*/
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+img {
+    width: 100%;
+}
+
+/* nav */
+#logo img {
+    max-width: 50px;
+}
+
+nav {
+    display: flex;
+    background-color: var(--color-five);
+    color: var(--color-three);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-three);
+}
+
+.nivUn,
+.nivUn li,
+.nivDeux,
+.nivDeux li {
+    list-style-type: none;
+}
+
+.nivUn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+
+/* main */
+h1 {
+    padding: 1rem;
+    
+    color: var(--color-five);
+    font-size: 5rem;
+    font-family: "lora", 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h2 {
+    padding: 1rem;
+    color: var(--color-five);
+    font-size: 1.5rem;
+}
+
+h3 {
+    padding: 1rem;
+    color: var(--color-one);
+    font-size: 1.2rem;
+}
+
+p {
+    padding-left: 1rem;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+/* side */
+
+.side {
+    display: flex;
+    flex-direction: column;
+}
+
+.side .trouver,
+.side .contact,
+.side .reassurance,
+.side .horaires {
+    margin: .5rem 0;
+}
+
+.carte {
+    text-align: center;
+}
+
+.btnMessage {
+    margin: .5rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(to bottom,
+            var(--color-five) 5%,
+            var(--color-fivelight) 100%);
+    background-color: var(--color-five);
+    border-radius: 15px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: Arial;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.btnMessage:hover {
+    background: linear-gradient(to bottom,
+            var(--color-fivelight) 5%,
+            var(--color-five) 100%);
+    background-color: var(--color-fivelight);
+}
+
+.btnMessage:active {
+    position: relative;
+    top: 1px;
+}
+
+.reassurance {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.reassuranceItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem 0;
+}
+
+.reassuranceImg {
+    max-width: 50%;
+
+}
+
+.reassuranceImg img {
+    border-radius: 50%;
+}
+
+.reassurance p {
+    padding: 0;
+}
+
+/* footer */
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--color-five);
+    color: var(--color-three);
+    font-size: .7rem;
+}
+
+footer a {
+    color: var(--color-three);
+    text-decoration: none;
+}
+
+footer p {
+    text-align: center;
+    padding: 0;
+}
+
+.legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* page Clinique */
+
+.services li {
+    padding: .5rem 2rem;
+}
+
+.douleur p,
+.pharmacie p {
+    padding: 1rem;
+}
+
+/* *********************** 
+   RESPONSIVE DESKTOP
+   ************************ */
+
+@media screen and (min-width: 576px) {
+
+    main {
+        position: relative;
+    }
+
+    section, h1 {
+        margin-right: 300px;
+    }
+
+    /* side */
+
+    .side {
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 300px;
+        -webkit-box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
+        box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
+        border-radius: 5px;
+
+
+    }
+
+
+    /*fin*/
+}
