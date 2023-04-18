@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Création de compte - Épi-Véto La Chaussée d'Ivry</title>
+    <title>Modification de compte - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>
@@ -20,29 +20,29 @@
 <nav>
             <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
             <ul class="nivUn">
-                <li><a href="index.php">Accueil</a></li>
-                <li> <a href="clinique.php">La Clinique</a>
+                <li><a href="../../index.php">Accueil</a></li>
+                <li> <a href="../../clinique.php">La Clinique</a>
                     <ul class="nivDeux">
-                        <li><a href="equipements.php">Nos Équipements</a></li>
+                        <li><a href="../../equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
                 <?php if (isConnected()) : ?>
                     <?php if (isAdminConnected()) : ?>
-                        <a class="btn"  href="./adminEpiVeto/index.php" role="button">Admin</a>
+                        <a class="btn"  href="../index.php" role="button">Admin</a>
                     <?php endif ?>
-                    <a class="btnInput"  href="./login/deconnexion.php">Se déconnecter</a>
+                    <a class="btnInput"  href="../../login/deconnexion.php">Se déconnecter</a>
                 <?php else : ?>
-                    <a class="btnInput" href="./login/">Se connecter</a>
-                <li><a href="register/index.php">Inscription</a></li>
+                   
                 <?php endif ?>
             </ul>
         </nav>
 </header>
 
-    <main>
-        <h2>Création d'un compte utilisateur</h2>
 
-        <form method="POST" class="formRegister">
+    <main>
+        <h2>Modification d'un compte utilisateur</h2>
+
+        <form method="POST" class="formRegister" novalidate>
             <div id="nomPrenom">
                 <div class="civilite">
                     <label for="civilite">Civilité :</label>
@@ -51,38 +51,38 @@
                 </div>
                 <div>
                     <label for="prenom">Prénom *</label>
-                    <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>" required>
+                    <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>" placeholder="<?= $prenom ?>" required>
                 </div>
                 <div>
                     <label for="nom">Nom *</label>
-                    <input type="text" name="nom" id="nom" value="<?= $nom ?>" required>
+                    <input type="text" name="nom" id="nom" value="<?= $nom ?>" placeholder="<?= $nom ?>" required>
                 </div>
             </div>
 
             <div id="contact">
                 <div>
                     <label for="telephone">Téléphone *</label>
-                    <input type="tel" name="telephone" id="telephone" value="<?= $telephone ?>">
+                    <input type="tel" name="telephone" id="telephone" value="<?= $telephone ?>" placeholder="<?= $telephone ?>" required> 
                 </div>
 
                 <div>
                     <label for="email">E-mail *</label>
-                    <input type="email" name="email" id="email" required value="<?= $email ?>">
+                    <input type="email" name="email" id="email" value="<?= $email ?>" placeholder="<?= $email ?>"required>
                 </div>
-                <div class="password">
-                    <div>
-                        <label for="pwd">Mot de passe *</label>
-                        <input type="password" name="pwd" id="pwd" required value="<?= $pwd ?>">
-                    </div>
-                    <div>
-                        <label for="confPwd">Confirmation du mot de passe *</label>
-                        <input type="password" name="confPwd" id="confPwd" required value="<?= $confPwd ?>">
-                    </div>
+                <div class="role">
+                    <label for="role">Rôle :</label>
+                    client <input type="radio" name="role" id="role" value="client" checked>
+                    admin <input type="radio" name="role" id="role" value="admin">
                 </div>
+
+
             </div>
-            <div>
-                <input class="btn" type="submit" value="Inscription">
+            <div class="annulModif">
+                <a href="../"><button class="btnInput" type="button">Annuler</button></a>
+                <input class="btn" type="submit" name="ajout" value="Modifier">
+
             </div>
+
             <?php if (!empty($errors)) : ?>
                 <div class="errors">
                     <ul class="errors">
@@ -94,7 +94,7 @@
         <p>* Informations obligatoires</p>
 
 
-        <?php include_once '../structure/sideView.php' ?>
+       
 
 
     </main>
@@ -107,11 +107,11 @@
         <p></p>
         <?php if (isConnected()) : ?>
             <?php if (isAdminConnected()) : ?>
-                <a class="btn" href="./adminEpiVeto/index.php" role="button">Admin</a>
+                <a class="btn" href="../../adminEpiVeto/index.php" role="button">Admin</a>
             <?php endif ?>
-            <a class="btnInput" href="./login/deconnexion.php">Se déconnecter</a>
+            <a class="btnInput" href="../../login/deconnexion.php">Se déconnecter</a>
         <?php else : ?>
-            <a class="btnInput" href="./login/">Administration du site</a>
+            <a class="btnInput" href="../../login/">Administration du site</a>
         <?php endif ?>
     </footer>
 

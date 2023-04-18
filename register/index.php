@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $prenom = cleanData($_POST['prenom']);
     $nom = cleanData($_POST['nom']);
     $telephone = cleanData($_POST['telephone']);
+    $telephone = cleanPhone($telephone);
     $email = cleanData($_POST['email']);
     $pwd = cleanData($_POST['pwd']);
     $confPwd = cleanData($_POST['confPwd']);

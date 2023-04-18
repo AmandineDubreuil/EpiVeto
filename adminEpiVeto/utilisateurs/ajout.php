@@ -1,1 +1,0 @@
-{# voir register/index.php #}
