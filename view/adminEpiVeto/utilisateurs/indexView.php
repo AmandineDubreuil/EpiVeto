@@ -83,7 +83,7 @@
                     </tbody>
                 </table>
             <?php else : ?>
-                <p>Aucune Annonce !</p>
+                <p>Aucun utilisateur !</p>
             <?php endif; ?>
 
 

@@ -20,7 +20,7 @@
     <div class="reassurance">
         <div class="reassuranceItem">
             <div class="reassuranceImg"><img src="./assets/img/Image.jpg" alt=""></div>
-            <p>Chiens / Chats / Lapins</p>
+            <p>Chiens / Chats / NAC</p>
         </div>
         <div class="reassuranceItem">
             <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>

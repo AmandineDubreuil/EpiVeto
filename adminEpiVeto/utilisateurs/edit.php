@@ -21,12 +21,12 @@ $roleDb = getUtilisateurById($id)['role'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
-    $civiliteModif = cleanData($_POST['civilite']);
-    $prenom = cleanData($_POST['prenom']);
-    $nom = cleanData($_POST['nom']);
-    $telephone = cleanData($_POST['telephone']);
-    $email = cleanData($_POST['email']);
-    $roleModif = cleanData($_POST['role']);
+    $civiliteModif = checkXSSPostValue($_POST['civilite']);
+    $prenom = checkXSSPostValue($_POST['prenom']);
+    $nom = checkXSSPostValue($_POST['nom']);
+    $telephone = checkXSSPostValue($_POST['telephone']);
+    $email = checkXSSPostValue($_POST['email']);
+    $roleModif = checkXSSPostValue($_POST['role']);
 
     if (!empty($civiliteModif) && $civiliteModif !== $civiliteDb) :
 

@@ -206,6 +206,28 @@ function isGetIdValid(): bool
     endif;
 }
 
+function getUtilisateurs(): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT id_utilisateur, prenom, nom, telephone, email, role, created_at, modified_at  FROM `utilisateurs` WHERE 1 ORDER BY nom ASC ";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->execute();
+    return $resultat->fetchAll();
+}
+
+
+function getUtilisateurById(int $idUtilisateur): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT * FROM utilisateurs WHERE id_utilisateur = :idUtilisateur";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
+    $resultat->execute();
+    return $resultat->fetch();
+}
+
+
+
 function updateUtilisateur(int $id_utilisateur, string $civilite, string $prenom, string $nom, int $telephone, string $email,  string $role): bool
 {
     require 'pdo.php';
@@ -222,6 +244,21 @@ function updateUtilisateur(int $id_utilisateur, string $civilite, string $prenom
     return $resultat->execute();
 }
 
+function updatePwd(int $id_utilisateur, string $pwd): bool
+{
+    require 'pdo.php';
+
+    $pwdHashe = password_hash($pwd, PASSWORD_DEFAULT);
+
+    $requete = 'UPDATE utilisateurs SET pwd = :pwd, modified_at = now() WHERE id_utilisateur = :id_utilisateur';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+    $resultat->bindValue(':pwd', $pwdHashe, PDO::PARAM_STR);
+    $resultat->execute();
+    return $resultat->execute();
+}
+
+
 
 function suppUtilisateurById(int $idUtilisateur): bool
 {
@@ -231,3 +268,6 @@ function suppUtilisateurById(int $idUtilisateur): bool
     $resultat->bindValue(':idUtilisateur', $idUtilisateur, PDO::PARAM_INT);
     return $resultat->execute();
 }
+
+
+// // fonctions équipe

@@ -71,7 +71,7 @@
                 </div>
                 <div class="role">
                     <label for="role">Rôle :</label>
-                    client <input type="radio" name="role" id="role" value="client" checked>
+                    client <input type="radio" name="role" id="role" value="client">
                     admin <input type="radio" name="role" id="role" value="admin">
                 </div>
 

@@ -4,4 +4,4 @@ include './inc/fonctions.php';
 //dd($_SESSION);
 
 //$role = $_SESSION['role'];
-include './view/indexView.php';
+include './view/equipeView.php';

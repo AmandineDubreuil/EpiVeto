@@ -37,27 +37,29 @@
 </header>
 
     <main class="container">
-        <h2>Connexion à votre compte</h2>
+        <h2>Mon compte Utilisateur</h2>
+        <section class="modifPwd">
+            <h3>Modification du mot de passe</h3>
         <form method="POST" class="formConnexion">
+            
             <div>
-                <label for="email">Email :</label>
-                <input type="email" name="email" id="email">
-            </div>
-            <div>
-                <label for="pwd">Mot de passe :</label>
-                <input type="password" name="pwd" id="pwd" >
+                <label for="pwdOld">Mot de passe actuel :</label>
+                <input type="password" name="pwdOld" id="pwdOld" >
             </div>
             <div>
-                <input class="btn" type="submit" value="Connexion">
+                <label for="pwdNew">Nouveau mot de passe :</label>
+                <input type="password" name="pwdNew" id="pwdNew" >
             </div>
-            <div class="errors">
-                <ul class="errors">
-                    <?php foreach ($errors as $error) { ?>
-                        <li><?= $error ?></li>
-                    <?php } ?>
-                </ul>
+            <div>
+                <label for="confPwdNew">Confirmation du nouveau mot de passe :</label>
+                <input type="password" name="confPwdNew" id="confPwdNew" >
             </div>
+            <div>
+                <input class="btn" type="submit" value="Modification">
+            </div>
+          
         </form>
+    </section>
     </main>
 
     <footer>

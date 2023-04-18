@@ -28,7 +28,7 @@ if (isset($_POST['submitted']) && !empty($_POST['submitted'])) :
     $error = checkEmail($_POST['email'], 'email', $error);
     $error = checkPwdValid($_POST['pwd'], 'pwd', $error);
     $error = checkPwdConfirm($_POST['pwd'], $_POST['confPwd'], 'confPwd', $error);
-    // 123456789aA!
+  
 
     if (count($error) === 0) :
         

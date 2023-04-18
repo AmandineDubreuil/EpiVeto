@@ -32,7 +32,7 @@
                     <?php endif ?>
                     <a class="btnInput"  href="../login/deconnexion.php">Se déconnecter</a>
                 <?php else : ?>
-                    <a class="btnInput" href="../login/">Se connecter</a>
+                    <a class="btnInput" href="../login/index.php">Se connecter</a>
                 <li><a href="register/index.php">Inscription</a></li>
                 <?php endif ?>
             </ul>

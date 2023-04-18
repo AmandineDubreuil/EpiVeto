@@ -3,7 +3,7 @@
 * Suppression d'un utilisateur
 */
 session_start();
-include '../inc/fonctions.php';
+include '../../inc/fonctions.php';
 
 (isAdminConnected()) ?: redirectUrl('view/404.php');
 
