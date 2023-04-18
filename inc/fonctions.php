@@ -90,6 +90,21 @@ function checkEmptyValue($postEntrie, $key, $error)
     return $error;
 }
 
+function checkTelephone($telephone, $key, $error)
+{
+    
+    // Supprime tous les caractères non numériques
+$telephone = preg_replace('/\D/', '', $telephone); 
+
+// Vérifie si le numéro de téléphone a exactement 10 chiffres
+if (strlen($telephone) !== 10) :
+       // Affiche un message d'erreur
+    $error[$key] = "Le numéro de téléphone doit avoir 10 chiffres.";
+endif;
+return $error;
+
+}
+
 /**
  * checkEmail
  * 
