@@ -52,10 +52,12 @@
                 <div>
                     <label for="prenom">Prénom *</label>
                     <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>" required>
+                    <span class="error"><?= isset($error['prenom']) ?$error['prenom'] : ""?></span>
                 </div>
                 <div>
                     <label for="nom">Nom *</label>
                     <input type="text" name="nom" id="nom" value="<?= $nom ?>" required>
+                    <span class="error"><?= isset($error['nom']) ?$error['nom'] : ""?></span>
                 </div>
             </div>
 
@@ -63,30 +65,34 @@
                 <div>
                     <label for="telephone">Téléphone *</label>
                     <input type="tel" name="telephone" id="telephone" value="<?= $telephone ?>">
+                    <span class="error"><?= isset($error['telephone']) ?$error['telephone'] : ""?></span>
                 </div>
 
                 <div>
                     <label for="email">E-mail *</label>
                     <input type="email" name="email" id="email" required value="<?= $email ?>">
+                    <span class="error"><?= isset($error['email']) ?$error['email'] : ""?></span>
                 </div>
                 <div class="password">
                     <div>
                         <label for="pwd">Mot de passe *</label>
                         <input type="password" name="pwd" id="pwd" required value="<?= $pwd ?>">
+                        <span class="error"><?= isset($error['pwd']) ?$error['pwd'] : ""?></span>
                     </div>
                     <div>
                         <label for="confPwd">Confirmation du mot de passe *</label>
                         <input type="password" name="confPwd" id="confPwd" required value="<?= $confPwd ?>">
+                        <span class="error"><?= isset($error['confPwd']) ?$error['confPwd'] : ""?></span>
                     </div>
                 </div>
             </div>
             <div>
-                <input class="btn" type="submit" value="Inscription">
+                <input class="btn" type="submit" name="submitted" value="Inscription">
             </div>
             <?php if (!empty($errors)) : ?>
                 <div class="errors">
                     <ul class="errors">
-                        <li><?= $errors ?></li>
+                        <li><?= $error ?></li>
                     </ul>
                 </div>
             <?php endif; ?>
