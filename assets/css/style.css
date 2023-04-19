@@ -250,8 +250,13 @@ footer {
     color: var(--color-three);
     font-size: .7rem;
 }
+.legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-footer a {
+footer .legal a {
     color: var(--color-three);
     text-decoration: none;
 }
@@ -260,11 +265,13 @@ footer p {
     text-align: center;
     padding: 0;
 }
-
-.legal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logAdmin {
+    color: var(--color-fivelight);
+    text-decoration: none;
+}
+.logAdmin :visited{
+    color: var(--color-fivelight);
+    text-decoration: none;
 }
 
 /* page Clinique */
