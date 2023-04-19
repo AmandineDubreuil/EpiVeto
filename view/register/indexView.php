@@ -13,11 +13,11 @@
 
 <body>
 
-<header>
+    <header>
         <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite']?> <?= $_SESSION['nom']?></p>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
         <?php endif  ?>
-<nav>
+        <nav>
             <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
             <ul class="nivUn">
                 <li><a href="index.php">Accueil</a></li>
@@ -26,18 +26,10 @@
                         <li><a href="equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
-                <?php if (isConnected()) : ?>
-                    <?php if (isAdminConnected()) : ?>
-                        <a class="btn"  href="./adminEpiVeto/index.php" role="button">Admin</a>
-                    <?php endif ?>
-                    <a class="btnInput"  href="./login/deconnexion.php">Se déconnecter</a>
-                <?php else : ?>
-                    <a class="btnInput" href="./login/index.php">Se connecter</a>
-                <li><a href="register/index.php">Inscription</a></li>
-                <?php endif ?>
+                <li><a href="equipe.php">L'Équipe</a></li>
             </ul>
         </nav>
-</header>
+    </header>
 
     <main>
         <h2>Création d'un compte utilisateur</h2>
@@ -52,12 +44,12 @@
                 <div>
                     <label for="prenom">Prénom *</label>
                     <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>" required>
-                    <span class="error"><?= isset($error['prenom']) ?$error['prenom'] : ""?></span>
+                    <span class="error"><?= isset($error['prenom']) ? $error['prenom'] : "" ?></span>
                 </div>
                 <div>
                     <label for="nom">Nom *</label>
                     <input type="text" name="nom" id="nom" value="<?= $nom ?>" required>
-                    <span class="error"><?= isset($error['nom']) ?$error['nom'] : ""?></span>
+                    <span class="error"><?= isset($error['nom']) ? $error['nom'] : "" ?></span>
                 </div>
             </div>
 
@@ -65,24 +57,24 @@
                 <div>
                     <label for="telephone">Téléphone *</label>
                     <input type="tel" name="telephone" id="telephone" value="<?= $telephone ?>">
-                    <span class="error"><?= isset($error['telephone']) ?$error['telephone'] : ""?></span>
+                    <span class="error"><?= isset($error['telephone']) ? $error['telephone'] : "" ?></span>
                 </div>
 
                 <div>
                     <label for="email">E-mail *</label>
                     <input type="email" name="email" id="email" required value="<?= $email ?>">
-                    <span class="error"><?= isset($error['email']) ?$error['email'] : ""?></span>
+                    <span class="error"><?= isset($error['email']) ? $error['email'] : "" ?></span>
                 </div>
                 <div class="password">
                     <div>
                         <label for="pwd">Mot de passe *</label>
                         <input type="password" name="pwd" id="pwd" required value="<?= $pwd ?>">
-                        <span class="error"><?= isset($error['pwd']) ?$error['pwd'] : ""?></span>
+                        <span class="error"><?= isset($error['pwd']) ? $error['pwd'] : "" ?></span>
                     </div>
                     <div>
                         <label for="confPwd">Confirmation du mot de passe *</label>
                         <input type="password" name="confPwd" id="confPwd" required value="<?= $confPwd ?>">
-                        <span class="error"><?= isset($error['confPwd']) ?$error['confPwd'] : ""?></span>
+                        <span class="error"><?= isset($error['confPwd']) ? $error['confPwd'] : "" ?></span>
                     </div>
                 </div>
             </div>

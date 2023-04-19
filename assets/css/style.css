@@ -74,10 +74,11 @@ nav a {
 }
 
 /* main */
+
 h1 {
     padding: 1rem;
-    
-    color: var(--color-five);
+    background-color: var(--color-five);
+    color: var(--color-three);
     font-size: 5rem;
     font-family: "lora", 'Times New Roman', Times, serif;
     text-align: center;
@@ -97,11 +98,70 @@ h3 {
 
 p {
     padding-left: 1rem;
+    text-align: justify;
 }
 
 .gras {
     font-weight: bold;
 }
+
+.imgRonde {
+
+    width: 60%;
+}
+
+.imgRonde img {
+    border-radius: 100%;
+    border: 1px solid var(--color-one);
+}
+
+.card {
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h3 {
+    font-size: 1rem;
+}
+
+
+/*boutons*/
+
+.btnGris {
+    margin: .5rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(to bottom,
+            var(--color-two) 5%,
+            var(--color-twolight) 100%);
+    background-color: var(--color-two);
+    border-radius: 15px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: Arial;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.btnGris:hover {
+    background: linear-gradient(to bottom,
+            var(--color-twolight) 5%,
+            var(--color-two) 100%);
+    background-color: var(--color-twolight);
+}
+
+.btnGris:active {
+    position: relative;
+    top: 1px;
+}
+
+
 
 /* side */
 
@@ -218,6 +278,57 @@ footer p {
     padding: 1rem;
 }
 
+/* page l'equipe*/
+
+.veterinaires,
+.asv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.cardEquipe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.cardEquipe h3 {
+    padding-bottom: 0;
+}
+.cardEquipe .reseaux a{
+    font-size: 1.5rem;
+    color: var(--color-five);
+}
+
+.cardEquipe .reseaux a:visited{
+    font-size: 1.5rem;
+    color: var(--color-fivedark);
+}
+
+/*page collaborateur*/
+
+.collaborateur {
+    padding: 1rem;
+ }
+.collaborateur h2{
+    padding-bottom: 0;
+}
+.collaborateur h3{
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+} 
+.collaborateurImg{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 1rem;
+}
+
 /* *********************** 
    RESPONSIVE DESKTOP
    ************************ */
@@ -226,17 +337,30 @@ footer p {
 
     main {
         position: relative;
+        min-height: 1000px;
     }
 
-    section, h1 {
+    section {
         margin-right: 300px;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    /* l'équipe*/
+    .veterinaires,
+    .asv {
+
+        flex-direction: row;
+
     }
 
     /* side */
 
     .side {
         position: absolute;
-        top: 0;
+        top: 8.5rem;
         right: 0;
         max-width: 300px;
         -webkit-box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);

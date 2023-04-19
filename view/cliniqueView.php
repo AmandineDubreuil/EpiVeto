@@ -26,15 +26,8 @@
                         <li><a href="equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
-                <?php if (isConnected()) : ?>
-                    <?php if (isAdminConnected()) : ?>
-                        <a class="btn"  href="./adminEpiVeto/index.php" role="button">Admin</a>
-                    <?php endif ?>
-                    <a class="btnInput"  href="./login/deconnexion.php">Se déconnecter</a>
-                <?php else : ?>
-                    <a class="btnInput" href="./login/index.php">Se connecter</a>
-                <li><a href="register/index.php">Inscription</a></li>
-                <?php endif ?>
+                <li><a href="equipe.php">L'Équipe</a></li>
+               
             </ul>
         </nav>
 </header>

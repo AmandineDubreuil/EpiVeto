@@ -11,6 +11,7 @@
                         <li><a href="equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
+                <li><a href="equipe.php">L'Équipe</a></li>
                 <?php if (isConnected()) : ?>
                     <?php if (isAdminConnected()) : ?>
                         <a class="btn"  href="./adminEpiVeto/index.php" role="button">Admin</a>

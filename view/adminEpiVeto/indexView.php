@@ -13,11 +13,11 @@
 
 <body>
 
-<header>
+    <header>
         <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite']?> <?= $_SESSION['nom']?></p>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
         <?php endif  ?>
-<nav>
+        <nav>
             <a id="logo" href="index.php"><img src="../assets/img/logo.JPG" alt=""></a>
             <ul class="nivUn">
                 <li><a href="../index.php">Accueil</a></li>
@@ -26,28 +26,38 @@
                         <li><a href="../equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
-                <?php if (isConnected()) : ?>
-                    <?php if (isAdminConnected()) : ?>
-                        <a class="btn"  href="index.php" role="button">Admin</a>
-                    <?php endif ?>
-                    <a class="btnInput"  href="../login/deconnexion.php">Se déconnecter</a>
-                <?php else : ?>
-                    <a class="btnInput" href="../login/index.php">Se connecter</a>
-                <li><a href="register/index.php">Inscription</a></li>
-                <?php endif ?>
+                <li><a href="../equipe.php">L'Équipe</a></li>
+                <?php if (isAdminConnected()) : ?>
+                    <li>
+                    <a class="btn" href="index.php" role="button">Admin</a>
+                    <ul class="nivDeux">
+                        <li><a href="./equipe/index.php">Gestion de l'Equipe</a></li>
+                        <li><a href="./utilisateurs/index.php">Gestion des Utilisateurs</a></li>
+                    </ul>
+                <?php endif ?></li>
+                <a class="btnInput" href="../login/deconnexion.php">Se déconnecter</a>
+
             </ul>
         </nav>
-</header>
+    </header>
 
     <main>
         <h2 id="admin">Administration du site</h2>
 
-        <section class="cards">
-            <a href="./utilisateurs/index.php"><h3>Gestion des utilisateurs</h3></a>
-            <p>Permet l'ajout, la modification ou la suppression d'un compte utilisateur</p>
+        <section>
+            <a href="./equipe/index.php">
+                <h3>Gestion de l'équipe</h3>
+            </a>
+            <p>Permet l'ajout, la modification ou la suppression d'un membre de l'équipe.</p>
 
         </section>
+        <section>
+            <a href="./utilisateurs/index.php">
+                <h3>Gestion des utilisateurs</h3>
+            </a>
+            <p>Permet l'ajout, la modification ou la suppression d'un compte utilisateur.</p>
 
+        </section>
 
     </main>
 

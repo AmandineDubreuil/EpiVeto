@@ -92,17 +92,16 @@ function checkEmptyValue($postEntrie, $key, $error)
 
 function checkTelephone($telephone, $key, $error)
 {
-    
+
     // Supprime tous les caractères non numériques
-$telephone = preg_replace('/\D/', '', $telephone); 
+    $telephone = preg_replace('/\D/', '', $telephone);
 
-// Vérifie si le numéro de téléphone a exactement 10 chiffres
-if (strlen($telephone) !== 10) :
-       // Affiche un message d'erreur
-    $error[$key] = "Le numéro de téléphone doit avoir 10 chiffres.";
-endif;
-return $error;
-
+    // Vérifie si le numéro de téléphone a exactement 10 chiffres
+    if (strlen($telephone) !== 10) :
+        // Affiche un message d'erreur
+        $error[$key] = "Le numéro de téléphone doit avoir 10 chiffres.";
+    endif;
+    return $error;
 }
 
 /**
@@ -180,7 +179,7 @@ function findEmail(string $email): array|bool
     return $resultat->fetch();
 }
 
-function insertUtilisateur( string $civilite, string $prenom, string $nom,  string $telephone, string $email, string $pwd): int
+function insertUtilisateur(string $civilite, string $prenom, string $nom,  string $telephone, string $email, string $pwd): int
 {
     require 'pdo.php';
     $pwdHashe = password_hash($pwd, PASSWORD_DEFAULT);
@@ -269,5 +268,140 @@ function suppUtilisateurById(int $idUtilisateur): bool
     return $resultat->execute();
 }
 
+// fonctions images
+
+function uploadPhoto($photo)
+{
+    $target_dir = "../../uploads/equipe/";
+    $target_file = $target_dir . basename($_FILES["photoUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+   // dd($target_file);
+    // Check if image file is a actual image or fake image
+    if (isset($_POST["ajout"])) {
+        $check = getimagesize($_FILES["photoUpload"]["tmp_name"]);
+       
+        if ($check !== false) {
+            echo "Le fichier est une image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "Le fichier téléchargé n'est pas une image.";
+            $uploadOk = 0;
+        }
+    }
+
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Désolé, le fichier existe déjà.";
+        $uploadOk = 0;
+    }
+
+    // Check file size
+    if ($_FILES["photoUpload"]["size"] > 500000) {
+        echo "Désolé, votre image est trop grande.";
+        $uploadOk = 0;
+    }
+
+    // Allow certain file formats
+    if (
+        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif"
+    ) {
+        echo "Désolé, seuls les fichiers de type JPG, JPEG, PNG & GIF sont autorisés.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Désolé, le fichier n'a pas été téléchargé.";
+        // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["photoUpload"]["tmp_name"], $target_file)) {
+            echo "Le fichier " . htmlspecialchars(basename($_FILES["photoUpload"]["name"])) . " a bien été téléchargé.";
+        } else {
+            echo "Désolé, une erreur est survenue lors du téléchargement.";
+        }
+    }
+}
+
+
+
 
 // // fonctions équipe
+
+function getEmployes(): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT id_employe, nom, prenom, created_at, modified_at  FROM `employes` WHERE 1 ORDER BY nom ASC";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->execute();
+    return $resultat->fetchAll();
+}
+
+function getEmployesByFonction(string $fonction): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT id_employe, photo, titre, nom, prenom, diplome, description, insta, facebook  FROM `employes` WHERE fonction = :fonction ORDER BY nom ASC";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':fonction', $fonction, PDO::PARAM_STR);
+    $resultat->execute();
+    return $resultat->fetchAll();
+}
+
+function getEmployeById(int $idEmploye): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT *  FROM `employes` WHERE id_employe = :id_employe";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':id_employe', $idEmploye, PDO::PARAM_INT);
+    $resultat->execute();
+    return $resultat->fetch();
+}
+
+
+function insertEmploye(string $prenom, string $nom, string $titre, string $fonction, string $diplome, string $description, string $photo, string $insta, string $facebook ): int //string $description, string $photo, string $insta, string $facebook //, `description`, `photo`, `insta`, `facebook` //:description, :photo, :insta, :facebook,
+{
+    require 'pdo.php';
+
+    $requete = 'INSERT INTO employes (`prenom`, `nom`, `titre`,`fonction`,  `diplome`, `description`, `photo`, `insta`, `facebook`, `created_at`, `modified_at`) VALUES (:prenom, :nom, :titre, :fonction, :diplome, :description, :photo, :insta, :facebook, now(), now())';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+    $resultat->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $resultat->bindValue(':fonction', $fonction, PDO::PARAM_STR);
+    $resultat->bindValue(':diplome', $diplome, PDO::PARAM_STR);
+    $resultat->bindValue(':description', $description, PDO::PARAM_STR);
+     $resultat->bindValue(':photo', $photo, PDO::PARAM_STR);
+     $resultat->bindValue(':insta', $insta, PDO::PARAM_STR);
+     $resultat->bindValue(':facebook', $facebook, PDO::PARAM_STR);
+    $resultat->execute();
+    return $conn->lastInsertId();
+}
+
+function updateEmploye(int $id_employe, string $titre, string $prenom, string $nom, string $fonction, string $diplome, string $description, string $photo, string $insta, string $facebook ): bool
+{
+    require 'pdo.php';
+    $requete = 'UPDATE employes SET titre = :titre, prenom = :prenom, nom = :nom, fonction = :fonction, diplome = :diplome, description  = :description, photo = :photo, insta = :insta, facebook = :facebook, modified_at = now() WHERE id_employe = :id_employe';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':id_employe', $id_employe, PDO::PARAM_INT);
+    $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $resultat->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+    $resultat->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $resultat->bindValue(':fonction', $fonction, PDO::PARAM_STR);
+    $resultat->bindValue(':diplome', $diplome, PDO::PARAM_STR);
+    $resultat->bindValue(':description', $description, PDO::PARAM_STR);
+    $resultat->bindValue(':photo', $photo, PDO::PARAM_STR);
+    $resultat->bindValue(':insta', $insta, PDO::PARAM_STR);
+    $resultat->bindValue(':facebook', $facebook, PDO::PARAM_STR);
+    $resultat->execute();
+    return $resultat->execute();
+}
+
+function suppEmployeById(int $idEmploye): bool
+{
+    require 'pdo.php';
+    $sqlRequest = "DELETE FROM employes WHERE id_employe = :idEmploye";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':idEmploye', $idEmploye, PDO::PARAM_INT);
+    return $resultat->execute();
+}

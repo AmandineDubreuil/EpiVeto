@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Épi-Véto La Chaussée d'Ivry</title>
+    <title>L'Équipe - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -13,11 +13,11 @@
 
 <body>
 
-<header>
+    <header>
         <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite']?> <?= $_SESSION['nom']?></p>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
         <?php endif  ?>
-<nav>
+        <nav>
             <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
             <ul class="nivUn">
                 <li><a href="index.php">Accueil</a></li>
@@ -26,36 +26,92 @@
                         <li><a href="equipements.php">Nos Équipements</a></li>
                     </ul>
                 </li>
-                <?php if (isConnected()) : ?>
-                    <?php if (isAdminConnected()) : ?>
-                        <a class="btn"  href="./adminEpiVeto/index.php" role="button">Admin</a>
-                    <?php endif ?>
-                    <a class="btnInput"  href="./login/monCompte.php?id=<?= $_SESSION['id_utilisateur'] ?>">Mon Compte</a>
-                    <a class="btnInput"  href="./login/deconnexion.php">Se déconnecter</a>
-                <?php else : ?>
-                    <a class="btnInput" href="./login/index.php">Se connecter</a>
-                <li><a href="register/index.php">Inscription</a></li>
-                <?php endif ?>
+                <li><a href="equipe.php">L'Équipe</a></li>
             </ul>
         </nav>
-</header>
+    </header>
 
     <main>
-        <h1>Épi-Véto</h1>
+        <h1>L'Équipe</h1>
+        <h2>Nos Vétérinaires</h2>
+        <section class="veterinaires">
 
-        <section class="presentation">
-            <p>
-                Bienvenue à Épi-Véto !
-                Nous sommes une équipe de professionnels, dévoués à fournir des soins de qualité pour vos compagnons à quatre pattes. Notre clinique offre une gamme complète de services vétérinaires, allant de la médecine préventive à la chirurgie avancée.
-            </p>
-            <div class="imgPresentation">
-                <div><img src="./assets/img/clinique/epiveto.jpg" alt="Épi-Véto"></div>
-                <p>Chez nous, vous trouverez une atmosphère chaleureuse et accueillante pour vous et votre animal de compagnie. Nous nous engageons à offrir un service personnalisé et attentionné à chaque patient, tout en travaillant en étroite collaboration avec vous pour assurer la meilleure santé possible de votre animal.
 
-                    Notre équipe est composée de vétérinaires qualifié(e)s, et d'ASV (Auxiliaire Spécialisé Vétérinaire) compétent(e)s, tous animés par une passion commune pour les animaux. Nous sommes équipés d'installations modernes et à la pointe de la technologie pour garantir des soins de qualité supérieure à tous les animaux qui nous sont confiés.</p>
-            </div>
-            <p>Que vous ayez besoin d'une simple consultation de routine, d'une intervention chirurgicale complexe ou de conseils sur la santé de votre animal, nous sommes là pour vous aider. N'hésitez pas à nous contacter pour en savoir plus sur nos services ou pour prendre rendez-vous avec l'un de nos vétérinaires experts.</p>
+            <?php
+            if (count(getEmployesByFonction($veterinaires)) != 0) :
+                foreach (getEmployesByFonction($veterinaires) as $veterinaire) : ?>
+                    <article class="card">
+                        <div class="imgRonde">
+                            <?php if (!empty($veterinaire['photo'])) : ?>
+                                <img src="<?= $veterinaire['photo'] ?>" alt="">
+                            <?php else : ?>
+                                <img src="./uploads/equipe/Image.jpg" alt="">
+                            <?php endif; ?>
+                        </div>
+                        <div class="cardEquipe">
+                            <h3><?= $veterinaire['titre'] ?> <?= $veterinaire['nom'] ?> <?= $veterinaire['prenom'] ?></h3>
+                            <p><?= $veterinaire['diplome'] ?></p>
+                            <div class="reseaux">
+                                <?php if (!empty($veterinaire['insta'])) : ?>
+                                    <a href="<?= $veterinaire['insta'] ?>" target="blank"><i class="fa-brands fa-square-instagram"></i></a>
+                                <?php endif; ?>
+                                <?php if (!empty($veterinaire['facebook'])) : ?>
+                                    <a href="<?= $veterinaire['facebook'] ?>" target="blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($veterinaire['description'])) : ?>
+                                <a href="collaborateur.php?id=<?= $veterinaire['id_employe'] ?>" class="btnGris">En savoir plus</a>
+                            <?php endif; ?>
+                        </div>
+                    </article>
+            <?php
+                endforeach;
+            else :
+                echo 'Aucun(e) vétérinaire enregistré(e).';
+            endif;
+            ?>
+
+
         </section>
+        <h2>Nos ASV</h2>
+        <section class="asv">
+
+            <?php
+            if (count(getEmployesByFonction($asvs)) != 0) :
+                foreach (getEmployesByFonction($asvs) as $asv) : ?>
+                    <article class="card">
+                        <div class="imgRonde"> <?php if (file_exists($asv['photo'])) : ?>
+                                <img src="<?= $asv['photo'] ?>" alt="">
+                            <?php else : ?>
+                                <img src="./uploads/equipe/Image.jpg" alt="">
+                            <?php endif; ?>
+                        </div>
+                        <div class="cardEquipe">
+                            <h3><?= $asv['titre'] ?> <?= $asv['nom'] ?> <?= $asv['prenom'] ?></h3>
+                            <p><?= $asv['diplome'] ?></p>
+                            <div class="reseaux">
+                                <?php if (!empty($asv['insta'])) : ?>
+                                    <a href="<?= $asv['insta'] ?>" target="blank"><i class="fa-brands fa-square-instagram"></i></a>
+                                <?php endif; ?>
+                                <?php if (!empty($asv['facebook'])) : ?>
+                                    <a href="<?= $asv['facebook'] ?>" target="blank"><i class="fa-brands fa-square-facebook"></i></a>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($asv['description'])) : ?>
+                                <a href="collaborateur.php?id=<?= $asv['id_employe'] ?>" class="btnGris">En savoir plus</a>
+                            <?php endif; ?>
+                        </div>
+                    </article>
+            <?php
+                endforeach;
+            else :
+                echo 'Aucun(e) ASV enregistré(e).';
+            endif;
+            ?>
+
+        </section>
+
+
         <?php include_once 'structure/sideView.php' ?>
 
 
