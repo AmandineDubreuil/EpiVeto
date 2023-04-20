@@ -97,7 +97,6 @@ h3 {
 }
 
 p {
-    padding-left: 1rem;
     text-align: justify;
 }
 
@@ -170,6 +169,10 @@ p {
     flex-direction: column;
 }
 
+.side p {
+    padding: 0 1rem;
+}
+
 .side .trouver,
 .side .contact,
 .side .reassurance,
@@ -179,6 +182,7 @@ p {
 
 .carte {
     text-align: center;
+    margin: 1rem;
 }
 
 .btnMessage {
@@ -211,6 +215,10 @@ p {
     top: 1px;
 }
 
+.side .horaires p {
+    padding-top: .5rem;
+}
+
 .reassurance {
     padding: 1rem;
     display: flex;
@@ -239,6 +247,7 @@ p {
 
 .reassurance p {
     padding: 0;
+    text-align: center;
 }
 
 /* footer */
@@ -286,6 +295,31 @@ footer p {
     align-items: center;
 }
 
+.accueil {
+    font-family: "raleway";
+    font-size: 1rem;
+    font-weight: 800;
+    padding-left: 1rem;
+    text-align: justify;
+    background-color: var(--color-four);
+    color: var(--color-one);
+}
+
+.presentation {
+    padding: 1rem;
+}
+
+.presentation p {
+    margin: 1rem 0;
+}
+
+.imgPresentation div {
+    margin: 1.5rem 0;
+}
+
+.imgPresentation div img {
+    border-radius: 5px;
+}
 
 /* page Clinique */
 
@@ -294,8 +328,10 @@ footer p {
 }
 
 .douleur p,
-.pharmacie p {
+.pharmacie p,
+.hospitalisation p {
     padding: 1rem;
+
 }
 
 .cliniqueImg {
@@ -376,7 +412,7 @@ footer p {
 
     main {
         position: relative;
-        min-height: 1000px;
+        min-height: 860px;
     }
 
     section {
@@ -404,7 +440,20 @@ footer p {
 
     /* page Accueil*/
 
-    
+    .imgPresentation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .imgPresentationText {
+        width: 65%;
+        padding-left: 1rem;
+    }
+
+    .imgPresentationImg {
+        width: 35%;
+    }
 
     /* page clinique */
 
@@ -426,10 +475,6 @@ footer p {
         flex-direction: row-reverse;
         justify-content: space-between;
         background-color: var(--color-two);
-    }
-
-    .pharmacie {
-        margin-right: 0;
     }
 
     /* page l'équipe*/

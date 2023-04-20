@@ -29,11 +29,12 @@
                 <li><a href="equipe.php">L'Équipe</a></li>
                
             </ul>
-        </nav>
+        </nav> 
+        <h1>L'Équipe</h1>
     </header>
 
     <main>
-        <h1>L'Équipe</h1>
+       
         <section class="collaborateur">
             <h2><?= $titre ?> <?= $nom ?> <?= $prenom ?></h2>
             <h3><?= $fonction ?></h3>

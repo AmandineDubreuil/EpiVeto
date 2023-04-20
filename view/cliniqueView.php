@@ -29,12 +29,13 @@
                 <li><a href="equipe.php">L'Équipe</a></li>
 
             </ul>
-        </nav>
+        </nav>  
+         <h1>La clinique </h1>
     </header>
 
     </header>
     <main>
-        <h1>La clinique </h1>
+     
         <section class="services">
             <h2>Services proposés</h2>
             <ul>

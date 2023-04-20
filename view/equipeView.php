@@ -28,11 +28,12 @@
                 </li>
                 <li><a href="equipe.php">L'Équipe</a></li>
             </ul>
-        </nav>
+        </nav>   
+          <h1>L'Équipe</h1>
     </header>
 
     <main>
-        <h1>L'Équipe</h1>
+   
         <h2>Nos Vétérinaires</h2>
         <section class="veterinaires">
 

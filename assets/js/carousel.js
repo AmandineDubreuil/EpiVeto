@@ -18,7 +18,7 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
     carouselHeight += "px";
     // console.dir(carouselHeight);
     // width du carousel en px
-    carouselWidth = "600px"; // "340px";
+    carouselWidth = "800px"; // "340px";
 
     // emplacement dans l'HTML du carousel 
     let carouselParent = document.querySelector(elem);
@@ -56,7 +56,7 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
     carousel.classList.add("carousel");
     carousel.style.width = carouselWidth; //"100%";
     carousel.style.height = carouselHeight; //"30vh";
-    carousel.style.maxHeight = "340px";
+    carousel.style.maxHeight = "454px";
     carousel.style.position = "relative";
     carousel.style.overflow = "hidden";
     carouselParent.prepend(carousel);

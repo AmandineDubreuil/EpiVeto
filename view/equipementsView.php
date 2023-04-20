@@ -30,10 +30,11 @@
 
             </ul>
         </nav>
+            <h1>Les Équipements</h1>
     </header>
 
     <main>
-        <h1>Les Équipements</h1>
+    
         <section class="equipements">
             <div class="card">
                 <div><img src="./assets/img/materiel/neovet.jpg" alt="NeoVet"></div>
