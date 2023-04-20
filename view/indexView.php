@@ -32,11 +32,12 @@
 
             </ul>
         </nav>
+        <div id="slider"></div>
     </header>
 
     <main>
         
-            <div id="slider"></div>
+            
         
         <section class="presentation">
             <p>

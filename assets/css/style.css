@@ -270,6 +270,7 @@ footer p {
 .logAdmin {
     color: var(--color-fivelight);
     text-decoration: none;
+
 }
 
 .logAdmin :visited {
@@ -279,11 +280,12 @@ footer p {
 
 /* page accueil */
 
-#slider{
-   display: flex;
-   justify-content: center;
-   align-items: center;
+#slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 /* page Clinique */
 
@@ -385,6 +387,25 @@ footer p {
         width: 45%;
     }
 
+
+    /* side */
+
+    .side {
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 300px;
+        -webkit-box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
+        box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
+        border-radius: 5px;
+        background-color: var(--color-four);
+
+    }
+
+    /* page Accueil*/
+
+    
+
     /* page clinique */
 
     .cliniqueImg {
@@ -419,22 +440,6 @@ footer p {
 
     }
 
-    /* side */
-
-    .side {
-        position: absolute;
-        top: 8.5rem;
-        right: 0;
-        max-width: 300px;
-        -webkit-box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
-        box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
-        border-radius: 5px;
-        background-color: var(--color-four);
-
-    }
-.sideAccueil .side{
-    top: 27rem;
-}
 
     /*fin*/
 }

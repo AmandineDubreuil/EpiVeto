@@ -1,22 +1,25 @@
-console.log("first")
+//console.log("first")
 
 const launchCarousel = (elem, carouselWidth, carouselHeight) => {
-    console.log("carrousel launch");
-    console.dir(carouselWidth, carouselHeight);
+    // console.log("carrousel launch");
     console.dir(carouselHeight);
+    //console.dir(carouselHeight);
+
     // déclarations valeurs et variables
     // temps de défilement des images en ms
     let time = 10000;
     // temps de transitionCSS en ms
     let timeCssTrans = 2000;
+
     // height du carousel en px
     //calcul du ration largeur ecran/ largeur image
-    carouselHeight = 400; //(window.innerWidth * carouselHeight) / carouselWidth;
+
+    carouselHeight = (window.innerWidth * carouselHeight) / carouselWidth;
     carouselHeight += "px";
-    console.dir(carouselHeight);
+    // console.dir(carouselHeight);
     // width du carousel en px
-    carouselWidth = 600;
-    carouselWidth += "px";
+    carouselWidth = "600px"; // "340px";
+
     // emplacement dans l'HTML du carousel 
     let carouselParent = document.querySelector(elem);
     // types d'effets de défilement d'images
@@ -28,29 +31,7 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
         "./uploads/carousel/visuel-affiche-tique.jpg",
         "./uploads/carousel/IntoxForet.jpg",
     ];
-    // creation des textes associés
 
-    const textArray = [
-        {
-            text1: "",
-            text2: ""
-        },
-        {
-            text1: "",
-            text2: ""
-        },
-        {
-            text1: "",
-            text2: ""
-        }
-    ]
-    
-    /* ou utilisation d'images picsum
-    let i = 0;
-    while (i < nbImages) {
-        imgArray[i] = "https://picsum.photos/1024/768?random=" + (i + 1);
-        i++;
-    } */
     // creation des class CSS de transition dans une balise style
     const style = document.createElement('style');
     style.type = 'text/css';
@@ -73,13 +54,13 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
     //element principal
     const carousel = document.createElement("div");
     carousel.classList.add("carousel");
-    carousel.style.width =   carouselWidth; //"100%";
-    carousel.style.height = carouselHeight;
-  
+    carousel.style.width = carouselWidth; //"100%";
+    carousel.style.height = carouselHeight; //"30vh";
+    carousel.style.maxHeight = "340px";
     carousel.style.position = "relative";
     carousel.style.overflow = "hidden";
     carouselParent.prepend(carousel);
-    
+
     //imageA (qui va disparaître)
     const imageA = document.createElement("img");
     imageA.src = imgArray[0];
@@ -88,6 +69,7 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
     imageA.style.width = "100%";
     imageA.style.position = "absolute";
     imageA.style.overflow = "hidden"
+
     // ajouts d'effet?
     carousel.prepend(imageA);
 
@@ -99,28 +81,10 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
     imageB.style.width = "100%";
     imageB.style.position = "absolute";
     carousel.prepend(imageB);
-  
-    //Partie textes
-    
-    const frameText =  document.createElement("div");
-    frameText.classList.add("frameText");
-    carousel.prepend(frameText);
 
-    
-    const textes = document.createElement("div");
-    textes.classList.add("sliderTextes");
-    frameText.prepend(textes);
-    
-    const solde = document.createElement("p");
-    solde.classList.add("sliderPara");
-    textes.append(solde);
+    //  console.dir(imageB);
+    // console.dir(imageB.clientHeight);
 
-    const title = document.createElement("p");
-    title.classList.add("sliderPara");
-    title.classList.add("gras");
-    textes.append(title);
-
-    
     // creations des puces images
     const sliderNav = document.createElement("div");
     sliderNav.classList.add("sliderNav");
@@ -132,8 +96,7 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
 
     // logique du programme
     i = 0;
-    solde.innerText = textArray[i].text1;
-    title.innerText = textArray[i].text2;
+
     const loop = setInterval(() => {
         // si i >= à la taille entrée de mon tableau le ramener à 0
         i++;
@@ -155,10 +118,9 @@ const launchCarousel = (elem, carouselWidth, carouselHeight) => {
 
             // le setTimeout doit durer le même temps que ma transition css
         }, timeCssTrans)
-        solde.innerText = textArray[i].text1;
-        title.innerText = textArray[i].text2;
+
     }, time)
-    console.dir(carousel);
+    //console.dir(carousel);
 }
 // obtenir la taille de la première image du carousel
 //https://stackoverflow.com/questions/11442712/get-width-height-of-remote-image-from-url
@@ -175,7 +137,7 @@ getMeta("./uploads/carousel/logoVectoAccueilLight.png", (err, img) => {
     window.addEventListener("resize", () => {
         document.querySelector(".carousel").style.height = ((window.innerWidth * img.naturalHeight) / img.naturalWidth) + "px"
     })
-    
+
 });
 
 
