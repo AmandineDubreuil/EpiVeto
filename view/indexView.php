@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/carousel.js" defer></script>
+    <script src="./assets/js/script.js" defer></script>
 </head>
 
 <body>
 
-<header>
+    <header>
         <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite']?> <?= $_SESSION['nom']?></p>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
         <?php endif  ?>
-<nav>
+        <nav>
             <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
             <ul class="nivUn">
                 <li><a href="index.php">Accueil</a></li>
@@ -27,14 +29,15 @@
                     </ul>
                 </li>
                 <li><a href="equipe.php">L'Équipe</a></li>
-              
+
             </ul>
         </nav>
-</header>
+    </header>
 
     <main>
-        <h1>Épi-Véto</h1>
-
+        
+            <div id="slider"></div>
+        
         <section class="presentation">
             <p>
                 Bienvenue à Épi-Véto !
@@ -48,8 +51,9 @@
             </div>
             <p>Que vous ayez besoin d'une simple consultation de routine, d'une intervention chirurgicale complexe ou de conseils sur la santé de votre animal, nous sommes là pour vous aider. N'hésitez pas à nous contacter pour en savoir plus sur nos services ou pour prendre rendez-vous avec l'un de nos vétérinaires experts.</p>
         </section>
+        <div class="sideAccueil">
         <?php include_once 'structure/sideView.php' ?>
-
+</div>
 
     </main>
 
@@ -59,14 +63,15 @@
             <p><a href="#">Mentions légales</a> - <a href="">Politique de confidentialité</a></p>
         </div>
         <p>
-        <?php if (isConnected()) : ?>
-            <?php if (isAdminConnected()) : ?>
-                <a href="./adminEpiVeto/index.php" role="button">Page Administrateur</a>
+            <?php if (isConnected()) : ?>
+                <?php if (isAdminConnected()) : ?>
+                    <a href="./adminEpiVeto/index.php" role="button">Page Administrateur</a>
+                <?php endif ?>
+                <a href="./login/deconnexion.php">Se déconnecter</a>
+            <?php else : ?>
+                <a class="logAdmin" href="./login/">Administration du site</a>
             <?php endif ?>
-            <a href="./login/deconnexion.php">Se déconnecter</a>
-        <?php else : ?>
-            <a class="logAdmin" href="./login/">Administration du site</a>
-        <?php endif ?></p>
+        </p>
     </footer>
 
 </body>

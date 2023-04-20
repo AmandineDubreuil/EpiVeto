@@ -250,6 +250,7 @@ footer {
     color: var(--color-three);
     font-size: .7rem;
 }
+
 .legal {
     display: flex;
     align-items: center;
@@ -265,13 +266,23 @@ footer p {
     text-align: center;
     padding: 0;
 }
+
 .logAdmin {
     color: var(--color-fivelight);
     text-decoration: none;
 }
-.logAdmin :visited{
+
+.logAdmin :visited {
     color: var(--color-fivelight);
     text-decoration: none;
+}
+
+/* page accueil */
+
+#slider{
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* page Clinique */
@@ -283,6 +294,21 @@ footer p {
 .douleur p,
 .pharmacie p {
     padding: 1rem;
+}
+
+.cliniqueImg {
+    margin: 1rem;
+}
+
+.cliniqueImg img {
+    border-radius: 5px;
+}
+
+.douleur,
+.hospitalisation,
+.pharmacie {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* page l'equipe*/
@@ -307,12 +333,13 @@ footer p {
 .cardEquipe h3 {
     padding-bottom: 0;
 }
-.cardEquipe .reseaux a{
+
+.cardEquipe .reseaux a {
     font-size: 1.5rem;
     color: var(--color-five);
 }
 
-.cardEquipe .reseaux a:visited{
+.cardEquipe .reseaux a:visited {
     font-size: 1.5rem;
     color: var(--color-fivedark);
 }
@@ -321,19 +348,22 @@ footer p {
 
 .collaborateur {
     padding: 1rem;
- }
-.collaborateur h2{
+}
+
+.collaborateur h2 {
     padding-bottom: 0;
 }
-.collaborateur h3{
+
+.collaborateur h3 {
     padding: 0 1rem;
     padding-bottom: 1rem;
-} 
-.collaborateurImg{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-bottom: 1rem;
+}
+
+.collaborateurImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
 }
 
 /* *********************** 
@@ -355,7 +385,33 @@ footer p {
         width: 45%;
     }
 
-    /* l'équipe*/
+    /* page clinique */
+
+    .cliniqueImg {
+        max-width: 40%;
+    }
+
+    .cliniqueText {
+        width: 55%;
+    }
+
+    .hospitalisation {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .douleur,
+    .pharmacie {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        background-color: var(--color-two);
+    }
+
+    .pharmacie {
+        margin-right: 0;
+    }
+
+    /* page l'équipe*/
     .veterinaires,
     .asv {
 
@@ -373,10 +429,12 @@ footer p {
         -webkit-box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
         box-shadow: 2px 2px 12px 5px rgba(0, 0, 0, 0.31);
         border-radius: 5px;
-
+        background-color: var(--color-four);
 
     }
-
+.sideAccueil .side{
+    top: 27rem;
+}
 
     /*fin*/
 }
