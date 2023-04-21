@@ -324,7 +324,59 @@ function uploadPhoto($photo)
     }
 }
 
+function uploadCarousel($photo)
+{
+    $target_dir = "../../uploads/carousel/";
+    $target_file = $target_dir . basename($_FILES["carouselUn"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+   // dd($target_file);
+    // Check if image file is a actual image or fake image
+    if (isset($_POST["ajout"])) {
+        $check = getimagesize($_FILES["carouselUn"]["tmp_name"]);
+       
+        if ($check !== false) {
+            echo "Le fichier est une image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "Le fichier téléchargé n'est pas une image.";
+            $uploadOk = 0;
+        }
+    }
 
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Désolé, le fichier existe déjà.";
+        $uploadOk = 0;
+    }
+
+    // Check file size
+    if ($_FILES["carouselUn"]["size"] > 500000) {
+        echo "Désolé, votre image est trop grande.";
+        $uploadOk = 0;
+    }
+
+    // Allow certain file formats
+    if (
+        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif"
+    ) {
+        echo "Désolé, seuls les fichiers de type JPG, JPEG, PNG & GIF sont autorisés.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Désolé, le fichier n'a pas été téléchargé.";
+        // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["carouselUn"]["tmp_name"], $target_file)) {
+            echo "Le fichier " . htmlspecialchars(basename($_FILES["carouselUn"]["name"])) . " a bien été téléchargé.";
+        } else {
+            echo "Désolé, une erreur est survenue lors du téléchargement.";
+        }
+    }
+}
 
 
 // // fonctions équipe
@@ -405,3 +457,28 @@ function suppEmployeById(int $idEmploye): bool
     $resultat->bindValue(':idEmploye', $idEmploye, PDO::PARAM_INT);
     return $resultat->execute();
 }
+
+/* fonctions sur BDD Actualites */
+
+function getActualiteById(int $idActualite): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT *  FROM `actualites` WHERE id_actualite = :id_actualite";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':id_actualite', $idActualite, PDO::PARAM_INT);
+    $resultat->execute();
+    return $resultat->fetch();
+}
+function updateActualite(int $idActualite, string $bandeau, string $carouselUn, string $carouselDeux): bool
+{
+    require 'pdo.php';
+    $requete = 'UPDATE actualites SET bandeau = :bandeau, carousel_un = :carouselUn, carousel_deux = :carouselDeux WHERE id_actualite = :id_actualite';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':id_actualite', $idActualite, PDO::PARAM_INT);
+    $resultat->bindValue(':bandeau', $bandeau, PDO::PARAM_STR);
+    $resultat->bindValue(':carouselUn', $carouselUn, PDO::PARAM_STR);
+    $resultat->bindValue(':carouselDeux', $carouselDeux, PDO::PARAM_STR);
+    $resultat->execute();
+    return $resultat->execute();
+}
+

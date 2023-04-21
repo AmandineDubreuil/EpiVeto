@@ -20,9 +20,6 @@ $photoDb = getEmployeById($id)['photo'];
 $insta = getEmployeById($id)['insta'];
 $facebook = getEmployeById($id)['facebook'];
 
-
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
     $titreModif = checkXSSPostValue($_POST['titre']);

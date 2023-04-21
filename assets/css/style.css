@@ -127,6 +127,41 @@ p {
     font-size: 1rem;
 }
 
+.messagedefilant{
+    width: 100%;
+    background-color: var(--color-fivelight);
+    color: var(--color-three);
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    height: 25px;
+  
+}
+.messagedefilant div {
+    position: absolute;
+    min-width: 100%; /* au minimum la largeur du conteneur */
+  }
+
+  .messagedefilant div span, 
+.messagedefilant div:after {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+  top:0;
+}
+ 
+.messagedefilant div span {
+  animation: defilement 20s infinite linear;
+
+}
+
+
+@keyframes defilement {
+  0% { margin-left: 100%; }
+  100% { margin-left: -100%; }
+}
 
 /*boutons*/
 
@@ -326,6 +361,9 @@ footer p {
 .services li {
     padding: .5rem 2rem;
 }
+.services, .douleur, .hospitalisation, .pharmacie {
+    padding: 1.5rem 0;
+}
 
 .douleur p,
 .pharmacie p,
@@ -474,7 +512,7 @@ footer p {
     .pharmacie {
         flex-direction: row-reverse;
         justify-content: space-between;
-        background-color: var(--color-two);
+        background-color: var(--color-twolight);
     }
 
     /* page l'équipe*/

@@ -12,30 +12,8 @@
 </head>
 
 <body>
+<?php require_once '../structure/headerNiv1View.php' ?>
 
-    <header>
-        <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
-        <?php endif  ?>
-        <nav>
-            <a id="logo" href="index.php"><img src="../assets/img/logo.JPG" alt=""></a>
-            <ul class="nivUn">
-                <li><a href="../index.php">Accueil</a></li>
-                <li> <a href="../clinique.php">La Clinique</a>
-                    <ul class="nivDeux">
-                        <li><a href="../equipements.php">Nos Équipements</a></li>
-                    </ul>
-                </li>
-                <li><a href="../equipe.php">L'Équipe</a></li>
-                <?php if (isAdminConnected()) : ?>
-                    <li>
-                    <a class="btn" href="index.php" role="button">Admin</a>
-                    <ul class="nivDeux">
-                        <li><a href="./equipe/index.php">Gestion de l'Equipe</a></li>
-                        <li><a href="./utilisateurs/index.php">Gestion des Utilisateurs</a></li>
-                    </ul>
-                <?php endif ?></li>
-                <a class="btnInput" href="../login/deconnexion.php">Se déconnecter</a>
 
             </ul>
         </nav>
@@ -45,20 +23,40 @@
         <h2 id="admin">Administration du site</h2>
 
         <section>
+            <h3>Gestion des actualités</h3>
+            <table class="adminTable">
+                <thead>
+                    <tr>
+                        <th>Bandeau</th>
+                        <th>Carousel Un</th>
+                        <th>Carousel Deux modif marche pas</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><?= $bandeau ?></td>
+                        <td><?= $carouselUn ?></td>
+                        <td><?= $carouselDeux ?></td>
+                        <td>
+                            <a class="btn" href="./actualites/edit.php?id=<?= $idActualite ?>">Modifier</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </section>
+
+        <section>
             <a href="./equipe/index.php">
                 <h3>Gestion de l'équipe</h3>
             </a>
             <p>Permet l'ajout, la modification ou la suppression d'un membre de l'équipe.</p>
 
         </section>
-        <section>
-            <a href="./utilisateurs/index.php">
-                <h3>Gestion des utilisateurs</h3>
-            </a>
-            <p>Permet l'ajout, la modification ou la suppression d'un compte utilisateur.</p>
-
-        </section>
-
+        
     </main>
 
     <footer>
@@ -67,14 +65,15 @@
             <p><a href="#">Mentions légales</a> - <a href="">Politique de confidentialité</a></p>
         </div>
         <p>
-        <?php if (isConnected()) : ?>
-            <?php if (isAdminConnected()) : ?>
-                <a href="./adminEpiVeto/index.php" role="button">Page Administrateur</a>
+            <?php if (isConnected()) : ?>
+                <?php if (isAdminConnected()) : ?>
+                    <a href="./adminEpiVeto/index.php" role="button">Page Administrateur</a>
+                <?php endif ?>
+                <a href="./login/deconnexion.php">Se déconnecter</a>
+            <?php else : ?>
+                <a class="logAdmin" href="./login/">Administration du site</a>
             <?php endif ?>
-            <a href="./login/deconnexion.php">Se déconnecter</a>
-        <?php else : ?>
-            <a class="logAdmin" href="./login/">Administration du site</a>
-        <?php endif ?></p>
+        </p>
     </footer>
 
 

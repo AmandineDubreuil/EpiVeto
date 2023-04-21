@@ -14,24 +14,15 @@
 </head>
 
 <body>
-
-    <header>
-        <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
-        <?php endif  ?>
-        <nav>
-            <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
-            <ul class="nivUn">
-                <li><a href="index.php">Accueil</a></li>
-                <li> <a href="clinique.php">La Clinique</a>
-                    <ul class="nivDeux">
-                        <li><a href="equipements.php">Nos Équipements</a></li>
-                    </ul>
-                </li>
-                <li><a href="equipe.php">L'Équipe</a></li>
+<?php require_once './structure/headerNiv0View.php' ?>
 
             </ul>
         </nav>
+        <?php if (!empty($bandeau)) : ?>
+            <div class="messagedefilant">
+                <div><span><?= $bandeau ?></span></div>
+            </div>
+        <?php endif; ?>
         <div id="slider"></div>
     </header>
 
@@ -47,27 +38,27 @@
                     <p>Chez nous, vous trouverez une atmosphère chaleureuse et accueillante pour vous et votre animal de compagnie. Nous nous engageons à offrir un service personnalisé et attentionné à chaque patient, tout en travaillant en étroite collaboration avec vous pour assurer la meilleure santé possible de votre animal.
                     </p>
                     <p>
-                        Notre équipe est composée de vétérinaires qualifié(e)s, et d'ASV (Auxiliaire Spécialisé Vétérinaire) compétent(e)s, tous animés par une passion commune pour les animaux. Nous sommes équipés d'installations modernes et à la pointe de la technologie pour garantir des soins de qualité supérieure à tous les animaux qui nous sont confiés.
+                        Notre équipe est composée de docteurs vétérinaires et d'ASV (Auxiliaire Spécialisé(e) Vétérinaire) diplômé(e)s et formé(e)s en permanence, tous animés par une passion commune pour les animaux. Nous sommes équipés d'installations modernes et renouvellées régulièrement pour garantir des soins de qualité supérieure à tous les animaux qui nous sont confiés.
                     </p>
                 </div>
             </div>
             <p>Que vous ayez besoin d'une simple consultation de routine, d'une intervention chirurgicale complexe ou de conseils sur la santé de votre animal, nous sommes là pour vous aider. N'hésitez pas à nous contacter pour en savoir plus sur nos services ou pour prendre rendez-vous avec l'un de nos vétérinaires.</p>
         </section>
         <section class="reassuranceAccueil">
-        <div class="reassurance">
-        <div class="reassuranceItem">
-            <div class="reassuranceImg"><img src="./assets/img/Image.jpg" alt=""></div>
-            <p>Chiens - Chats - NAC</p>
-        </div>
-        <div class="reassuranceItem">
-            <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>
-            <p>Conseils</p>
-        </div>
-        <div class="reassuranceItem">
-            <div class="reassuranceImg"><img src="./assets/img/animaux/chien-pekinois-stethoscope-isole.jpg" alt="chien stéthoscope"></div>
-            <p>Qualité des soins</p>
-        </div>
-    </div>
+            <div class="reassurance">
+                <div class="reassuranceItem">
+                    <div class="reassuranceImg"><img src="./assets/img/Image.jpg" alt=""></div>
+                    <p>Chiens - Chats - NAC</p>
+                </div>
+                <div class="reassuranceItem">
+                    <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>
+                    <p>Conseils</p>
+                </div>
+                <div class="reassuranceItem">
+                    <div class="reassuranceImg"><img src="./assets/img/animaux/chien-pekinois-stethoscope-isole.jpg" alt="chien stéthoscope"></div>
+                    <p>Qualité des soins</p>
+                </div>
+            </div>
         </section>
         <div class="sideAccueil">
             <?php include_once 'structure/sideView.php' ?>

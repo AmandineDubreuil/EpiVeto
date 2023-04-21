@@ -13,20 +13,7 @@
 
 <body>
 
-    <header>
-        <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
-        <?php endif  ?>
-        <nav>
-            <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
-            <ul class="nivUn">
-                <li><a href="index.php">Accueil</a></li>
-                <li> <a href="clinique.php">La Clinique</a>
-                    <ul class="nivDeux">
-                        <li><a href="equipements.php">Nos Équipements</a></li>
-                    </ul>
-                </li>
-                <li><a href="equipe.php">L'Équipe</a></li>
+<?php require_once './structure/headerNiv0View.php' ?>
 
             </ul>
         </nav>  
@@ -40,24 +27,26 @@
             <h2>Services proposés</h2>
             <ul>
                 <li><i class="fa-solid fa-paw"></i> Médecine et Chirurgie des Animaux de Compagnie</li>
-                <li><i class="fa-solid fa-paw"></i> Laboratoire d'Analyses ( Biochimie, Hématologie, Cytologie ...)</li>
+                <li><i class="fa-solid fa-paw"></i> Laboratoire d'Analyses ( Biochimie, Hématologie, Cytologie, Immunologie ...)</li>
                 <li><i class="fa-solid fa-paw"></i> Radiologie et Echographie Numérique</li>
                 <li><i class="fa-solid fa-paw"></i> Oto-fibroscopie</li>
                 <li><i class="fa-solid fa-paw"></i> Hospitalisation</li>
                 <li><i class="fa-solid fa-paw"></i> Alimentation Physiologique et Diététique</li>
+                <li><i class="fa-solid fa-paw"></i> Produits d'hygiène et de soins</li>
+                <li><i class="fa-solid fa-paw"></i> Accessoires pour animaux</li>
             </ul>
         </section>
         <section class="douleur">
             <div class="cliniqueText">
                 <h3>Gestion de la douleur</h3>
-                <p>La gestion de la douleur, préventive ou curative, est une préoccupation permanente . Les antalgiques sont utilisés systématiquement : anti-inflammatoires stéroïdiens ou non stéroïdiens, et surtout antalgiques majeurs opiacés (butorphanol, buprénorphine, méthadone ...).</p>
+                <p>La gestion de la douleur, préventive ou curative, est une préoccupation permanente. Les antalgiques sont utilisés systématiquement : anti-inflammatoires stéroïdiens ou non stéroïdiens, et surtout antalgiques majeurs opiacés.</p>
             </div>
             <div class="cliniqueImg"><img src="./assets/img/clinique/gros-plan-veterinaire-prenant-soin-animal-compagnie.jpg" alt="Freepik gros plan vétérinaire prenant soin animal compagnie"></div>
         </section>
         <section class="hospitalisation">
             <div class="cliniqueText">
                 <h3>Hospitalisation</h3>
-                <p>Lors d'hospitalisation supérieure à une demi-journée, les propriétaires sont les bienvenus ( et même souhaités ! ) dans la clinique pour rendre visite à leur animal ; le chenil et sa courette de détente sont accessibles en dehors des heures de chirurgie, de soins ou d'entretien.
+                <p>Lors d'hospitalisation supérieure à une demi-journée, les propriétaires sont les bienvenus (et même souhaités!) dans la clinique pour rendre visite à leur animal; le chenil et sa courette de détente sont accessibles en dehors des heures de chirurgie, de soins ou d'entretien.
                 </p>
             </div>
             <div class="cliniqueImg"><img src="./assets/img/clinique/hospitalisation" alt="chat hospitalisé"></div>
@@ -66,9 +55,9 @@
             <div class="cliniqueText">
                 <h3>Pharmacie</h3>
                 <div>
-                    <p>Nous fournissons les médicaments que nous presrivons.</p>
-                    <p>Attention : la loi nous interdit strictement de tenir une officine de pharmacie ouverte, c'est à dire que nous ne pouvons délivrer de médicaments à prescription sur ordonnances qu'aux seuls animaux que nous soignons personnellement. Nous n'avons donc pas le droit de vendre en dehors de nos consultations ces médicaments sauf si nous suivons personnellement les animaux malades , même sur présentation d'une ordonnance d'un confrère.</p>
-                    <p>Les médicaments à prescription sans ordonnance et tous les autres produits vétérinaires (aliments, jouets ...) sont à votre disposition à l'accueil.</p>
+                    <p>Nous fournissons les médicaments que nous prescrivons.</p>
+                    <p>Attention : la loi nous interdit strictement de tenir une officine de pharmacie ouverte, c'est à dire que nous ne pouvons délivrer de médicaments à prescription sur ordonnances qu'aux seuls animaux que nous soignons personnellement. Nous n'avons donc pas le droit de vendre en dehors de nos consultations ces médicaments sauf si nous suivons personnellement les animaux malades, même sur présentation d'une ordonnance d'un confrère.</p>
+                    <p>Les médicaments à prescription sans ordonnance et tous les autres produits vétérinaires (aliments, jouets...) sont à votre disposition à l'accueil.</p>
                 </div>
             </div>
             <div class="cliniqueImg"><img src="./assets/img/clinique/pills-stethoscope-syringe.jpg" alt="Freepik pills-sthethoscope-syringe"></div>

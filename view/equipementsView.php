@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Outils - Épi-Véto La Chaussée d'Ivry</title>
+    <title>Nos équipements - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -13,21 +13,7 @@
 
 <body>
 
-    <header>
-        <?php if (isConnected()) : ?>
-            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
-        <?php endif  ?>
-        <nav>
-            <a id="logo" href="index.php"><img src="./assets/img/logo.JPG" alt=""></a>
-            <ul class="nivUn">
-                <li><a href="index.php">Accueil</a></li>
-                <li> <a href="clinique.php">La Clinique</a>
-                    <ul class="nivDeux">
-                        <li><a href="equipements.php">Nos Équipements</a></li>
-                    </ul>
-                </li>
-                <li><a href="equipe.php">L'Équipe</a></li>
-
+<?php require_once './structure/headerNiv0View.php' ?>
             </ul>
         </nav>
             <h1>Les Équipements</h1>
@@ -51,23 +37,23 @@
                 </div>
             </div>
             <div class="card">
-                <div><img src="./assets/img/materiel/echoLogicF6.png" alt="Echographe Logic F6"></div>
+                <div><img src="./uploads/equipe/Image.jpg" alt="Echographe Logic F6"></div>
                 <div>
-                    <h3>Échographe LOGIQ F6</h3>
+                    <h3>Echographe</h3>
                     <p>nouvelle génération de plate-forme d'échographie numérique interdisciplinaire (échographie abdominale, échocardiographie ...)</p>
                 </div>
             </div>
             <div class="card">
-                <div><img src="./assets/img/materiel/vetScanVS2Biochimie.png" alt="VetScan VS2"></div>
+                <div><img src="./uploads/equipe/Image.jpg" alt="VetScan VS2"></div>
                 <div>
-                    <h3>VetScan VS2</h3>
+                    <h3>Lorem</h3>
                     <p>analyseur vétérinaire pour l‘exploration des paramètres biochimiques et hormonaux ; dosage par spectrophotométrie en phase aqueuse de 25 paramètres biochimiques par bilans.</p>
                 </div>
             </div>
             <div class="card">
-                <div><img src="./assets/img/materiel/reflovetPlusBiochimie.png" alt="RefloVet Plus"></div>
+                <div><img src="./uploads/equipe/Image.jpg" alt="RefloVet Plus"></div>
                 <div>
-                    <h3>Reflovet Plus</h3>
+                    <h3>Lorem</h3>
                     <p>l'appareil d'analyse biochimique idéal pour les services d'urgence et les suivis ; résultats immédiats.</p>
                 </div>
             </div>
