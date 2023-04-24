@@ -29,8 +29,8 @@
                 foreach (getEmployesByFonction($veterinaires) as $veterinaire) : ?>
                     <article class="card">
                         <div class="imgRonde">
-                            <?php if (!empty($veterinaire['photo'])) : ?>
-                                <img src="<?= $veterinaire['photo'] ?>" alt="">
+                            <?php if (!empty($veterinaire['photo_un'])) : ?>
+                                <img src="<?= $veterinaire['photo_un'] ?>" alt="">
                             <?php else : ?>
                                 <img src="./uploads/equipe/Image.jpg" alt="">
                             <?php endif; ?>
@@ -46,7 +46,7 @@
                                     <a href="<?= $veterinaire['facebook'] ?>" target="blank"><i class="fa-brands fa-square-facebook"></i></a>
                                 <?php endif; ?>
                             </div>
-                            <?php if (!empty($veterinaire['description'])) : ?>
+                            <?php if (!empty($veterinaire['description_pro'])) : ?>
                                 <a href="collaborateur.php?id=<?= $veterinaire['id_employe'] ?>" class="btnGris">En savoir plus</a>
                             <?php endif; ?>
                         </div>
@@ -67,8 +67,8 @@
             if (count(getEmployesByFonction($asvs)) != 0) :
                 foreach (getEmployesByFonction($asvs) as $asv) : ?>
                     <article class="card">
-                        <div class="imgRonde"> <?php if (file_exists($asv['photo'])) : ?>
-                                <img src="<?= $asv['photo'] ?>" alt="">
+                        <div class="imgRonde"> <?php if (file_exists($asv['photo_un'])) : ?>
+                                <img src="<?= $asv['photo_un'] ?>" alt="">
                             <?php else : ?>
                                 <img src="./uploads/equipe/Image.jpg" alt="">
                             <?php endif; ?>
@@ -84,7 +84,7 @@
                                     <a href="<?= $asv['facebook'] ?>" target="blank"><i class="fa-brands fa-square-facebook"></i></a>
                                 <?php endif; ?>
                             </div>
-                            <?php if (!empty($asv['description'])) : ?>
+                            <?php if (!empty($asv['description_pro'])) : ?>
                                 <a href="collaborateur.php?id=<?= $asv['id_employe'] ?>" class="btnGris">En savoir plus</a>
                             <?php endif; ?>
                         </div>

@@ -127,7 +127,7 @@ p {
     font-size: 1rem;
 }
 
-.messagedefilant{
+.messagedefilant {
     width: 100%;
     background-color: var(--color-fivelight);
     color: var(--color-three);
@@ -136,31 +136,38 @@ p {
     overflow: hidden;
     position: relative;
     height: 25px;
-  
+
 }
+
 .messagedefilant div {
     position: absolute;
-    min-width: 100%; /* au minimum la largeur du conteneur */
-  }
-
-  .messagedefilant div span, 
-.messagedefilant div:after {
-  position: relative;
-  display: inline-block;
-  font-size: 1rem;
-  white-space: nowrap;
-  top:0;
+    min-width: 100%;
+    /* au minimum la largeur du conteneur */
 }
- 
+
+.messagedefilant div span,
+.messagedefilant div:after {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    white-space: nowrap;
+    top: 0;
+}
+
 .messagedefilant div span {
-  animation: defilement 20s infinite linear;
+    animation: defilement 20s infinite linear;
 
 }
 
 
 @keyframes defilement {
-  0% { margin-left: 100%; }
-  100% { margin-left: -100%; }
+    0% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: -100%;
+    }
 }
 
 /*boutons*/
@@ -361,7 +368,11 @@ footer p {
 .services li {
     padding: .5rem 2rem;
 }
-.services, .douleur, .hospitalisation, .pharmacie {
+
+.services,
+.douleur,
+.hospitalisation,
+.pharmacie {
     padding: 1.5rem 0;
 }
 
@@ -388,48 +399,41 @@ footer p {
 }
 
 /* page équipements*/
-.equipements{
+.equipements {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-  
 
-}
-.equipements .columnEquipements{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
 
 }
 
-.equipements .columnEquipements:nth-child(2){
-    margin-top: 15%;
-    display: flex;
-    justify-content: space-between;
-}
-.equipements .card{
+.equipements .card {
     width: 100%;
     justify-content: flex-start;
 }
 
-.equipements .card p, .equipements .card h3{
-text-align: center;
+.equipements .card p,
+.equipements .card h3 {
+    text-align: center;
 }
-.maisAussi{
+
+.maisAussi {
     margin: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.maisAussi p{
+
+.maisAussi p {
     text-align: center;
 }
+
 .maisAussi .imgRonde {
     max-width: 25%;
 }
+
 
 /* page l'equipe*/
 
@@ -438,7 +442,7 @@ text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
 }
 
@@ -559,25 +563,35 @@ text-align: center;
         background-color: var(--color-twolight);
     }
 
-/* page équipements*/
+    /* page équipements*/
 
 
 
-.equipements .card{
- max-width: 15rem;
- min-height: 26rem;
-}
+    .equipements .card:nth-child(2),
+    .equipements .card:nth-child(4),
+    .equipements .card:nth-child(6),
+    .equipements .card:nth-child(8),
+    .equipements .card:nth-child(10) {
+        margin-top: 15%;
+    }
 
-.parentmaisAussiText{
-    display: flex;
-    justify-content: center;
-}
-.maisAussiText{
-    max-width: 60%;
-} 
-.maisAussi .imgRonde {
-    width: 10%;
-}
+    .equipements .card {
+        width: 20rem;
+    }
+
+    .parentmaisAussiText {
+        display: flex;
+        justify-content: center;
+    }
+
+    .maisAussiText {
+        max-width: 60%;
+    }
+
+    .maisAussi .imgRonde {
+        width: 10%;
+    }
+
     /* page l'équipe*/
     .veterinaires,
     .asv {

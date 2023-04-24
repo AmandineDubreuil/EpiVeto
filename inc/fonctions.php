@@ -393,7 +393,7 @@ function getEmployes(): array
 function getEmployesByFonction(string $fonction): array
 {
     require 'pdo.php';
-    $sqlRequest = "SELECT id_employe, photo, titre, nom, prenom, diplome, description, insta, facebook  FROM `employes` WHERE fonction = :fonction ORDER BY nom ASC";
+    $sqlRequest = "SELECT id_employe, photo_un, titre, nom, prenom, diplome, description_pro, insta, facebook  FROM `employes` WHERE fonction = :fonction ORDER BY nom ASC";
     $resultat = $conn->prepare($sqlRequest);
     $resultat->bindValue(':fonction', $fonction, PDO::PARAM_STR);
     $resultat->execute();
