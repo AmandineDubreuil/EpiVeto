@@ -25,7 +25,7 @@
 
             <div class="nomCollabo">
                 <h2><?= $titre ?> <?= $nom ?> <?= $prenom ?></h2>
-                <?php if (!empty($associe)) : ?>
+                <?php if ($associe == 'oui') : ?>
                     <h3>Associé - <?= $fonction ?></h3>
                 <?php else : ?>
                     <h3><?= $fonction ?></h3>

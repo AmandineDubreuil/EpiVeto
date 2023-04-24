@@ -29,9 +29,9 @@
                 <span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span>
             </div>
             <div class="associe"><label for="associe">Associé Épi-Véto :</label>
-                oui <input type="checkbox" name="associe" id="associe" value="oui">
+                Oui <input type="radio" name="associe" id="associe" value="oui">
+                Non <input type="radio" name="associe" id="associe" value="non">
             </div>
-            <div>
                 <label for="prenom">Prénom :</label>
                 <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>">
                 <span class="error"><?= isset($error['prenom']) ? $error['prenom'] : "" ?></span>
@@ -119,12 +119,12 @@
 
             <div>
                 <label for="insta">Instagram :</label>
-                <input type="url" name="insta" id="insta">
+                <input type="url" name="insta" id="insta" value="<?= $insta ?>">
                 <span class="error"><?= isset($error['insta']) ? $error['insta'] : "" ?></span>
             </div>
             <div>
                 <label for="facebook">Facebook :</label>
-                <input type="url" name="facebook" id="facebook">
+                <input type="url" name="facebook" id="facebook" value="<?= $facebook ?>">
                 <span class="error"><?= isset($error['facebook']) ? $error['facebook'] : "" ?></span>
             </div>
 

@@ -9,37 +9,76 @@ include '../../inc/fonctions.php';
 
 
 (isGetIdValid()) ? $id = $_GET['id'] : error404();
-
-$titreDb = getEmployeById($id)['titre'];
+$associeDb = getEmployeById($id)['associe'];
 $prenom = getEmployeById($id)['prenom'];
 $nom = getEmployeById($id)['nom'];
+$titreDb = getEmployeById($id)['titre'];
 $fonctionDb = getEmployeById($id)['fonction'];
 $diplome = getEmployeById($id)['diplome'];
+
 $description_pro = getEmployeById($id)['description_pro'];
-$photoDb = getEmployeById($id)['photo'];
+$description_perso = getEmployeById($id)['description_perso'];
+
+$question_1 = getEmployeById($id)['question_1'];
+$question_2 = getEmployeById($id)['question_2'];
+$question_3 = getEmployeById($id)['question_3'];
+$question_4 = getEmployeById($id)['question_4'];
+$question_5 = getEmployeById($id)['question_5'];
+
+$photo_unDb = getEmployeById($id)['photo_un'];
+$photo_deuxDb = getEmployeById($id)['photo_deux'];
+$photo_troisDb = getEmployeById($id)['photo_trois'];
+$photo_quatreDb = getEmployeById($id)['photo_quatre'];
+
 $insta = getEmployeById($id)['insta'];
 $facebook = getEmployeById($id)['facebook'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
-    $titreModif = checkXSSPostValue($_POST['titre']);
+        // traitement des failles XSS
+        foreach ($_POST as $key => $value) :
+
+            if ($key !== 'titre' || 'fonction' || 'associe') :
+                $_POST[$key] = checkXSSPostValue($value);
+            endif;
+    
+        endforeach;
+//dd($_POST);
+   $associeModif = checkXSSPostValue($_POST['associe']);
     $prenom = checkXSSPostValue($_POST['prenom']);
     $nom = checkXSSPostValue($_POST['nom']);
+    $titreModif = checkXSSPostValue($_POST['titre']);
     $fonctionModif = checkXSSPostValue($_POST['fonction']);
     $diplome = checkXSSPostValue($_POST['diplome']);
+
     $description_pro = checkXSSPostValue($_POST['description_pro']);
+    $description_perso = checkXSSPostValue($_POST['description_perso']);
+
+    $photo_unName = $_FILES["photo_unUpload"];
+    $photo_un = updatePhoto($photo_unName, $photo_unDb);
+   
+    $photo_deuxName = $_FILES["photo_deuxUpload"];
+    $photo_deux = updatePhoto($photo_deuxName, $photo_deuxDb);
+  //  dd($photo_deux);
+    $photo_troisName = $_FILES["photo_troisUpload"];
+    $photo_trois = updatePhoto($photo_troisName, $photo_troisDb);
+    $photo_quatreName = $_FILES["photo_quatreUpload"];
+    $photo_quatre = updatePhoto($photo_quatreName, $photo_quatreDb);
+
+    $question_1 = checkXSSPostValue($_POST['question_1']);
+    $question_2 = checkXSSPostValue($_POST['question_2']);
+    $question_3 = checkXSSPostValue($_POST['question_3']);
+    $question_4 = checkXSSPostValue($_POST['question_4']);
+    $question_5 = checkXSSPostValue($_POST['question_5']);
+
     $insta = checkXSSPostValue($_POST['insta']);
     $facebook = checkXSSPostValue($_POST['facebook']);
 
-    $photoName = $_FILES["photoUpload"]["name"];
-    if (!empty($photoName) && $photoName !== $photoDb) :
-      
-        unlink('../.' . $photoDb);
-        uploadPhoto($photoName);
-        $photo = "./uploads/equipe/" . basename($_FILES["photoUpload"]["name"]);
 
+      if (!empty($associeModif) && $associeModif !== $associeDb) :
+        $associe = $associeModif;
     else :
-        $photo = $photoDb;
+        $associe = $associeDb;
     endif;
 
     if (!empty($titreModif) && $titreModif !== $titreDb) :
@@ -54,11 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $fonction = $fonctionDb;
     endif;
 
-updateEmploye($id, $titre, $prenom, $nom, $fonction, $diplome, $description_pro, $photoUn, $insta, $facebook);
-redirectUrl('adminEpiVeto/equipe');
+    updateEmploye($id, $associe, $prenom, $nom, $titre, $fonction, $diplome, $description_pro, $description_perso, $question_1, $question_2, $question_3, $question_4, $question_5, $photo_un, $photo_deux, $photo_trois, $photo_quatre, $insta, $facebook);
+    redirectUrl('adminEpiVeto/equipe');
 
 endif;
 
 require '../../view/adminEpiVeto/equipe/editView.php';
-
-

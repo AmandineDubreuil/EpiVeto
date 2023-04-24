@@ -18,21 +18,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
     $photo_troisUpload =  $_FILES["photo_troisUpload"];
     $photo_quatreUpload =  $_FILES["photo_quatreUpload"];
 
-    // // photo un
-    //     if (!empty($photo_un["name"])) :
-    //      //   dd($photo_un);
-    //         uploadPhoto($photo_un);
-    //         $photo_unName = $photo_un["name"];
-    //     endif;
-    //     if ($photo_unName) :
-    //         $photo_un = "./uploads/equipe/" . basename($photo_un["name"]);
-    //     else :
-    //         $photo_un = "";
-    //     endif;
-
-
-
-    // traitement des failles XSS
+       // traitement des failles XSS
     foreach ($_POST as $key => $value) :
 
         if ($key !== 'titre' || 'fonction') :
