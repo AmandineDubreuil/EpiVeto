@@ -22,13 +22,14 @@
     <main>
 
         <section class="collaborateur">
-            <div class="imgHaut"><img src="<?= $photo_deux ?>" alt=""></div>
+
             <div class="nomCollabo">
                 <h2><?= $titre ?> <?= $nom ?> <?= $prenom ?></h2>
                 <?php if (!empty($associe)) : ?>
-                    <h3>Associé</h3>
+                    <h3>Associé - <?= $fonction ?></h3>
+                <?php else : ?>
+                    <h3><?= $fonction ?></h3>
                 <?php endif; ?>
-                <h3><?= $fonction ?></h3>
                 <div class="reseaux">
                     <?php if (!empty($insta)) : ?>
                         <a href="<?= $insta ?>" target="blank"><i class="fa-brands fa-square-instagram"></i></a>
@@ -37,10 +38,14 @@
                         <a href="<?= $facebook ?>" target="blank"><i class="fa-brands fa-square-facebook"></i></a>
                     <?php endif; ?>
                 </div>
+                <div class="imgHaut">
+                    <div><img src="<?= $photo_deux ?>" alt=""></div>
+                </div>
             </div>
 
-            <div class="descriptionGénérale">
+            <div class="descriptionGenerale">
                 <div class="descriptionPro">
+                    <h3>Côté Pro...</h3>
                     <p class="gras"><?= $diplome ?></p>
                     <p><?= nl2br($description_pro) ?></p>
                 </div>
@@ -53,26 +58,55 @@
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="descriptionPerso">
-                    <p><?= nl2br($description_perso) ?></p>
-                </div>
+                <?php if (!empty($description_perso)) : ?>
+                    <div class="descriptionPerso">
+                        <div>
+                            <h3>Côté Perso...</h3>
+                            <p><?= nl2br($description_perso) ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="questions">
-                <p>Au questionnaire Épi-Véto, <?= $prenom ?> <?= $nom ?> a répondu : </p>
-                <p>1. Qu'est-ce qui me plait le plus à Épi-Véto ?</p>
-                <p><?= $question_1 ?></p>
-                <p>2. Quel est mon mot médical préféré ?</p>
-                <p><?= $question_2 ?></p>
-                <p>3. Quel est l'animal (espèce) que je préfère ?</p>
-                <p><?= $question_3 ?></p>
-                <p>4. Quelle phrase idiote / expression m'agace ?</p>
-                <p><?= $question_4 ?></p>
-                <p>5. Quelle est ma devise personnelle ?</p>
-                <p><?= $question_5 ?></p>
+                <h3>Quelques questions...</h3>
+                <div>
+                    <p>Au questionnaire Épi-Véto, <?= $prenom ?> <?= $nom ?> a répondu : </p>
+                </div>
+                <div>
+                    <p>1. Qu'est-ce qui me plait le plus à Épi-Véto ?</p>
+                    <p><?= $question_1 ?></p>
+                </div>
+                <div>
+                    <p>2. Quel est mon mot médical préféré ?</p>
+                    <p><?= $question_2 ?></p>
+                </div>
+                <div>
+                    <p>3. Quel est l'animal (espèce) que je préfère ?</p>
+                    <p><?= $question_3 ?></p>
+                </div>
+                <div>
+                    <p>4. Quelle phrase idiote / expression m'agace ?</p>
+                    <p><?= $question_4 ?></p>
+                </div>
+                <div>
+                    <p>5. Quelle est ma devise personnelle ?</p>
+                    <p><?= $question_5 ?></p>
+                </div>
             </div>
             <div class="imgBas">
-                <div><img src="<?= $photo_trois ?>" alt=""></div>
-                <div><img src="<?= $photo_quatre ?>" alt=""></div>
+
+                <div> <?php if (file_exists($photo_trois)) : ?>
+                        <img src="<?= $photo_trois ?>" alt="">
+                    <?php else : ?>
+                        <img src="./uploads/equipe/Image.jpg" alt="">
+                    <?php endif; ?>
+                </div>
+                <div><?php if (file_exists($photo_quatre)) : ?>
+                        <img src="<?= $photo_quatre ?>" alt="">
+                    <?php else : ?>
+                        <img src="./uploads/equipe/Image.jpg" alt="">
+                    <?php endif; ?>
+                </div>
             </div>
             <?php include_once 'structure/sideView.php' ?>
         </section>
