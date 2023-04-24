@@ -272,14 +272,15 @@ function suppUtilisateurById(int $idUtilisateur): bool
 
 function uploadPhoto($photo)
 {
+    
     $target_dir = "../../uploads/equipe/";
-    $target_file = $target_dir . basename($_FILES["photoUpload"]["name"]);
+    $target_file = $target_dir . basename($photo["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // dd($target_file);
     // Check if image file is a actual image or fake image
     if (isset($_POST["ajout"])) {
-        $check = getimagesize($_FILES["photoUpload"]["tmp_name"]);
+        $check = getimagesize($photo["tmp_name"]);
 
         if ($check !== false) {
             echo "Le fichier est une image - " . $check["mime"] . ".";
@@ -297,7 +298,7 @@ function uploadPhoto($photo)
     }
 
     // Check file size
-    if ($_FILES["photoUpload"]["size"] > 500000) {
+    if ($photo["size"] > 500000) {
         echo "Désolé, votre image est trop grande.";
         $uploadOk = 0;
     }
@@ -316,12 +317,31 @@ function uploadPhoto($photo)
         echo "Désolé, le fichier n'a pas été téléchargé.";
         // if everything is ok, try to upload file
     } else {
-        if (move_uploaded_file($_FILES["photoUpload"]["tmp_name"], $target_file)) {
-            echo "Le fichier " . htmlspecialchars(basename($_FILES["photoUpload"]["name"])) . " a bien été téléchargé.";
+        if (move_uploaded_file($photo["tmp_name"], $target_file)) {
+            echo "Le fichier " . htmlspecialchars(basename($photo["name"])) . " a bien été téléchargé.";
         } else {
             echo "Désolé, une erreur est survenue lors du téléchargement.";
         }
     }
+}
+
+function insertPhoto($photo)
+{
+    $photo_Name = '';
+    if (!empty($photo["name"])) :
+         
+           uploadPhoto($photo);
+           $photo_Name = $photo["name"]; 
+       
+       endif;
+       if ($photo_Name) :
+           $photo = "./uploads/equipe/" . basename($photo["name"]);  
+            //  dd($photo);
+             
+       else :
+           $photo = "";
+       endif;
+   return $photo;
 }
 
 function uploadCarousel($photo)
@@ -415,7 +435,7 @@ function insertEmploye(string $associe, string $prenom, string $nom, string $tit
 {
     require 'pdo.php';
 
-    $requete = 'INSERT INTO employes (`associe`,`prenom`, `nom`, `titre`,`fonction`,  `diplome`, `description_pro`, `description_perso`,`question_1`,`question_2`,`question_3`,`question_4`,`question_5`,`photo_un`,`photo_deux`,`photo_trois`,`photo_quatre`, `insta`, `facebook`, `created_at`, `modified_at`) VALUES (:prenom, :nom, :titre, :fonction, :diplome, :description, :photo, :insta, :facebook, now(), now())';
+    $requete = 'INSERT INTO employes (`associe`,`prenom`, `nom`, `titre`,`fonction`,  `diplome`, `description_pro`, `description_perso`,`question_1`,`question_2`,`question_3`,`question_4`,`question_5`,`photo_un`,`photo_deux`,`photo_trois`,`photo_quatre`, `insta`, `facebook`, `created_at`, `modified_at`) VALUES (:associe, :prenom, :nom, :titre, :fonction, :diplome, :description_pro, :description_perso, :question_1, :question_2, :question_3, :question_4, :question_5, :photo_un, :photo_deux, :photo_trois, :photo_quatre, :insta, :facebook, now(), now())';
     $resultat = $conn->prepare($requete);
     $resultat->bindValue(':associe', $associe, PDO::PARAM_STR);
     $resultat->bindValue(':prenom', $prenom, PDO::PARAM_STR);
