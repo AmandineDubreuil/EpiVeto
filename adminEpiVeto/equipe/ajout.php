@@ -8,7 +8,7 @@ include '../../inc/fonctions.php';
 (isAdminConnected()) ?: redirectUrl('view/404.php');
 //dd($_SESSION['id_utilisateur']);
 
-$prenom = $nom = $titre = $fonction = $diplome = $description = $photoUpload = $insta = $facebook = '';
+$associe = $prenom = $nom = $titre = $fonction = $diplome = $description_pro = $description_perso = $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $photo_unUpload = $photo_deuxUpload = $photo_troisUpload = $photo_quatreUpload = $insta = $facebook = '';
 
 $error = [];
 
@@ -50,7 +50,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         $fonction = $_POST['fonction'];
         $diplome = $_POST['diplome'];
         $description = $_POST['description'];
-        // $photo = $_POST['photo'];  
+        $photo = $_POST['photo'];  
         $insta = $_POST['insta'];
         $facebook = $_POST['facebook'];
 

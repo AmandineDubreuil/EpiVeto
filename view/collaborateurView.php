@@ -97,14 +97,11 @@
 
                 <div> <?php if (file_exists($photo_trois)) : ?>
                         <img src="<?= $photo_trois ?>" alt="">
-                    <?php else : ?>
-                        <img src="./uploads/equipe/Image.jpg" alt="">
                     <?php endif; ?>
                 </div>
                 <div><?php if (file_exists($photo_quatre)) : ?>
                         <img src="<?= $photo_quatre ?>" alt="">
-                    <?php else : ?>
-                        <img src="./uploads/equipe/Image.jpg" alt="">
+                    
                     <?php endif; ?>
                 </div>
             </div>

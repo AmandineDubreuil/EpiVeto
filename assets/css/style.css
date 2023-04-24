@@ -703,12 +703,18 @@ footer p {
 
     }
 
-    .descriptionGenerale .descriptionPro,
-    .descriptionGenerale .descriptionPerso,
-    .descriptionGenerale .ImgPrincipale {
-        width: 30%;
 
+    .collaborateur .descriptionGenerale {
+        flex-wrap: nowrap;
     }
+
+    .descriptionGenerale .descriptionPro {
+        max-width: 60%;
+        padding-right: 1rem;
+    }
+.descriptionGenerale .ImgPrincipale {
+    min-width: 30%;
+}
 
     /*fin*/
 }
