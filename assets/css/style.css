@@ -643,7 +643,7 @@ footer p {
 
 /* ADMINISTRATION DU SITE */
 
-/* ADMIN Accueil*/
+/* ADMIN Accueil Général*/
 .adminAccueilSection{
     margin: 1rem;
     padding: 1rem;
@@ -653,7 +653,36 @@ footer p {
 }
 .adminAccueilSection a{
     text-decoration: none;
+    }
+
+/* ADMIN Accueil Equipe */
+.accueilAdminEquipe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.accueilAdminEquipe a{
+    text-decoration: none;
+}
+.adminEquipe .btnRouge{
+    margin: 2rem;
+}
+.adminTable {
+    margin: 1rem;
+    border-collapse: collapse;
+    border: 1px solid var(--color-twolight);
+  }
+  .adminTable th {
+    padding: 1rem;
+    background-color: var(--color-five);
+    color: var(--color-three);
+  }
+  .adminTable tr {
+    border: 1px solid var(--color-twolight);
+  }
+  .adminTable td {
+    padding: .5rem;
+  }
 
 /* *********************** 
    RESPONSIVE DESKTOP

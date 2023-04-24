@@ -365,7 +365,7 @@ function updatePhoto($photo_Name, $photo_Db)
 function getEmployes(): array
 {
     require 'pdo.php';
-    $sqlRequest = "SELECT id_employe, nom, prenom, created_at, modified_at  FROM `employes` WHERE 1 ORDER BY nom ASC";
+    $sqlRequest = "SELECT id_employe, titre, nom, prenom, created_at, modified_at  FROM `employes` WHERE 1 ORDER BY nom ASC";
     $resultat = $conn->prepare($sqlRequest);
     $resultat->execute();
     return $resultat->fetchAll();

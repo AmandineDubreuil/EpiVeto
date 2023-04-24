@@ -13,30 +13,34 @@
 
 <body>
 
-<?php require_once '../../structure/headerNiv2View.php' ?>
-            </ul>
-        </nav>
-</header>
+    <?php require_once '../../structure/headerNiv2View.php' ?>
+    </ul>
+    </nav>
+    </header>
 
     <main>
-        <a href="../"><h2 id="admin">Administration du site</h2></a>
-        <a href="../"><button class="btnInput" type="button">Retour</button></a>
-
-        <section class="utilisateurs">
+        <div class="accueilAdminEquipe">
+            <a href="../">
+                <h2 id="admin">Administration du site</h2>
+            </a>
+            <a href="../"><button class="btnGris" type="button">Retour</button></a>
+        </div>
+        <div class="adminEquipe">
             <h3>Gestion des membres de l'équipe</h3>
-           
-<a href="./ajout.php" class="btnGris">Ajouter une personne</a>
 
-            <?php 
+            <a href="./ajout.php" class="btnRouge">Ajouter une personne</a>
+
+            <?php
             if (count(getUtilisateurs()) != 0) : ?>
                 <table class="adminTable">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>Titre</th>
                             <th>Nom</th>
                             <th>Prénom</th>
                             <th>Créé le</th>
                             <th>Modifié le</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,14 +49,14 @@
                         ?>
                         <?php foreach (getEmployes() as $key => $value) : ?>
                             <tr>
-                                <td><?= $value['id_employe'] ?></td>
+                                <td><?= $value['titre'] ?></td>
                                 <td><?= $value['nom'] ?></td>
                                 <td><?= $value['prenom'] ?></td>
                                 <td><?= $value['created_at'] ?></td>
                                 <td><?= $value['modified_at'] ?></td>
                                 <td>
-                                    <a class="btn" href="./edit.php?id=<?= $value['id_employe'] ?>">Modifier</a>
-                                    <a class="btnInput"  href="./supp.php?id=<?= $value['id_employe'] ?>" onclick="return confirm('Confirmer la suppression de ce membre de l\'équipe ?');">Supprimer</a>
+                                    <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_employe'] ?>">Modifier</a>
+                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_employe'] ?>" onclick="return confirm('Confirmer la suppression de ce membre de l\'équipe ?');">Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -64,7 +68,7 @@
 
 
 
-        </section>
+        </div>
 
 
     </main>
@@ -75,14 +79,15 @@
             <p><a href="#">Mentions légales</a> - <a href="">Politique de confidentialité</a></p>
         </div>
         <p>
-        <?php if (isConnected()) : ?>
-            <?php if (isAdminConnected()) : ?>
-                <a href="./adminEpiVeto/index.php" role="button">Page Administrateur</a>
+            <?php if (isConnected()) : ?>
+                <?php if (isAdminConnected()) : ?>
+                    <a href="./adminEpiVeto/index.php" role="button">Page Administrateur</a>
+                <?php endif ?>
+                <a href="./login/deconnexion.php">Se déconnecter</a>
+            <?php else : ?>
+                <a class="logAdmin" href="./login/">Administration du site</a>
             <?php endif ?>
-            <a href="./login/deconnexion.php">Se déconnecter</a>
-        <?php else : ?>
-            <a class="logAdmin" href="./login/">Administration du site</a>
-        <?php endif ?></p>
+        </p>
     </footer>
 
 </body>
