@@ -54,7 +54,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         $insta = $_POST['insta'];
         $facebook = $_POST['facebook'];
 
-         insertEmploye($prenom, $nom, $titre, $fonction, $diplome,  $description, $photo, $insta, $facebook);
+         insertEmploye($associe, $prenom, $nom, $titre, $fonction, $diplome, $description_pro, $description_perso, $question_1, $question_2, $question_3, $question_4, $question_5, $photo_un, $photo_deux, $photo_trois, $photo_quatre, $insta, $facebook);
 
 
         redirectUrl('./adminEpiVeto/equipe');

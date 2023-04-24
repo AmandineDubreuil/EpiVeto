@@ -15,7 +15,7 @@ $prenom = getEmployeById($id)['prenom'];
 $nom = getEmployeById($id)['nom'];
 $fonctionDb = getEmployeById($id)['fonction'];
 $diplome = getEmployeById($id)['diplome'];
-$description = getEmployeById($id)['description'];
+$description_pro = getEmployeById($id)['description_pro'];
 $photoDb = getEmployeById($id)['photo'];
 $insta = getEmployeById($id)['insta'];
 $facebook = getEmployeById($id)['facebook'];
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $nom = checkXSSPostValue($_POST['nom']);
     $fonctionModif = checkXSSPostValue($_POST['fonction']);
     $diplome = checkXSSPostValue($_POST['diplome']);
-    $description = checkXSSPostValue($_POST['description']);
+    $description_pro = checkXSSPostValue($_POST['description_pro']);
     $insta = checkXSSPostValue($_POST['insta']);
     $facebook = checkXSSPostValue($_POST['facebook']);
 
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $fonction = $fonctionDb;
     endif;
 
-updateEmploye($id, $titre, $prenom, $nom, $fonction, $diplome, $description, $photo, $insta, $facebook);
+updateEmploye($id, $titre, $prenom, $nom, $fonction, $diplome, $description_pro, $photoUn, $insta, $facebook);
 redirectUrl('adminEpiVeto/equipe');
 
 endif;

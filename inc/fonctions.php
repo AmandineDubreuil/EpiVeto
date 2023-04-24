@@ -276,11 +276,11 @@ function uploadPhoto($photo)
     $target_file = $target_dir . basename($_FILES["photoUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-   // dd($target_file);
+    // dd($target_file);
     // Check if image file is a actual image or fake image
     if (isset($_POST["ajout"])) {
         $check = getimagesize($_FILES["photoUpload"]["tmp_name"]);
-       
+
         if ($check !== false) {
             echo "Le fichier est une image - " . $check["mime"] . ".";
             $uploadOk = 1;
@@ -330,11 +330,11 @@ function uploadCarousel($photo)
     $target_file = $target_dir . basename($_FILES["carouselUn"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-   // dd($target_file);
+    // dd($target_file);
     // Check if image file is a actual image or fake image
     if (isset($_POST["ajout"])) {
         $check = getimagesize($_FILES["carouselUn"]["tmp_name"]);
-       
+
         if ($check !== false) {
             echo "Le fichier est une image - " . $check["mime"] . ".";
             $uploadOk = 1;
@@ -411,38 +411,58 @@ function getEmployeById(int $idEmploye): array
 }
 
 
-function insertEmploye(string $prenom, string $nom, string $titre, string $fonction, string $diplome, string $description, string $photo, string $insta, string $facebook ): int //string $description, string $photo, string $insta, string $facebook //, `description`, `photo`, `insta`, `facebook` //:description, :photo, :insta, :facebook,
+function insertEmploye(string $associe, string $prenom, string $nom, string $titre, string $fonction, string $diplome, string $description_pro, string $description_perso, string $question_1, string $question_2, string $question_3, string $question_4, string $question_5, string $photo_un, string $photo_deux, string $photo_trois, string $photo_quatre, string $insta, string $facebook): int //string $description, string $photo, string $insta, string $facebook //, `description`, `photo`, `insta`, `facebook` //:description, :photo, :insta, :facebook,
 {
     require 'pdo.php';
 
-    $requete = 'INSERT INTO employes (`prenom`, `nom`, `titre`,`fonction`,  `diplome`, `description`, `photo`, `insta`, `facebook`, `created_at`, `modified_at`) VALUES (:prenom, :nom, :titre, :fonction, :diplome, :description, :photo, :insta, :facebook, now(), now())';
+    $requete = 'INSERT INTO employes (`associe`,`prenom`, `nom`, `titre`,`fonction`,  `diplome`, `description_pro`, `description_perso`,`question_1`,`question_2`,`question_3`,`question_4`,`question_5`,`photo_un`,`photo_deux`,`photo_trois`,`photo_quatre`, `insta`, `facebook`, `created_at`, `modified_at`) VALUES (:prenom, :nom, :titre, :fonction, :diplome, :description, :photo, :insta, :facebook, now(), now())';
     $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':associe', $associe, PDO::PARAM_STR);
     $resultat->bindValue(':prenom', $prenom, PDO::PARAM_STR);
     $resultat->bindValue(':nom', $nom, PDO::PARAM_STR);
     $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
     $resultat->bindValue(':fonction', $fonction, PDO::PARAM_STR);
     $resultat->bindValue(':diplome', $diplome, PDO::PARAM_STR);
-    $resultat->bindValue(':description', $description, PDO::PARAM_STR);
-     $resultat->bindValue(':photo', $photo, PDO::PARAM_STR);
-     $resultat->bindValue(':insta', $insta, PDO::PARAM_STR);
-     $resultat->bindValue(':facebook', $facebook, PDO::PARAM_STR);
+    $resultat->bindValue(':description_pro', $description_pro, PDO::PARAM_STR);
+    $resultat->bindValue(':description_perso', $description_perso, PDO::PARAM_STR);
+    $resultat->bindValue(':question_1', $question_1, PDO::PARAM_STR);
+    $resultat->bindValue(':question_2', $question_2, PDO::PARAM_STR);
+    $resultat->bindValue(':question_3', $question_3, PDO::PARAM_STR);
+    $resultat->bindValue(':question_4', $question_4, PDO::PARAM_STR);
+    $resultat->bindValue(':question_5', $question_5, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_un', $photo_un, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_deux', $photo_deux, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_trois', $photo_trois, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_quatre', $photo_quatre, PDO::PARAM_STR);
+    $resultat->bindValue(':insta', $insta, PDO::PARAM_STR);
+    $resultat->bindValue(':facebook', $facebook, PDO::PARAM_STR);
     $resultat->execute();
     return $conn->lastInsertId();
 }
 
-function updateEmploye(int $id_employe, string $titre, string $prenom, string $nom, string $fonction, string $diplome, string $description, string $photo, string $insta, string $facebook ): bool
+function updateEmploye(int $id_employe, string $associe, string $prenom, string $nom, string $titre, string $fonction, string $diplome, string $description_pro, string $description_perso, string $question_1, string $question_2, string $question_3, string $question_4, string $question_5, string $photo_un, string $photo_deux, string $photo_trois, string $photo_quatre, string $insta, string $facebook): bool
 {
     require 'pdo.php';
-    $requete = 'UPDATE employes SET titre = :titre, prenom = :prenom, nom = :nom, fonction = :fonction, diplome = :diplome, description  = :description, photo = :photo, insta = :insta, facebook = :facebook, modified_at = now() WHERE id_employe = :id_employe';
+    $requete = 'UPDATE employes SET associe = :associe, prenom = :prenom, nom = :nom, titre = :titre, fonction = :fonction, diplome = :diplome, description_pro  = :description_pro, description_perso  = :description_perso, question_1 = :question_1, question_2 = :question_2, question_3 = :question_3, question_4 = :question_4, question_5 = :question_5, photo_un = :photo_un, photo_deux = :photo_deux, photo_trois = :photo_trois, photo_quatre = :photo_quatre, insta = :insta, facebook = :facebook, modified_at = now() WHERE id_employe = :id_employe';
     $resultat = $conn->prepare($requete);
     $resultat->bindValue(':id_employe', $id_employe, PDO::PARAM_INT);
-    $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $resultat->bindValue(':associe', $associe, PDO::PARAM_STR);
     $resultat->bindValue(':prenom', $prenom, PDO::PARAM_STR);
     $resultat->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
     $resultat->bindValue(':fonction', $fonction, PDO::PARAM_STR);
     $resultat->bindValue(':diplome', $diplome, PDO::PARAM_STR);
-    $resultat->bindValue(':description', $description, PDO::PARAM_STR);
-    $resultat->bindValue(':photo', $photo, PDO::PARAM_STR);
+    $resultat->bindValue(':description_pro', $description_pro, PDO::PARAM_STR);
+    $resultat->bindValue(':description_perso', $description_perso, PDO::PARAM_STR);
+    $resultat->bindValue(':question_1', $question_1, PDO::PARAM_STR);
+    $resultat->bindValue(':question_2', $question_2, PDO::PARAM_STR);
+    $resultat->bindValue(':question_3', $question_3, PDO::PARAM_STR);
+    $resultat->bindValue(':question_4', $question_4, PDO::PARAM_STR);
+    $resultat->bindValue(':question_5', $question_5, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_un', $photo_un, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_deux', $photo_deux, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_trois', $photo_trois, PDO::PARAM_STR);
+    $resultat->bindValue(':photo_quatre', $photo_quatre, PDO::PARAM_STR);
     $resultat->bindValue(':insta', $insta, PDO::PARAM_STR);
     $resultat->bindValue(':facebook', $facebook, PDO::PARAM_STR);
     $resultat->execute();
@@ -481,4 +501,3 @@ function updateActualite(int $idActualite, string $bandeau, string $carouselUn, 
     $resultat->execute();
     return $resultat->execute();
 }
-

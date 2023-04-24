@@ -66,12 +66,12 @@
 
             <div>
                 <label for="insta">Instagram :</label>
-                <input type="url" name="insta" id="insta">
+                <input type="url" name="insta" id="insta" value="<?= $insta ?>">
                 <span class="error"><?= isset($error['insta']) ?$error['insta'] : ""?></span>
             </div>
             <div>
                 <label for="facebook">Facebook :</label>
-                <input type="url" name="facebook" id="facebook">
+                <input type="url" name="facebook" id="facebook" value="<?= $facebook ?>">
                 <span class="error"><?= isset($error['facebook']) ?$error['facebook'] : ""?></span>
             </div>
 
