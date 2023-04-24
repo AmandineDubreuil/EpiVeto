@@ -561,9 +561,7 @@ text-align: center;
 
 /* page équipements*/
 
-.equipements{
-    /* flex-wrap: nowrap; */
-}
+
 
 .equipements .card{
  max-width: 15rem;
