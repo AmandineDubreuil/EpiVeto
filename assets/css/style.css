@@ -709,6 +709,7 @@ footer p {
     }
 
     .descriptionGenerale .descriptionPro {
+        min-width: 30%;
         max-width: 60%;
         padding-right: 1rem;
     }
