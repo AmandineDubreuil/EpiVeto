@@ -170,7 +170,10 @@ p {
     }
 }
 
-/*boutons*/
+/* BOUTONS */
+
+/* Bouton gris : fond gris moyen écriture gris clair */
+/* utilisé pour : retour*/ 
 
 .btnGris {
     margin: .5rem;
@@ -202,6 +205,104 @@ p {
     top: 1px;
 }
 
+/* bouton rouge : fond rouge écriture gris très clair*/
+/* utilisé pour : message du side */ 
+
+.btnRouge {
+    margin: .5rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(to bottom,
+            var(--color-five) 5%,
+            var(--color-fivelight) 100%);
+    background-color: var(--color-five);
+    border-radius: 15px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: Arial;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.btnRouge:hover {
+    background: linear-gradient(to bottom,
+            var(--color-fivelight) 5%,
+            var(--color-five) 100%);
+    background-color: var(--color-fivelight);
+}
+
+.btnRouge:active {
+    position: relative;
+    top: 1px;
+}
+
+/* bouton rouge foncé : fond rouge foncé écriture gris clair*/
+/* utilisé pour : bouton suppression */ 
+
+.btnRougeFonce {
+    margin: .5rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(to bottom,
+            var(--color-fivedark) 5%,
+            var(--color-fivedark) 100%);
+    background-color: var(--color-five);
+    border-radius: 15px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: Arial;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.btnRougeFonce:hover {
+    background: linear-gradient(to bottom,
+            var(--color-five) 5%,
+            var(--color-five) 100%);
+    background-color: var(--color-fivelight);
+}
+
+.btnRougeFonce:active {
+    position: relative;
+    top: 1px;
+}
+
+/* bouton rouge clair : fond rouge foncé écriture gris clair*/
+/* utilisé pour : bouton modification */ 
+
+.btnRougeClair {
+    margin: .5rem;
+    box-shadow: 1px 2px 6px -2px var(--color-one);
+    background: linear-gradient(to bottom,
+            var(--color-fivelight) 5%,
+            var(--color-fivelight) 100%);
+    background-color: var(--color-five);
+    border-radius: 15px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: Arial;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.btnRougeClair:hover {
+    background: linear-gradient(to bottom,
+            var(--color-five) 5%,
+            var(--color-five) 100%);
+    background-color: var(--color-fivelight);
+}
+
+.btnRougeClair:active {
+    position: relative;
+    top: 1px;
+}
 
 
 /* side */
@@ -225,36 +326,6 @@ p {
 .carte {
     text-align: center;
     margin: 1rem;
-}
-
-.btnMessage {
-    margin: .5rem;
-    box-shadow: 1px 2px 6px -2px var(--color-one);
-    background: linear-gradient(to bottom,
-            var(--color-five) 5%,
-            var(--color-fivelight) 100%);
-    background-color: var(--color-five);
-    border-radius: 15px;
-    border: none;
-    display: inline-block;
-    cursor: pointer;
-    color: var(--color-three);
-    font-family: Arial;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-    text-decoration: none;
-}
-
-.btnMessage:hover {
-    background: linear-gradient(to bottom,
-            var(--color-fivelight) 5%,
-            var(--color-five) 100%);
-    background-color: var(--color-fivelight);
-}
-
-.btnMessage:active {
-    position: relative;
-    top: 1px;
 }
 
 .side .horaires p {
@@ -568,6 +639,20 @@ footer p {
 
 .collaborateur .imgBas div:nth-child(2) {
     width: 30%;
+}
+
+/* ADMINISTRATION DU SITE */
+
+/* ADMIN Accueil*/
+.adminAccueilSection{
+    margin: 1rem;
+    padding: 1rem;
+        border: var(--color-twolight) 1px solid;
+    border-radius: 5px;
+
+}
+.adminAccueilSection a{
+    text-decoration: none;
 }
 
 /* *********************** 

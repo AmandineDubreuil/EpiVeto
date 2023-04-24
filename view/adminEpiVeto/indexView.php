@@ -12,17 +12,17 @@
 </head>
 
 <body>
-<?php require_once '../structure/headerNiv1View.php' ?>
+    <?php require_once '../structure/headerNiv1View.php' ?>
 
 
-            </ul>
-        </nav>
+    </ul>
+    </nav>
     </header>
 
     <main>
         <h2 id="admin">Administration du site</h2>
 
-        <section>
+        <section class="adminAccueilSection">
             <h3>Gestion des actualités</h3>
             <table class="adminTable">
                 <thead>
@@ -38,25 +38,26 @@
                         <td><?= $bandeau ?></td>
                         <td><?= $carouselUn ?></td>
                         <td><?= $carouselDeux ?></td>
-                        <td>
-                            <a class="btn" href="./actualites/edit.php?id=<?= $idActualite ?>">Modifier</a>
-                        </td>
+
                     </tr>
 
                 </tbody>
             </table>
-
+            <a class="btnRougeClair" href="./actualites/edit.php?id=<?= $idActualite ?>">Modifier</a>
 
         </section>
 
-        <section>
+        <section class="adminAccueilSection">
             <a href="./equipe/index.php">
                 <h3>Gestion de l'équipe</h3>
             </a>
             <p>Permet l'ajout, la modification ou la suppression d'un membre de l'équipe.</p>
 
+            <a class="btnRougeClair" href="./equipe/index.php">
+                <p>Aller</p>
+            </a>
         </section>
-        
+
     </main>
 
     <footer>

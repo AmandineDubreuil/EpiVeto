@@ -10,7 +10,7 @@
     <div class="contact">
         <h2>Nous contacter</h2>
         <p>Tél. : 02 37 38 28 33</p>
-        <a href="#" class="btnMessage"><i class="fa-regular fa-paper-plane"></i> message</a>
+        <a href="#" class="btnRouge"><i class="fa-regular fa-paper-plane"></i> message</a>
     </div>
     <div class="horaires">
         <h2>Nos horaires</h2>
