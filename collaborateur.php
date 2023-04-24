@@ -2,7 +2,9 @@
 session_start();
 include './inc/fonctions.php';
 //dd($_SESSION);
+$idActualite = 1;
 
+$bandeau = getActualiteById($idActualite)['bandeau'];
 (isGetIdValid()) ? $id = $_GET['id'] : error404();
 
 

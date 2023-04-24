@@ -15,8 +15,7 @@
 
 <?php require_once './structure/headerNiv0View.php' ?>
 
-            </ul>
-        </nav>  
+
          <h1>La clinique </h1>
     </header>
 

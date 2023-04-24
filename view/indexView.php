@@ -16,13 +16,6 @@
 <body>
 <?php require_once './structure/headerNiv0View.php' ?>
 
-            </ul>
-        </nav>
-        <?php if (!empty($bandeau)) : ?>
-            <div class="messagedefilant">
-                <div><span><?= $bandeau ?></span></div>
-            </div>
-        <?php endif; ?>
         <div id="slider"></div>
     </header>
 

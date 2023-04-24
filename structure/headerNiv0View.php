@@ -12,3 +12,10 @@
                     </ul>
                 </li>
                 <li><a href="equipe.php">L'Équipe</a></li>
+                </ul>
+        </nav>
+        <?php if (!empty($bandeau)) : ?>
+            <div class="messagedefilant">
+                <div><span><?= $bandeau ?></span></div>
+            </div>
+        <?php endif; ?>

@@ -14,8 +14,7 @@
 <body>
 
 <?php require_once './structure/headerNiv0View.php' ?>
-            </ul>
-        </nav>   
+
           <h1>L'Équipe</h1>
     </header>
 

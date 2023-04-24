@@ -18,8 +18,7 @@ require '../inc/fonctions.php';
 <body>
 
 <?php require_once './structure/headerNiv0View.php' ?>
-            </ul>
-        </nav>
+ 
 </header>
 
     <main class="container">

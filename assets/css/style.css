@@ -387,6 +387,50 @@ footer p {
     flex-wrap: wrap;
 }
 
+/* page équipements*/
+.equipements{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  
+
+}
+.equipements .columnEquipements{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.equipements .columnEquipements:nth-child(2){
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+.equipements .card{
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.equipements .card p, .equipements .card h3{
+text-align: center;
+}
+.maisAussi{
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.maisAussi p{
+    text-align: center;
+}
+.maisAussi .imgRonde {
+    max-width: 25%;
+}
+
 /* page l'equipe*/
 
 .veterinaires,
@@ -515,6 +559,27 @@ footer p {
         background-color: var(--color-twolight);
     }
 
+/* page équipements*/
+
+.equipements{
+    /* flex-wrap: nowrap; */
+}
+
+.equipements .card{
+ max-width: 15rem;
+ min-height: 26rem;
+}
+
+.parentmaisAussiText{
+    display: flex;
+    justify-content: center;
+}
+.maisAussiText{
+    max-width: 60%;
+} 
+.maisAussi .imgRonde {
+    width: 10%;
+}
     /* page l'équipe*/
     .veterinaires,
     .asv {
