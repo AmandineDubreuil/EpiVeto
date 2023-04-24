@@ -173,7 +173,7 @@ p {
 /* BOUTONS */
 
 /* Bouton gris : fond gris moyen écriture gris clair */
-/* utilisé pour : retour*/ 
+/* utilisé pour : retour*/
 
 .btnGris {
     margin: .5rem;
@@ -206,7 +206,7 @@ p {
 }
 
 /* bouton rouge : fond rouge écriture gris très clair*/
-/* utilisé pour : message du side */ 
+/* utilisé pour : message du side */
 
 .btnRouge {
     margin: .5rem;
@@ -239,7 +239,7 @@ p {
 }
 
 /* bouton rouge foncé : fond rouge foncé écriture gris clair*/
-/* utilisé pour : bouton suppression */ 
+/* utilisé pour : bouton suppression */
 
 .btnRougeFonce {
     margin: .5rem;
@@ -272,7 +272,7 @@ p {
 }
 
 /* bouton rouge clair : fond rouge foncé écriture gris clair*/
-/* utilisé pour : bouton modification */ 
+/* utilisé pour : bouton modification */
 
 .btnRougeClair {
     margin: .5rem;
@@ -643,46 +643,147 @@ footer p {
 
 /* ADMINISTRATION DU SITE */
 
-/* ADMIN Accueil Général*/
-.adminAccueilSection{
+/* ADMIN / Index */
+.adminAccueilSection {
     margin: 1rem;
     padding: 1rem;
-        border: var(--color-twolight) 1px solid;
+    border: var(--color-twolight) 1px solid;
     border-radius: 5px;
 
 }
-.adminAccueilSection a{
-    text-decoration: none;
-    }
 
-/* ADMIN Accueil Equipe */
-.accueilAdminEquipe{
+.adminAccueilSection a {
+    text-decoration: none;
+}
+
+/* ADMIN Equipe / Index  */
+.accueilAdminEquipe {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.accueilAdminEquipe a{
+
+.accueilAdminEquipe a {
     text-decoration: none;
 }
-.adminEquipe .btnRouge{
+
+.adminEquipe .btnRouge {
     margin: 2rem;
 }
+
 .adminTable {
     margin: 1rem;
     border-collapse: collapse;
     border: 1px solid var(--color-twolight);
-  }
-  .adminTable th {
+}
+
+.adminTable th {
     padding: 1rem;
     background-color: var(--color-five);
     color: var(--color-three);
-  }
-  .adminTable tr {
+}
+
+.adminTable tr {
     border: 1px solid var(--color-twolight);
-  }
-  .adminTable td {
+}
+
+.adminTable td {
     padding: .5rem;
-  }
+}
+
+/* ADMIN Equipe / Ajout d'un collaborateur  */
+/* ADMIN Equipe / Modification d'un collaborateur  */
+.formEquipe {
+    padding: 1rem;
+}
+
+.formEquipe input,
+.formEquipe textarea {
+    padding: .3rem;
+    font-size: 1rem;
+    border: var(--color-twolight) 1px solid;
+    border-radius: 5px;
+}
+
+.formEquipe label {
+    padding-right: 1rem;
+}
+
+.formEquipe .civilite,
+.formEquipe .fonctionDiplome, .formEquipe .reseaux {
+    padding: .7rem 0;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formEquipe #associe,
+.formEquipe .civilite #titre {
+    width: 1.5rem;
+}
+
+.formEquipe #prenom,
+.formEquipe #nom {
+    width: 15rem;
+    max-width: 80vw;
+}
+
+.formEquipe #diplome {
+    width: 30rem;
+    max-width: 80vw;
+}
+
+.formEquipe .description textarea {
+    width: 90vw;
+}
+
+.formEquipe #description_pro,
+.formEquipe #description_perso {
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.formEquipe .questions div {
+    margin: 0 0 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formEquipe .questions input {
+    width: 90vw;
+}
+
+.formEquipe .photos {
+    padding: 1rem;
+    width: 90vw;
+    border: var(--color-twolight) 1px solid;
+    border-radius: 5px;
+
+}
+
+#photo_unUpload,
+#photo_deuxUpload,
+#photo_troisUpload,
+#photo_quatreUpload {
+    padding: .5rem 0;
+    border: none;
+    }
+.formEquipe .reseaux input{
+    width: 16rem;
+}
+/* .formEquipe .reseaux{
+    padding: 1rem;
+    width: 90vw;
+    display: flex;
+
+} */
 
 /* *********************** 
    RESPONSIVE DESKTOP
@@ -827,9 +928,10 @@ footer p {
         max-width: 60%;
         padding-right: 1rem;
     }
-.descriptionGenerale .ImgPrincipale {
-    min-width: 30%;
-}
+
+    .descriptionGenerale .ImgPrincipale {
+        min-width: 30%;
+    }
 
     /*fin*/
 }
