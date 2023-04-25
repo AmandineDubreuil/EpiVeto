@@ -1,145 +1,195 @@
-//console.log("first")
+// width="600" height="338" 
+/*
+* @Adilade Slideshow/Carousel
+* @See www.adilade.fr
+*
+* Keyboard : 
+* Previous : left arrow or ctrl + left arrow
+* Next : right arrow or ctrl + right arrow
+* Pause/Play : space
+* 
+* Free to use - No warranty
+*/
+let timeInterval = '10000'; // Time between slides
+let carousel = document.querySelector('#slides-items');
+let items = document.querySelectorAll('.slide-item');
+const slides = document.querySelector('#slides');
 
-const launchCarousel = (elem, carouselWidth, carouselHeight) => {
-    // console.log("carrousel launch");
-    console.dir(carouselHeight);
-    //console.dir(carouselHeight);
+let carouselWidth = document.querySelector('.sliderImg').naturalWidth; // 800 "340px";
+let carouselNaturalHeight = document.querySelector('.sliderImg').naturalHeight;
 
-    // déclarations valeurs et variables
-    // temps de défilement des images en ms
-    let time = 10000;
-    // temps de transitionCSS en ms
-    let timeCssTrans = 2000;
 
-    // height du carousel en px
-    //calcul du ration largeur ecran/ largeur image
+let carouselHeight = (window.innerWidth * carouselNaturalHeight) / carouselWidth;
+carouselHeight += "px";
+carouselNaturalHeight += "px";
 
-    carouselHeight = (window.innerWidth * carouselHeight) / carouselWidth;
-    carouselHeight += "px";
-    // console.dir(carouselHeight);
-    // width du carousel en px
-    carouselWidth = "800px"; // "340px";
+slides.style.width = "100%";
+slides.style.height = carouselHeight;
+slides.style.maxHeight = carouselNaturalHeight;
+carousel.style.width = "100%";
+let hauteurMiSlide = slides.clientHeight / 2.5;
+hauteurMiSlide += "px";
 
-    // emplacement dans l'HTML du carousel 
-    let carouselParent = document.querySelector(elem);
-    // types d'effets de défilement d'images
-    // fadeOut,translateUp,translateLeft,...
-    let transition = "fadeOut";
-    // creation du tableau d'images
-    const imgArray = [
-        "./uploads/carousel/logoVectoAccueilLight.png",
-        "./uploads/carousel/visuel-affiche-tique.jpg",
-        "./uploads/carousel/IntoxForet.jpg",
-    ];
+let hauteurFinSlide = slides.clientHeight;
+hauteurFinSlide += "px";
+console.dir(hauteurMiSlide);
 
-    // creation des class CSS de transition dans une balise style
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = '.fadeOut{' +
-        'opacity: 0;' +
-        'transition: opacity ' + timeCssTrans + 'ms;' +
-        '}' +
-        '.translateLeft{' +
-        'transform: translateX(-' + carouselWidth + ');' +
-        'transition: all ' + timeCssTrans + 'ms;' +
-        ' }' +
-        '.translateUp{' +
-        'transform: translateY(-' + carouselHeight + ');' +
-        'transition: all ' + timeCssTrans + 'ms;' +
-        ' }';
-    //ajout de cette nouvelle balise style à la balise head 
-    document.getElementsByTagName('head')[0].appendChild(style);
+if (carousel !== undefined && items !== undefined && carousel !== null && items !== null) {
+    let itemscount = items.length;
+    const btnprev = document.querySelector('.slides-prev');
+    const btnnext = document.querySelector('.slides-next');
+    const btnplaypause = document.querySelector('.slides-playpause');
+    let btnplaypausepath = document.querySelector('.playpause');
 
-    //construction de mes éléménts
-    //element principal
-    const carousel = document.createElement("div");
-    carousel.classList.add("carousel");
-    carousel.style.width = carouselWidth; //"100%";
-    carousel.style.height = carouselHeight; //"30vh";
-    carousel.style.maxHeight = "454px";
-    carousel.style.position = "relative";
-    carousel.style.overflow = "hidden";
-    carouselParent.prepend(carousel);
+    btnprev.style.top = hauteurMiSlide;
+    btnnext.style.top = hauteurMiSlide;
 
-    //imageA (qui va disparaître)
-    const imageA = document.createElement("img");
-    imageA.src = imgArray[0];
-    imageA.id = "imageA";
-    imageA.alt = "blablabla";
-    imageA.style.width = "100%";
-    imageA.style.position = "absolute";
-    imageA.style.overflow = "hidden"
+    if (itemscount > 1) {
 
-    // ajouts d'effet?
-    carousel.prepend(imageA);
-
-    //imageB (qui va rester fixe)
-    const imageB = document.createElement("img");
-    imageB.src = imgArray[1];
-    imageB.id = "imageB";
-    imageB.alt = "blablabla";
-    imageB.style.width = "100%";
-    imageB.style.position = "absolute";
-    carousel.prepend(imageB);
-
-    //  console.dir(imageB);
-    // console.dir(imageB.clientHeight);
-
-    // creations des puces images
-    const sliderNav = document.createElement("div");
-    sliderNav.classList.add("sliderNav");
-    carousel.append(sliderNav);
-
-    imgArray.forEach(element => {
-
-    });
-
-    // logique du programme
-    i = 0;
-
-    const loop = setInterval(() => {
-        // si i >= à la taille entrée de mon tableau le ramener à 0
-        i++;
-        if (i >= imgArray.length) {
-            i = 0;
+        // Create Dots
+        let dotbox = document.createElement('div');
+        dotbox.classList.add('slides-dots');
+        dotbox.style.top = hauteurFinSlide;
+        // carousel.after(dotbox); Not supported by Edge => see next line
+        carousel.parentNode.insertBefore(dotbox, carousel.nextSibling);
+        for (let i = 0; i < itemscount; i++) {
+            dotbox.insertAdjacentHTML('beforeend', '<button aria-controls="slide-' + (i + 1) + '" aria-label="Slide number ' + (i + 1) + '" aria-selected="' + (document.querySelector('.slideactive').getAttribute('id').slice(-1) == (i + 1) ? 'true' : 'false') + '"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" role="img"><circle cx="16" cy="16" r="13" /></svg></button>');
         }
-        // changer l'image B cachée derriere l'image A
-        imageB.src = imgArray[i];
-        // effet de transition sur A
-        imageA.classList.add(transition);
-        // incrémentation de i
 
-        // le setTimeout me sert à attendre la fin de ma transition css
-        setTimeout(() => {
-            // changer l'image A
-            imageA.src = imgArray[i];
-            // et la ramener sur l'image B pour la masquer 
-            imageA.classList.remove(transition);
+        let dots = document.querySelectorAll('.slides-dots button');
+        let playpause = null;
+        
+        function slideprev() {
+            let itemcurrent = document.querySelector('.slideactive');
+            let dotcurrent = document.querySelector('.slides-dots button[aria-selected="true"]');
+            let prevslide = itemcurrent.previousElementSibling;
+            let prevdot = dotcurrent.previousElementSibling;
+            if (prevslide === null) {
+                prevslide = items[itemscount - 1];
+                prevdot = dots[itemscount - 1];
+            }
+            // Remove current
+            itemcurrent.classList.remove('slideactive');
+            dotcurrent.setAttribute('aria-selected', 'false');
 
-            // le setTimeout doit durer le même temps que ma transition css
-        }, timeCssTrans)
+            // Add Next
+            prevslide.classList.add('slideactive');
+            prevdot.setAttribute('aria-selected', 'true');
+        }
 
-    }, time)
-    //console.dir(carousel);
-}
-// obtenir la taille de la première image du carousel
-//https://stackoverflow.com/questions/11442712/get-width-height-of-remote-image-from-url
-const getMeta = (url, cb) => {
-    const img = new Image();
-    img.src = url;
-    img.onload = () => cb(null, img);
-    img.onerror = (err) => cb(err);
-};
-// permet d'obtenir la taille de l'image une fois chargée et lancer le carousel
-getMeta("./uploads/carousel/logoVectoAccueilLight.png", (err, img) => {
-    launchCarousel("#slider", img.naturalWidth, img.naturalHeight)
-    // a chaque changement de la taille du navigateur recalcul de la hauteur du carousel en fonction de la hauteur d'image
-    window.addEventListener("resize", () => {
-        document.querySelector(".carousel").style.height = ((window.innerWidth * img.naturalHeight) / img.naturalWidth) + "px"
-    })
+        function slidenext() {
+            let itemcurrent = document.querySelector('.slideactive');
+            let dotcurrent = document.querySelector('.slides-dots button[aria-selected="true"]');
+            let nextslide = itemcurrent.nextElementSibling;
+            let nextdot = dotcurrent.nextElementSibling;
+            if (nextslide === null) {
+                nextslide = items[0];
+                nextdot = dots[0];
+            }
+            // Remove current
+            itemcurrent.classList.remove('slideactive');
+            dotcurrent.setAttribute('aria-selected', 'false');
 
-});
+            // Add Next
+            nextslide.classList.add('slideactive');
+            nextdot.setAttribute('aria-selected', 'true');
+        }
 
+        function slidepause() {
+            clearInterval(playpause);
+            playpause = null;
+            btnplaypause.setAttribute('aria-label', 'Play Carousel');
+            btnplaypausepath.classList.add('paused');
+            carousel.setAttribute('aria-live', 'polite');
+        }
+        function slideplay() {
+            playpause = setInterval(slidenext, timeInterval);
+            btnplaypause.setAttribute('aria-label', 'Stop Carousel');
+            btnplaypausepath.classList.remove('paused');
+            carousel.removeAttribute('aria-live');
+        }
+        function slideplaypause() {
+            if (playpause !== null) {
+                slidepause();
+                carousel.classList.add('btnpressed');
+            } else {
+                slideplay();
+                carousel.classList.remove('btnpressed');
+            }
+        }
 
+        // Dots Navigate
+        [].map.call(dots, function (dot) {
 
+            dot.addEventListener('click', function (e) {
+                let itemcurrent = document.querySelector('.slideactive');
+                let dotcurrent = document.querySelector('.slides-dots button[aria-selected="true"]');
+                let dotclick = dot.getAttribute('aria-controls');
+                let targetslide = document.querySelector('#' + dotclick + '');
+                let targetdot = document.querySelector('button[aria-controls="' + dotclick + '"]');
 
+                // Remove current
+                itemcurrent.classList.remove('slideactive');
+                dotcurrent.setAttribute('aria-selected', 'false');
+
+                // Add Target
+                targetslide.classList.add('slideactive');
+                targetdot.setAttribute('aria-selected', 'true');
+
+                e.preventDefault();
+
+            }, false);
+
+        }, false);
+
+        // Navigate
+        btnprev.addEventListener('click', slideprev);
+        btnnext.addEventListener('click', slidenext);
+        btnplaypause.addEventListener('click', slideplaypause);
+
+        // Keyboard Navigate
+        carousel.addEventListener('keydown', keyHandler);
+        function keyHandler(e) {
+            // Left Arrow
+            if (e.keyCode === 37 || (e.ctrlKey && e.keyCode === 37)) {
+                e.preventDefault();
+                slideprev();
+            }
+            // Right Arrow
+            if (e.keyCode === 39 || (e.ctrlKey && e.keyCode === 39)) {
+                e.preventDefault();
+                slidenext();
+            }
+            // Space
+            if (e.keyCode === 32) {
+                e.preventDefault();
+                slideplaypause();
+            }
+        }
+
+        // Animate Slides
+        playpause = setInterval(slidenext, timeInterval);
+
+        // Stop Carousel on keyboard/mouse focus only when Carousel auto-rotating
+        function slidefocusstop() {
+            if (!carousel.classList.contains('btnpressed')) {
+                slidepause();
+            }
+        }
+        function slidefocusplay() {
+            if (!carousel.classList.contains('btnpressed')) {
+                slideplay();
+            }
+        }
+        carousel.addEventListener('focusin', slidefocusstop);
+        carousel.addEventListener('focusout', slidefocusplay);
+        carousel.addEventListener('mouseover', slidefocusstop);
+        carousel.addEventListener('mouseout', slidefocusplay);
+
+    } else { // End itemscount > 1 => Remove buttons controls
+        btnprev.parentNode.removeChild(btnprev);
+        btnnext.parentNode.removeChild(btnnext);
+        btnplaypause.parentNode.removeChild(btnplaypause);
+    }
+
+} // End if test

@@ -357,6 +357,7 @@ function updatePhoto($photo_Name, $photo_Db)
     endif;
     return $photo;
 }
+// // fonctions Carousel
 
 
 
