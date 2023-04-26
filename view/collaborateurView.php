@@ -22,6 +22,7 @@
     <main>
 
         <section class="collaborateur">
+        <a href="./equipe.php"><button class="btnGris" type="button">Retour</button></a>
 
             <div class="nomCollabo">
                 <h2><?= $titre ?> <?= $nom ?> <?= $prenom ?></h2>

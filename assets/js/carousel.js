@@ -17,7 +17,7 @@ const slides = document.querySelector('#slides');
 
 let carouselWidth = document.querySelector('.sliderImg').naturalWidth; // 800 "340px";
 let carouselNaturalHeight = document.querySelector('.sliderImg').naturalHeight;
-
+let item = document.querySelector('.slide-item')
 
 let carouselHeight = (window.innerWidth * carouselNaturalHeight) / carouselWidth;
 carouselHeight += "px";
@@ -26,13 +26,13 @@ carouselNaturalHeight += "px";
 slides.style.width = "100%";
 slides.style.height = carouselHeight;
 slides.style.maxHeight = carouselNaturalHeight;
-carousel.style.width = "100%";
-let hauteurMiSlide = slides.clientHeight / 2.5;
+carousel.style.width = "90%";
+let hauteurMiSlide = item.clientHeight / 2.5;
 hauteurMiSlide += "px";
 
-let hauteurFinSlide = slides.clientHeight;
+let hauteurFinSlide = item.clientHeight;
 hauteurFinSlide += "px";
-console.dir(hauteurMiSlide);
+
 
 if (carousel !== undefined && items !== undefined && carousel !== null && items !== null) {
     let itemscount = items.length;

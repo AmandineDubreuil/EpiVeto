@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/carousel.js" defer></script>
-    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/script.js" type="module" defer></script>
 </head>
 
 <body>
