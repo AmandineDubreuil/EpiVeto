@@ -35,9 +35,12 @@
                 <table class="adminTable">
                     <thead>
                         <tr>
+                        <th>Associé</th>
                             <th>Titre</th>
                             <th>Nom</th>
                             <th>Prénom</th>
+                            <th>Fonction</th>
+                            <th>Diplome</th>
                             <th>Créé le</th>
                             <th>Modifié le</th>
                             <th>Action</th>
@@ -49,9 +52,12 @@
                         ?>
                         <?php foreach (getEmployes() as $key => $value) : ?>
                             <tr>
+                            <td><?= $value['associe'] ?></td>
                                 <td><?= $value['titre'] ?></td>
                                 <td><?= $value['nom'] ?></td>
                                 <td><?= $value['prenom'] ?></td>
+                                <td><?= $value['fonction'] ?></td>
+                                <td><?= $value['diplome'] ?></td>
                                 <td><?= $value['created_at'] ?></td>
                                 <td><?= $value['modified_at'] ?></td>
                                 <td>

@@ -22,7 +22,7 @@
     <main>
 
         <section class="collaborateur">
-        <a href="./equipe.php"><button class="btnGris" type="button">Retour</button></a>
+            <a href="./equipe.php"><button class="btnGris" type="button">Retour</button></a>
 
             <div class="nomCollabo">
                 <h2><?= $titre ?> <?= $nom ?> <?= $prenom ?></h2>
@@ -68,32 +68,48 @@
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="questions">
-                <h3>Quelques questions...</h3>
-                <div>
-                    <p>Au questionnaire Épi-Véto, <?= $prenom ?> <?= $nom ?> a répondu : </p>
+            <?php if (!empty($question_1 || $question_2 || $question_3 || $question_4 || $question_5)) : ?>
+
+                <div class="questions">
+                    <h3>Quelques questions...</h3>
+                    <div>
+                        <p>Au questionnaire Épi-Véto, <?= $prenom ?> <?= $nom ?> a répondu : </p>
+                    </div>
+                    <?php if (!empty($question_1)) : ?>
+
+                        <div>
+                            <p class="gras"><i class="fa-solid fa-paw"></i> Qu'est-ce qui me plait le plus à Épi-Véto ?</p>
+                            <p><?= $question_1 ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($question_2)) : ?>
+                        <div>
+                            <p class="gras"><i class="fa-solid fa-paw"></i> Quel est mon mot médical préféré ?</p>
+                            <p><?= $question_2 ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($question_3)) : ?>
+                        <div>
+                            <p class="gras"><i class="fa-solid fa-paw"></i> Quel est l'animal (espèce) que je préfère ?</p>
+                            <p><?= $question_3 ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($question_4)) : ?>
+                        <div>
+                            <p class="gras"><i class="fa-solid fa-paw"></i> Quelle phrase idiote / expression m'agace ?</p>
+                            <p><?= $question_4 ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($question_5)) : ?>
+                        <div>
+                            <p class="gras"><i class="fa-solid fa-paw"></i> Quelle est ma devise personnelle ?</p>
+                            <p><?= $question_5 ?></p>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
-                <div>
-                    <p>1. Qu'est-ce qui me plait le plus à Épi-Véto ?</p>
-                    <p><?= $question_1 ?></p>
-                </div>
-                <div>
-                    <p>2. Quel est mon mot médical préféré ?</p>
-                    <p><?= $question_2 ?></p>
-                </div>
-                <div>
-                    <p>3. Quel est l'animal (espèce) que je préfère ?</p>
-                    <p><?= $question_3 ?></p>
-                </div>
-                <div>
-                    <p>4. Quelle phrase idiote / expression m'agace ?</p>
-                    <p><?= $question_4 ?></p>
-                </div>
-                <div>
-                    <p>5. Quelle est ma devise personnelle ?</p>
-                    <p><?= $question_5 ?></p>
-                </div>
-            </div>
+            <?php endif; ?>
+
             <div class="imgBas">
 
                 <div> <?php if (file_exists($photo_trois)) : ?>
@@ -102,7 +118,7 @@
                 </div>
                 <div><?php if (file_exists($photo_quatre)) : ?>
                         <img src="<?= $photo_quatre ?>" alt="">
-                    
+
                     <?php endif; ?>
                 </div>
             </div>

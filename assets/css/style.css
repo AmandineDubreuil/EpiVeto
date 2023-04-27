@@ -761,6 +761,31 @@ button {
 
 /* ADMINISTRATION DU SITE */
 
+/*ADMIN Général tableaux*/
+
+.adminTable {
+    margin: 1rem;
+    border-collapse: collapse;
+    border: 1px solid var(--color-twolight);
+   
+}
+
+.adminTable th {
+    padding: 1rem;
+    background-color: var(--color-five);
+    color: var(--color-three);
+}
+
+.adminTable tr {
+    border: 1px solid var(--color-twolight);
+}
+
+.adminTable td {
+    padding: .5rem;
+
+}
+
+
 /* ADMIN / Index */
 .adminAccueilSection {
     margin: 1rem;
@@ -788,26 +813,16 @@ button {
 .adminEquipe .btnRouge {
     margin: 2rem;
 }
-
-.adminTable {
-    margin: 1rem;
-    border-collapse: collapse;
-    border: 1px solid var(--color-twolight);
+.adminEquipe .btnRougeClair, .adminEquipe .btnRougeFonce{
+    margin: 0 .2rem;
+    padding: .2rem;
+   font-weight: 100;
+    border-radius: 5px;
+}
+.adminEquipe .adminTable {
+    white-space: nowrap;
 }
 
-.adminTable th {
-    padding: 1rem;
-    background-color: var(--color-five);
-    color: var(--color-three);
-}
-
-.adminTable tr {
-    border: 1px solid var(--color-twolight);
-}
-
-.adminTable td {
-    padding: .5rem;
-}
 
 /* ADMIN Equipe / Ajout d'un collaborateur  */
 /* ADMIN Equipe / Modification d'un collaborateur  */
