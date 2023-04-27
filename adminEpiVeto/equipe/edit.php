@@ -35,20 +35,40 @@ $facebook = getEmployeById($id)['facebook'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
-        // traitement des failles XSS
-        foreach ($_POST as $key => $value) :
+    // traitement des failles XSS
+    foreach ($_POST as $key => $value) :
 
-            if ($key !== 'titre' || 'fonction' || 'associe') :
-                $_POST[$key] = checkXSSPostValue($value);
-            endif;
-    
-        endforeach;
-//dd($_POST);
-   $associeModif = checkXSSPostValue($_POST['associe']);
+        if ($key !== 'titre' || 'fonction' || 'associe') :
+            $_POST[$key] = checkXSSPostValue($value);
+        endif;
+
+    endforeach;
+
+
+    if (isset($_POST['associe'])  && $_POST['associe'] !== $associeDb) :
+        $associe = $_POST['associe'];
+    else :
+        $associe = $associeDb;
+    endif;
+
+    if (isset($_POST['titre'])  && $_POST['titre'] !== $titreDb) :
+        $titre = $_POST['titre'];
+    else :
+        $titre = $titreDb;
+    endif;
+
     $prenom = checkXSSPostValue($_POST['prenom']);
     $nom = checkXSSPostValue($_POST['nom']);
-    $titreModif = checkXSSPostValue($_POST['titre']);
-    $fonctionModif = checkXSSPostValue($_POST['fonction']);
+
+
+    if (isset($_POST['fonction'])  && $_POST['fonction'] !== $fonctionDb) :
+        $fonction = $_POST['fonction'];
+    else :
+        $fonction = $fonctionDb;
+    endif;
+
+
+   // $fonctionModif = $_POST['fonction'];
     $diplome = checkXSSPostValue($_POST['diplome']);
 
     $description_pro = checkXSSPostValue($_POST['description_pro']);
@@ -56,10 +76,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
     $photo_unName = $_FILES["photo_unUpload"];
     $photo_un = updatePhoto($photo_unName, $photo_unDb);
-   
+
     $photo_deuxName = $_FILES["photo_deuxUpload"];
     $photo_deux = updatePhoto($photo_deuxName, $photo_deuxDb);
-  //  dd($photo_deux);
+    //  dd($photo_deux);
     $photo_troisName = $_FILES["photo_troisUpload"];
     $photo_trois = updatePhoto($photo_troisName, $photo_troisDb);
     $photo_quatreName = $_FILES["photo_quatreUpload"];
@@ -75,23 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $facebook = checkXSSPostValue($_POST['facebook']);
 
 
-      if (!empty($associeModif) && $associeModif !== $associeDb) :
-        $associe = $associeModif;
-    else :
-        $associe = $associeDb;
-    endif;
-
-    if (!empty($titreModif) && $titreModif !== $titreDb) :
-        $titre = $titreModif;
-    else :
-        $titre = $titreDb;
-    endif;
-
-    if (!empty($fonctionModif) && $fonctionModif !== $fonctionDb) :
-        $fonction = $fonctionModif;
-    else :
-        $fonction = $fonctionDb;
-    endif;
 
     updateEmploye($id, $associe, $prenom, $nom, $titre, $fonction, $diplome, $description_pro, $description_perso, $question_1, $question_2, $question_3, $question_4, $question_5, $photo_un, $photo_deux, $photo_trois, $photo_quatre, $insta, $facebook);
     redirectUrl('adminEpiVeto/equipe');
