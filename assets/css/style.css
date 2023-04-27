@@ -826,6 +826,9 @@ button {
 .formEquipe label {
     padding-right: 1rem;
 }
+.formEquipe span{
+    color: red;
+}
 
 .formEquipe .civilite,
 .formEquipe .fonctionDiplome, .formEquipe .reseaux {

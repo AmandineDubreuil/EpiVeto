@@ -53,7 +53,7 @@ function isAdminConnected(): bool
 }
 
 
-// fonctions utilisateurs
+// fonctions CRUD générales
 
 /**
  * checkXSSPostValue
@@ -168,6 +168,8 @@ function checkPwdConfirm($postPwd, $postConfPwd, $key, $error)
 }
 
 
+/*  fonctions UTILISATEURS  */
+
 function findEmail(string $email): array|bool
 {
     require 'pdo.php';
@@ -272,7 +274,7 @@ function suppUtilisateurById(int $idUtilisateur): bool
 
 function uploadPhoto($photo)
 {
-    
+
     $target_dir = "../../uploads/equipe/";
     $target_file = $target_dir . basename($photo["name"]);
     $uploadOk = 1;
@@ -329,19 +331,19 @@ function insertPhoto($photo)
 {
     $photo_Name = '';
     if (!empty($photo["name"])) :
-         
-           uploadPhoto($photo);
-           $photo_Name = $photo["name"]; 
-       
-       endif;
-       if ($photo_Name) :
-           $photo = "./uploads/equipe/" . basename($photo["name"]);  
-            //  dd($photo);
-             
-       else :
-           $photo = "";
-       endif;
-   return $photo;
+
+        uploadPhoto($photo);
+        $photo_Name = $photo["name"];
+
+    endif;
+    if ($photo_Name) :
+        $photo = "./uploads/equipe/" . basename($photo["name"]);
+    //  dd($photo);
+
+    else :
+        $photo = "";
+    endif;
+    return $photo;
 }
 
 function updatePhoto($photo_Name, $photo_Db)

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajout d'un collaborateur - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="../../assets/js/scriptAdmin.js" defer></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
@@ -23,26 +23,28 @@
         <form method="POST" action="" enctype="multipart/form-data" class="formEquipe" novalidate>
             <div class="associe"><label for="associe">Associé Épi-Véto :</label>
                 Oui <input type="radio" name="associe" id="associe" value="oui">
-                Non <input type="radio" name="associe" id="associe" value="non">
+                Non <input type="radio" name="associe" id="associe" value="non" checked>
             </div>
             <div class="civilite">
                 <div class="titre">
                     <label for="type">Titre :</label>
+
                     Dr <input type="radio" name="titre" id="titre" value="Dr">
                     Mme <input type="radio" name="titre" id="titre" value="Mme">
                     Mr <input type="radio" name="titre" id="titre" value="Mr">
-                    <span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span>
+                    <div> <span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span>
+                    </div>
                 </div>
                 <div>
                     <label for="prenom">Prénom :</label>
                     <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>">
-                    <span class="error"><?= isset($error['prenom']) ? $error['prenom'] : "" ?></span>
+                    <div><span class="error"><?= isset($error['prenom']) ? $error['prenom'] : "" ?></span></div>
                 </div>
 
                 <div>
                     <label for="nom">Nom :</label>
                     <input type="text" name="nom" id="nom" value="<?= $nom ?>">
-                    <span class="error"><?= isset($error['nom']) ? $error['nom'] : "" ?></span>
+                    <div><span class="error"><?= isset($error['nom']) ? $error['nom'] : "" ?></span></div>
                 </div>
             </div>
             <div class="fonctionDiplome">
@@ -50,12 +52,13 @@
                     <label for="fonction">Fonction :</label>
                     Vétérinaire <input type="radio" name="fonction" id="fonction" value="Vétérinaire">
                     ASV <input type="radio" name="fonction" id="fonction" value="ASV">
-                    <span class="error"><?= isset($error['fonction']) ? $error['fonction'] : "" ?></span>
+                    <div><span class="error"><?= isset($error['fonction']) ? $error['fonction'] : "" ?></span>
+                    </div>
                 </div>
                 <div>
                     <label for="diplome">Diplôme :</label>
                     <input type="text" name="diplome" id="diplome" value="<?= $diplome ?>">
-                    <span class="error"><?= isset($error['diplome']) ? $error['diplome'] : "" ?></span>
+                    <div> <span class="error"><?= isset($error['diplome']) ? $error['diplome'] : "" ?></span></div>
                 </div>
             </div>
             <div class="description">
@@ -115,7 +118,7 @@
                     <span class="error"><?= isset($error['photo_troisUpload']) ? $error['photo_troisUpload'] : "" ?></span>
                 </div>
                 <div>
-                    <label for="photo_quatreUpload">Photo en bas à gauche :</label>
+                    <label for="photo_quatreUpload">Photo en bas à droite :</label>
                     <input type="file" name="photo_quatreUpload" id="photo_quatreUpload" value="<?= $photo_quatreUpload ?>">
                     <span class="error"><?= isset($error['photo_quatreUpload']) ? $error['photo_quatreUpload'] : "" ?></span>
                 </div>

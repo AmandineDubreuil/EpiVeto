@@ -18,21 +18,31 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
     $photo_troisUpload =  $_FILES["photo_troisUpload"];
     $photo_quatreUpload =  $_FILES["photo_quatreUpload"];
 
-       // traitement des failles XSS
+    // traitement des failles XSS
     foreach ($_POST as $key => $value) :
 
-        if ($key !== 'titre' || 'fonction') :
+        if ($key !== 'titre' || 'fonction' || 'associe') :
             $_POST[$key] = checkXSSPostValue($value);
+
         endif;
 
         //traitement champs obligatoire vide
-        if ($key !== 'associe' && $key !== 'insta' && $key !== 'facebook' && $key !== 'description_pro' && $key !== 'description_perso' && $key !== 'question_1' && $key !== 'question_2' && $key !== 'question_3' && $key !== 'question_4' && $key !== 'question_5'  && $key !== 'photo_unUpload' && $key !== 'photo_deuxUpload' && $key !== 'photo_troisUpload' && $key !== 'photo_quatreUpload') :
+        if ($key !== 'insta' && $key !== 'facebook' && $key !== 'description_pro' && $key !== 'description_perso' && $key !== 'question_1' && $key !== 'question_2' && $key !== 'question_3' && $key !== 'question_4' && $key !== 'question_5'  && $key !== 'photo_unUpload' && $key !== 'photo_deuxUpload' && $key !== 'photo_troisUpload' && $key !== 'photo_quatreUpload') :
             $error = checkEmptyValue($value, $key, $error);
         endif;
 
-    endforeach;
-    //dd($_POST); 
 
+    endforeach;
+
+    if (!isset($_POST['titre'])) :
+        $error['titre'] = "Le champ Titre est vide.";
+    endif;
+    if (!isset($_POST['fonction'])) :
+        $error['fonction'] = "Le champ Fonction est vide.";
+    endif;
+
+
+    // dd($error);
     if (count($error) === 0) :
         $associe = $_POST['associe'];
         $prenom = $_POST['prenom'];
@@ -50,7 +60,9 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         $question_4 = $_POST['question_4'];
         $question_5 = $_POST['question_5'];
 
+
         $photo_un = insertPhoto($photo_unUpload);
+
         $photo_deux = insertPhoto($photo_deuxUpload);
         $photo_trois = insertPhoto($photo_troisUpload);
         $photo_quatre = insertPhoto($photo_quatreUpload);
@@ -62,6 +74,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
 
 
         redirectUrl('./adminEpiVeto/equipe');
+
     endif;
 endif;
 
