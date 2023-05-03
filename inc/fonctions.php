@@ -272,10 +272,10 @@ function suppUtilisateurById(int $idUtilisateur): bool
 
 // fonctions images
 
-function uploadPhoto($photo)
+function uploadPhoto($photo, $photoPath)
 {
 
-    $target_dir = "../../uploads/equipe/";
+    $target_dir = "../../uploads/" . $photoPath;
     $target_file = $target_dir . basename($photo["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -327,17 +327,17 @@ function uploadPhoto($photo)
     }
 }
 
-function insertPhoto($photo)
+function insertPhoto($photo, $photoPath)
 {
     $photo_Name = '';
     if (!empty($photo["name"])) :
 
-        uploadPhoto($photo);
+        uploadPhoto($photo, $photoPath);
         $photo_Name = $photo["name"];
 
     endif;
     if ($photo_Name) :
-        $photo = "./uploads/equipe/" . basename($photo["name"]);
+        $photo = "./uploads/" . $photoPath . basename($photo["name"]);
     //  dd($photo);
 
     else :
@@ -346,13 +346,13 @@ function insertPhoto($photo)
     return $photo;
 }
 
-function updatePhoto($photo_Name, $photo_Db)
+function updatePhoto($photo_Name, $photo_Db, $photoPath)
 {
     if (!empty($photo_Name["name"]) && $photo_Name["name"] !== $photo_Db) :
 
         unlink('../.' . $photo_Db);
-        uploadPhoto($photo_Name);
-        $photo = "./uploads/equipe/" . basename($photo_Name["name"]);
+        uploadPhoto($photo_Name, $photoPath);
+        $photo = "./uploads/". $photoPath . basename($photo_Name["name"]);
 
     else :
         $photo = $photo_Db;

@@ -74,16 +74,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $description_pro = checkXSSPostValue($_POST['description_pro']);
     $description_perso = checkXSSPostValue($_POST['description_perso']);
 
+$photoPath = 'equipe/';
+
     $photo_unName = $_FILES["photo_unUpload"];
-    $photo_un = updatePhoto($photo_unName, $photo_unDb);
+    $photo_un = updatePhoto($photo_unName, $photo_unDb, $photoPath);
 
     $photo_deuxName = $_FILES["photo_deuxUpload"];
-    $photo_deux = updatePhoto($photo_deuxName, $photo_deuxDb);
+    $photo_deux = updatePhoto($photo_deuxName, $photo_deuxDb, $photoPath);
     //  dd($photo_deux);
     $photo_troisName = $_FILES["photo_troisUpload"];
-    $photo_trois = updatePhoto($photo_troisName, $photo_troisDb);
+    $photo_trois = updatePhoto($photo_troisName, $photo_troisDb, $photoPath);
     $photo_quatreName = $_FILES["photo_quatreUpload"];
-    $photo_quatre = updatePhoto($photo_quatreName, $photo_quatreDb);
+    $photo_quatre = updatePhoto($photo_quatreName, $photo_quatreDb, $photoPath);
 
     $question_1 = checkXSSPostValue($_POST['question_1']);
     $question_2 = checkXSSPostValue($_POST['question_2']);

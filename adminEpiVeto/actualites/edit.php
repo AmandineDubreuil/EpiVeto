@@ -13,30 +13,16 @@ $carouselDeuxDb =getActualiteById($idActualite)['carousel_deux'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
 $bandeau = checkXSSPostValue($_POST['bandeau']);
-
+$carouselPath ='carousel/';
 // carousel Un
 
-$carouselUnName = $_FILES["carouselUn"]["name"];
-if (!empty($carouselUnName) && $carouselUnName !== $carouselUnDb) :
-  
-  //  unlink('../.' . $carouselUnDb);
-    uploadCarousel($carouselUnName);
-    $carouselUn = "./uploads/carousel/" . basename($_FILES["carouselUn"]["name"]);
+$carouselUnName = $_FILES["carouselUn"];
+$carouselUn = updatePhoto($carouselUnName, $carouselUnDb, $carouselPath);
 
-else :
-    $carouselUn = $carouselUnDb;
-endif;
+//dd($carouselUn);
 
-$carouselDeuxName = $_FILES["carouselDeux"]["name"];
-if (!empty($carouselDeuxName) && $carouselDeuxName !== $carouselDeuxDb) :
-  
-  //  unlink('../.' . $carouselUnDb);
-  //  uploadCarousel($carouselDeuxName);
-  //  $carouselDeux = "./uploads/carousel/" . basename($_FILES["carouselDeux"]["name"]);
-
-else :
-    $carouselDeux = $carouselDeuxDb;
-endif;
+$carouselDeuxName = $_FILES["carouselDeux"];
+$carouselDeux = updatePhoto($carouselDeuxName, $carouselDeuxDb, $carouselPath);
 
 
 updateActualite($idActualite, $bandeau, $carouselUn, $carouselDeux);
