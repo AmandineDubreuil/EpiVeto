@@ -12,6 +12,8 @@
                     </ul>
                 </li>
                 <li><a href="../../equipe.php">L'Équipe</a></li>
+                <li><a href="https://www.clubvetshop.fr/mon-veterinaire/clinique-veterinaire-epi-veto" target="blank">Boutique</a></li>
+
                 <?php if (isAdminConnected()) : ?>
                     <li>
                         <a class="btn" href="../index.php" role="button">Admin</a>

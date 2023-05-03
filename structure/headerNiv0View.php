@@ -12,10 +12,9 @@
                     </ul>
                 </li>
                 <li><a href="equipe.php">L'Équipe</a></li>
+                <li><a href="https://www.clubvetshop.fr/mon-veterinaire/clinique-veterinaire-epi-veto" target="blank">Boutique</a></li>
                 </ul>
-                <ul class="menuJS">
-
-                </ul>
+                
         </nav>
         <?php if (!empty($bandeau)) : ?>
             <div class="messagedefilant">
