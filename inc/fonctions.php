@@ -19,7 +19,7 @@ function dd($valeur)
 
 function redirectUrl(string $path = ''): void
 {
-    $homeUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/EpiVeto';
+    $homeUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/EpiVeto_old';
     $homeUrl .= '/' . $path;
     header("Location: {$homeUrl}");
     exit();
