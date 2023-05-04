@@ -720,7 +720,9 @@ button[aria-selected="true"] svg {
 }
 
 /* page Honoraires */
-
+#honoraires p{
+    padding: 1rem;
+}
 
 /* page l'equipe*/
 

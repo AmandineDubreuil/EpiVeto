@@ -505,6 +505,16 @@ function getHonoraires(): array
     return $resultat->fetchAll();
 }
 
+function getHonoraireMaxModified(): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT MAX(modified_at)  FROM `honoraires` WHERE 1 ";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->execute();
+    return $resultat->fetchAll();
+}
+
+
 function getHonoraireById(int $idActe): array
 {
     require 'pdo.php';
