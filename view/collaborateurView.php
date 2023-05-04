@@ -15,11 +15,11 @@
 
 <body>
 
-    <?php require_once './structure/headerNiv0View.php' ?>
+<?php require_once './structure/headerView.php' ?>
 
 
     <h1>L'Équipe</h1>
-    </header>
+
 
     <main>
 

@@ -15,10 +15,8 @@
 
 <body>
 
-    <?php require_once '../../structure/headerNiv2View.php' ?>
-    </ul>
-    </nav>
-    </header>
+<?php require_once '../../structure/headerView.php' ?>
+
 
     <main>
         <div class="accueilAdminEquipe">

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php require_once './structure/headerNiv0View.php' ?>
+    <?php require_once './structure/headerView.php' ?>
 
     <section id="slides" aria-roledescription="Slideshow" aria-label="Description of Carousel">
         <div class="slides-control">
@@ -70,7 +70,6 @@
         <!-- end slides-items -->
     </section>
 
-    </header>
 
     <main>
         <section class="presentation">

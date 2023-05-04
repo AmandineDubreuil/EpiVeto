@@ -14,12 +14,8 @@
 </head>
 
 <body>
-    <?php require_once '../structure/headerNiv1View.php' ?>
+<?php require_once '../structure/headerView.php' ?>
 
-
-    </ul>
-    </nav>
-    </header>
 
     <main>
         <h2 id="admin">Administration du site</h2>

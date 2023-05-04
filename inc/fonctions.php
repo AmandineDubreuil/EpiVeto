@@ -25,6 +25,14 @@ function redirectUrl(string $path = ''): void
     exit();
 }
 
+function getUrl(string $path)
+{
+    $homeUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/EpiVeto';
+    $homeUrl .= '/' . $path;
+   // dd($homeUrl);
+echo $homeUrl;
+}
+
 function error404(): void
 {
     http_response_code(404);

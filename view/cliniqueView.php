@@ -15,13 +15,13 @@
 
 <body>
 
-<?php require_once './structure/headerNiv0View.php' ?>
+<?php require_once './structure/headerView.php' ?>
 
 
          <h1>La clinique </h1>
-    </header>
 
-    </header>
+
+
     <main>
      
         <section class="services">

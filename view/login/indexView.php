@@ -6,17 +6,15 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Connexion - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="./assets/js/script.js" type="module" defer></script>
+    <script src="../assets/js/script.js" type="module" defer></script>
 
 </head>
 
 <body>
 
-<?php require_once '../structure/headerNiv1View.php' ?>
+<?php require_once '../structure/headerView.php' ?>
 
-            </ul>
-        </nav>
-</header>
+
 
     <main class="container">
         <h2>Connexion à votre compte</h2>

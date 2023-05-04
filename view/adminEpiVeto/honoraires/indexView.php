@@ -14,11 +14,8 @@
 </head>
 
 <body>
+<?php require_once '../../structure/headerView.php' ?>
 
-    <?php require_once '../../structure/headerNiv2View.php' ?>
-    </ul>
-    </nav>
-    </header>
 
     <main>
         <div class="accueilAdminHonoraires">

@@ -19,9 +19,9 @@ require '../inc/fonctions.php';
 
 <body>
 
-<?php require_once './structure/headerNiv0View.php' ?>
+<?php require_once './structure/headerView.php' ?>
  
-</header>
+
 
     <main class="container">
         <h2>Page non trouvée</h2>
