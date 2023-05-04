@@ -60,12 +60,12 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         $question_4 = $_POST['question_4'];
         $question_5 = $_POST['question_5'];
 
+        $photoPath = 'equipe/';
 
-        $photo_un = insertPhoto($photo_unUpload);
-
-        $photo_deux = insertPhoto($photo_deuxUpload);
-        $photo_trois = insertPhoto($photo_troisUpload);
-        $photo_quatre = insertPhoto($photo_quatreUpload);
+        $photo_un = insertPhoto($photo_unUpload, $photoPath);
+        $photo_deux = insertPhoto($photo_deuxUpload, $photoPath);
+        $photo_trois = insertPhoto($photo_troisUpload, $photoPath);
+        $photo_quatre = insertPhoto($photo_quatreUpload, $photoPath);
 
         $insta = $_POST['insta'];
         $facebook = $_POST['facebook'];
