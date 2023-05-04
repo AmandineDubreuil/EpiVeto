@@ -64,7 +64,7 @@
                             <div> <a href="<?= getUrl('adminEpiVeto/index.php'); ?>" class="menu-item">
                                     Administration du site
                                 </a></div>
-                            <div> <a href="<?= getUrl('adminEpiVeto/equipe/index.php'); ?>" class="menu-item"> ../../equipe/index.php
+                            <div> <a href="<?= getUrl('adminEpiVeto/equipe/index.php'); ?>" class="menu-item">
                                     Gestion de l'équipe
                                 </a></div>
                             <div> <a href="<?= getUrl('adminEpiVeto/honoraires/index.php'); ?>" class="menu-item">
