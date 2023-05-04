@@ -497,6 +497,17 @@ function getHonoraires(): array
     return $resultat->fetchAll();
 }
 
+function getHonoraireById(int $idActe): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT *  FROM `honoraires` WHERE id_acte = :id_acte";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':id_acte', $idActe, PDO::PARAM_INT);
+    $resultat->execute();
+    return $resultat->fetch();
+}
+
+
 function insertHonoraire(string $acte, float $prix): int
 {
     require 'pdo.php';
@@ -507,4 +518,16 @@ function insertHonoraire(string $acte, float $prix): int
     $resultat->bindValue(':prix', $prix, PDO::PARAM_INT);
     $resultat->execute();
     return $conn->lastInsertId();
+}
+
+function updateHonoraire(int $idActe, string $acte, float $prix): bool
+{
+    require 'pdo.php';
+    $requete = 'UPDATE honoraires SET acte = :acte, prix = :prix WHERE id_acte = :id_acte';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':id_acte', $idActe, PDO::PARAM_INT);
+    $resultat->bindValue(':acte', $acte, PDO::PARAM_STR);
+    $resultat->bindValue(':prix', $prix, PDO::PARAM_INT);
+    $resultat->execute();
+    return $resultat->execute();
 }
