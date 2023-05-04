@@ -1,6 +1,6 @@
 <?php
 /*
-* Page qui appelle la vue pour l'administration de l'équipe
+* Page qui appelle la vue pour l'administration des honoraires
 */
 session_start();
 include '../../inc/fonctions.php';

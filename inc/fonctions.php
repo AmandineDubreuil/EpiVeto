@@ -491,17 +491,17 @@ function updateActualite(int $idActualite, string $bandeau, string $carouselUn, 
 function getHonoraires(): array
 {
     require 'pdo.php';
-    $sqlRequest = "SELECT id_acte, acte, prix, modified_at  FROM `honoraires` WHERE 1 ORDER BY acte ASC";
+    $sqlRequest = "SELECT id_acte, acte, prix, modified_at  FROM `honoraires` WHERE 1 ORDER BY id_acte ASC";
     $resultat = $conn->prepare($sqlRequest);
     $resultat->execute();
     return $resultat->fetchAll();
 }
 
-function insertHonoraire(string $acte, float $prix): int 
+function insertHonoraire(string $acte, float $prix): int
 {
     require 'pdo.php';
 
-    $requete = 'INSERT INTO employes (`acte`,`prix`, `modified_at`) VALUES (:acte, :prix, now())';
+    $requete = 'INSERT INTO honoraires (`acte`,`prix`, `modified_at`) VALUES (:acte, :prix, now())';
     $resultat = $conn->prepare($requete);
     $resultat->bindValue(':acte', $acte, PDO::PARAM_STR);
     $resultat->bindValue(':prix', $prix, PDO::PARAM_INT);

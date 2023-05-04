@@ -47,10 +47,10 @@
 
                         <?php //dd(getArticleLimit($limit, $offset)) 
                         ?>
-                        <?php foreach (getEmployes() as $key => $value) : ?>
+                        <?php foreach (getHonoraires() as $key => $value) : ?>
                             <tr>
                                 <td><?= $value['acte'] ?></td>
-                                <td><?= $value['prix'] ?></td>
+                                <td><?= $value['prix'] ?> €</td>
                                 <td><?= $value['modified_at'] ?></td>
                                 <td>
                                     <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_acte'] ?>">Modifier</a>

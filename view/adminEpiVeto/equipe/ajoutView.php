@@ -22,7 +22,7 @@
 
     <main class="container">
         <h2>Nouveau collaborateur</h2>
-        <form method="POST" action="" enctype="multipart/form-data" class="formEquipe" novalidate>
+        <form method="POST" action="" enctype="multipart/form-data" class="formEquipe formCRUD" novalidate>
             <div class="associe"><label for="associe">Associé Épi-Véto :</label>
                 Oui <input type="radio" name="associe" id="associe" value="oui">
                 Non <input type="radio" name="associe" id="associe" value="non" checked>

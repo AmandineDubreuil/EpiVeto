@@ -64,7 +64,7 @@
                             <div> <a href="./equipe/index.php" class="menu-item">
                                     Gestion de l'équipe
                                 </a></div>
-                            <div> <a href="#" class="menu-item">
+                            <div> <a href="./honoraires/index.php" class="menu-item">
                                     Gestion des honoraires
                                 </a></div>
                             <div> <a href="www.clubvetshop.fr" class="menu-item">

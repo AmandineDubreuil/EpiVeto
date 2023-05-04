@@ -719,6 +719,8 @@ button[aria-selected="true"] svg {
     max-width: 25%;
 }
 
+/* page Honoraires */
+
 
 /* page l'equipe*/
 
@@ -925,29 +927,29 @@ button[aria-selected="true"] svg {
 
 /* ADMIN Equipe / Ajout d'un collaborateur  */
 /* ADMIN Equipe / Modification d'un collaborateur  */
-.formEquipe {
+.formCRUD {
     padding: 1rem;
 }
 
-.formEquipe input,
-.formEquipe textarea {
+.formCRUD input,
+.formCRUD textarea {
     padding: .3rem;
     font-size: 1rem;
     border: var(--color-twolight) 1px solid;
     border-radius: 5px;
 }
 
-.formEquipe label {
+.formCRUD label {
     padding-right: 1rem;
 }
 
-.formEquipe span {
+.formCRUD span {
     color: red;
 }
 
-.formEquipe .civilite,
-.formEquipe .fonctionDiplome,
-.formEquipe .reseaux {
+.formCRUD .civilite,
+.formCRUD .fonctionDiplome,
+.formCRUD .reseaux {
     padding: .7rem 0;
     width: 90vw;
     display: flex;
@@ -956,28 +958,28 @@ button[aria-selected="true"] svg {
     align-items: center;
 }
 
-.formEquipe #associe,
-.formEquipe .civilite #titre {
+.formCRUD #associe,
+.formCRUD .civilite #titre {
     width: 1.5rem;
 }
 
-.formEquipe #prenom,
-.formEquipe #nom {
+.formCRUD #prenom,
+.formCRUD #nom {
     width: 15rem;
     max-width: 80vw;
 }
 
-.formEquipe #diplome {
+.formCRUD #diplome {
     width: 30rem;
     max-width: 80vw;
 }
 
-.formEquipe .description textarea {
+.formCRUD .description textarea {
     width: 90vw;
 }
 
-.formEquipe #description_pro,
-.formEquipe #description_perso {
+.formCRUD #description_pro,
+.formCRUD #description_perso {
     margin: 0 0 2rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -985,7 +987,7 @@ button[aria-selected="true"] svg {
     align-items: flex-start;
 }
 
-.formEquipe .questions div {
+.formCRUD .questions div {
     margin: 0 0 1rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -993,11 +995,11 @@ button[aria-selected="true"] svg {
     align-items: flex-start;
 }
 
-.formEquipe .questions input {
+.formCRUD .questions input {
     width: 90vw;
 }
 
-.formEquipe .photos {
+.formCRUD .photos {
     padding: 1rem;
     width: 90vw;
     border: var(--color-twolight) 1px solid;
@@ -1013,16 +1015,33 @@ button[aria-selected="true"] svg {
     border: none;
 }
 
-.formEquipe .reseaux input {
+.formCRUD .reseaux input {
     width: 16rem;
 }
 
-/* .formEquipe .reseaux{
+/* .formCRUD .reseaux{
     padding: 1rem;
     width: 90vw;
     display: flex;
 
 } */
+
+/* ADMIN Honoraires / Ajout d'un acte  */
+
+.formCRUD #acte{
+    width: 30rem;
+    max-width: 90%;
+}
+.formCRUD #prix{
+    width: 5rem;
+    max-width: 90%;
+}
+.actePrix div{
+display: flex;
+flex-direction: column;
+padding: 1rem;
+}
+
 
 /* *********************** 
    RESPONSIVE DESKTOP
