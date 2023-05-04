@@ -37,10 +37,11 @@
                 <table class="adminTable">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>Acte</th>
                             <th>Prix</th>
                             <th>Modifié le</th>
-                            <th>Action</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -49,13 +50,14 @@
                         ?>
                         <?php foreach (getHonoraires() as $key => $value) : ?>
                             <tr>
-                                <td><?= $value['acte'] ?></td>
-                                <td><?= $value['prix'] ?> €</td>
-                                <td><?= $value['modified_at'] ?></td>
                                 <td>
                                     <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_acte'] ?>">Modifier</a>
                                     <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_acte'] ?>" onclick="return confirm('Confirmer la suppression de cet acte ?');">Supprimer</a>
                                 </td>
+                                <td><?= $value['acte'] ?></td>
+                                <td><?= $value['prix'] ?> €</td>
+                                <td><?= $value['modified_at'] ?></td>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

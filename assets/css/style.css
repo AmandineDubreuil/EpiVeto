@@ -913,14 +913,14 @@ button[aria-selected="true"] svg {
 }
 
 .adminEquipe .btnRougeClair,
-.adminEquipe .btnRougeFonce {
+.adminEquipe .btnRougeFonce, .adminHonoraires .btnRougeClair, .adminHonoraires .btnRougeFonce {
     margin: 0 .2rem;
     padding: .2rem;
     font-weight: 100;
     border-radius: 5px;
 }
 
-.adminEquipe .adminTable {
+.adminEquipe .adminTable, .adminHonoraires .adminTable {
     white-space: nowrap;
 }
 

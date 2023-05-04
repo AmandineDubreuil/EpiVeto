@@ -531,3 +531,11 @@ function updateHonoraire(int $idActe, string $acte, float $prix): bool
     $resultat->execute();
     return $resultat->execute();
 }
+function suppHonoraireById(int $idActe): bool
+{
+    require 'pdo.php';
+    $sqlRequest = "DELETE FROM honoraires WHERE id_acte = :idActe";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':idActe', $idActe, PDO::PARAM_INT);
+    return $resultat->execute();
+}
