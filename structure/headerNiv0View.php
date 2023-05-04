@@ -1,7 +1,4 @@
 <header>
-    <?php if (isConnected()) : ?>
-        <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
-    <?php endif  ?>
     <nav>
         <div class="menuPrincipal">
 
@@ -37,7 +34,7 @@
                     <a href="equipe.php" class="menu-item" id="equipe">L'Équipe</a>
                 </div>
                 <div class="menu-category">
-                                        <a href="#" class="menu-item" id="conseils">Les Conseils <i class="fas fa-caret-down"></i></a>
+                    <a href="#" class="menu-item" id="conseils">Les Conseils <i class="fas fa-caret-down"></i></a>
                     <div class="menu-category-items">
                         <div> <a href="#" class="menu-item">
                                 Chiens
@@ -48,7 +45,7 @@
                         <div> <a href="#" class="menu-item">
                                 NAC
                             </a></div>
-                        <div> <a href="#" class="menu-item">
+                        <div> <a href="www.clubvetshop.fr" class="menu-item">
                                 Infos Utiles
                             </a></div>
                     </div>

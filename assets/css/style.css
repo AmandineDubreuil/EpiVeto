@@ -113,15 +113,13 @@ nav a {
     border-bottom: none
 }
 
-.menu .active,
-.menu .category-active {
+.menu-category:active {
     background-color: var(--color-fivelight);
 }
 
 .menu-category:hover {
     background-color: var(--color-fivelight);
 }
-
 .menu-category-items>div:hover {
     background-color: var(--color-five);
 }
@@ -159,12 +157,13 @@ nav a {
     padding: 0;
     overflow: hidden;
     position: relative;
-    height: 25px;
+    height: 30px;
 
 }
 
 .messagedefilant div {
     position: absolute;
+    top: 5px;
     min-width: 100%;
     /* au minimum la largeur du conteneur */
 }
@@ -1033,7 +1032,9 @@ button[aria-selected="true"] svg {
 
     /*menu*/
     .menuPrincipal {
-        position: initial;
+        position: fixed;
+        -webkit-box-shadow: 0px 10px 13px -7px #4e4e4e98, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #4e4e4e98, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
     }
 
@@ -1048,19 +1049,25 @@ button[aria-selected="true"] svg {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
+
     }
 
     .menu-category {
         border-bottom: none;
         width: 15%;
+        height: 50px;
         text-align: center;
         padding-left: 0;
     }
 
     .menu-category-items {
         position: absolute;
+        top: 50px;
         background-color: var(--color-fivelight);
         z-index: 10;
+        padding-left: 1rem;
+        -webkit-box-shadow: 0px 10px 13px -7px #4e4e4e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #4e4e4e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     }
 
     /* Général */

@@ -1,4 +1,8 @@
 <article class="side">
+<?php if (isConnected()) : ?>
+            <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
+        <?php endif  ?>
+
     <div class="trouver">
         <h2>Nous trouver</h2>
         <p class="gras">ÉPI-VETO clinique vétérinaire La Chaussée d'Ivry</p>

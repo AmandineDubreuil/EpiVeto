@@ -17,7 +17,7 @@
 
     <?php require_once './structure/headerNiv0View.php' ?>
 
-    <h1>Les Équipements</h1>
+    <h1>Nos Équipements</h1>
     </header>
 
     <main>
