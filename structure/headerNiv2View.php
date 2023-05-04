@@ -70,12 +70,13 @@
                             <div> <a href="#" class="menu-item">
                                     Gestion des conseils
                                 </a></div>
+                                <div>
+                                                        <a href="../login/deconnexion.php" class="menu-item" id="deconnexion">Se déconnecter</a>
+
+                                </div>
                         </div>
                     </div>
                 <?php endif ?>
-                <div class="menu-category">
-                    <a href="../login/deconnexion.php" class="menu-item" id="deconnexion">Se déconnecter</a>
-                </div>
 
             </div>
         </div>
