@@ -31,22 +31,19 @@
                     <tr>
                         <th>Bandeau</th>
                         <th>Carousel Un</th>
-                        <th>Carousel Deux modif marche pas</th>
+                        <th>Carousel Deux</th>
                     </tr>
                 </thead>
                 <tbody>
-
                     <tr>
                         <td><?= $bandeau ?></td>
                         <td><?= $carouselUn ?></td>
                         <td><?= $carouselDeux ?></td>
-
                     </tr>
 
                 </tbody>
             </table>
             <a class="btnRougeClair" href="./actualites/edit.php?id=<?= $idActualite ?>">Modifier</a>
-
         </section>
 
         <section class="adminAccueilSection">
@@ -59,6 +56,19 @@
                 <p>Aller</p>
             </a>
         </section>
+        
+        <section class="adminAccueilSection">
+            <a href="./equipe/index.php">
+                <h3>Gestion des honoraires</h3>
+            </a>
+            <p>Permet l'ajout, la modification ou la suppression d'un acte et de son prix.</p>
+
+            <a class="btnRougeClair" href="./equipe/index.php">
+                <p>Aller</p>
+            </a>
+        </section>
+
+
 
     </main>
 
