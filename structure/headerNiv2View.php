@@ -3,6 +3,7 @@
             <p class="bienvenue">Bienvenue, <?= $_SESSION['civilite'] ?> <?= $_SESSION['nom'] ?></p>
         <?php endif  ?>
         <nav>
+            <h3>niveau 2</h3>
             <a id="logo" href="../../index.php"><img src="./assets/img/logo.JPG" alt=""></a>
             <ul class="nivUn">
                 <li><a href="../../index.php">Accueil</a></li>

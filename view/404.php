@@ -12,6 +12,8 @@ require '../inc/fonctions.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="./assets/js/script.js" type="module" defer></script>
+
     <title>404 - Épi-Véto La Chaussée d'Ivry</title>
 </head>
 
