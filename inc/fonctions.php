@@ -352,7 +352,7 @@ function updatePhoto($photo_Name, $photo_Db, $photoPath)
 
         unlink('../.' . $photo_Db);
         uploadPhoto($photo_Name, $photoPath);
-        $photo = "./uploads/". $photoPath . basename($photo_Name["name"]);
+        $photo = "./uploads/" . $photoPath . basename($photo_Name["name"]);
 
     else :
         $photo = $photo_Db;
@@ -484,4 +484,27 @@ function updateActualite(int $idActualite, string $bandeau, string $carouselUn, 
     $resultat->bindValue(':carouselDeux', $carouselDeux, PDO::PARAM_STR);
     $resultat->execute();
     return $resultat->execute();
+}
+
+/* fonctions sur BDD Honoraires */
+
+function getHonoraires(): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT id_acte, acte, prix, modified_at  FROM `honoraires` WHERE 1 ORDER BY acte ASC";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->execute();
+    return $resultat->fetchAll();
+}
+
+function insertHonoraire(string $acte, float $prix): int 
+{
+    require 'pdo.php';
+
+    $requete = 'INSERT INTO employes (`acte`,`prix`, `modified_at`) VALUES (:acte, :prix, now())';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':acte', $acte, PDO::PARAM_STR);
+    $resultat->bindValue(':prix', $prix, PDO::PARAM_INT);
+    $resultat->execute();
+    return $conn->lastInsertId();
 }

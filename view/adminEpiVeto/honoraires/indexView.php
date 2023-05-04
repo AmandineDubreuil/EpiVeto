@@ -21,29 +21,24 @@
     </header>
 
     <main>
-        <div class="accueilAdminEquipe">
+        <div class="accueilAdminHonoraires">
             <a href="../">
                 <h2 id="admin">Administration du site</h2>
             </a>
             <a href="../"><button class="btnGris" type="button">Retour</button></a>
         </div>
-        <div class="adminEquipe">
-            <h3>Gestion des membres de l'équipe</h3>
+        <div class="adminHonoraires">
+            <h3>Gestion des honoraires</h3>
 
-            <a href="./ajout.php" class="btnRouge">Ajouter une personne</a>
+            <a href="./ajout.php" class="btnRouge">Ajouter un acte</a>
 
             <?php
-            if (count(getEmployes()) != 0) : ?>
+            if (count(getHonoraires()) != 0) : ?>
                 <table class="adminTable">
                     <thead>
                         <tr>
-                        <th>Associé</th>
-                            <th>Titre</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Fonction</th>
-                            <th>Diplome</th>
-                            <th>Créé le</th>
+                            <th>Acte</th>
+                            <th>Prix</th>
                             <th>Modifié le</th>
                             <th>Action</th>
                         </tr>
@@ -54,24 +49,19 @@
                         ?>
                         <?php foreach (getEmployes() as $key => $value) : ?>
                             <tr>
-                            <td><?= $value['associe'] ?></td>
-                                <td><?= $value['titre'] ?></td>
-                                <td><?= $value['nom'] ?></td>
-                                <td><?= $value['prenom'] ?></td>
-                                <td><?= $value['fonction'] ?></td>
-                                <td><?= $value['diplome'] ?></td>
-                                <td><?= $value['created_at'] ?></td>
+                                <td><?= $value['acte'] ?></td>
+                                <td><?= $value['prix'] ?></td>
                                 <td><?= $value['modified_at'] ?></td>
                                 <td>
-                                    <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_employe'] ?>">Modifier</a>
-                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_employe'] ?>" onclick="return confirm('Confirmer la suppression de ce membre de l\'équipe ?');">Supprimer</a>
+                                    <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_acte'] ?>">Modifier</a>
+                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_acte'] ?>" onclick="return confirm('Confirmer la suppression de cet acte ?');">Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             <?php else : ?>
-                <p>Aucun membre de l'équipe !</p>
+                <p>Aucun acte !</p>
             <?php endif; ?>
 
 
