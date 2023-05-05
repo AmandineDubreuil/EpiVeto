@@ -614,8 +614,8 @@ svg {
 }
 
 .slides-dots svg {
-    width: 1.7rem;
-    height: 1.7rem;
+    width: .7rem;
+    height: .7rem;
     /* fill: rgba(0, 0, 0, 0.7); */
 }
 
@@ -626,7 +626,11 @@ button[aria-selected="true"] svg {
     fill: #691616;
 }
 
+/* page d'accueil */
+
+
 .accueil {
+    /*h1 accueil*/
     font-family: "raleway";
     font-size: 1rem;
     font-weight: 800;
