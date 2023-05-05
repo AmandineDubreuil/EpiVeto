@@ -80,7 +80,11 @@
                         </div>
                     </div>
                 <?php endif ?>
+                <div class="reseauxNav">
+                    <div><a href="https://www.instagram.com/epiveto/" target="blank"><i class="fa-brands fa-square-instagram"></i></a></div>
 
+                    <div><a href="https://www.facebook.com/groups/1945557415617763" target="blank"><i class="fa-brands fa-square-facebook"></i></a></div>
+                </div>
             </div>
         </div>
     </nav>

@@ -55,9 +55,6 @@ nav {
     background-color: var(--color-five);
 }
 
-
-
-
 .menuPrincipal {
     background-color: var(--color-five);
     color: var(--color-three);
@@ -146,6 +143,15 @@ nav a {
     display: block;
 }
 
+.reseauxNav{
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem 1rem;
+    width: 20%;
+}
+.reseauxNav a{
+    font-size: 1.3rem;
+}
 
 /* message défilant*/
 
@@ -1089,6 +1095,11 @@ padding: 1rem;
         padding-left: 1rem;
         -webkit-box-shadow: 0px 10px 13px -7px #4e4e4e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
         box-shadow: 0px 10px 13px -7px #4e4e4e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+
+    .reseauxNav{
+        justify-content: space-around;
+        width: 7%;
     }
 
     /* Général */
