@@ -37,3 +37,4 @@ function subMenu(menuButton) {
 subMenu("#clinique");
 subMenu("#conseils");
 subMenu("#admin");
+
