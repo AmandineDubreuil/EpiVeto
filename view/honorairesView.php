@@ -24,13 +24,13 @@
         <section id="honoraires">
             <?php
             if (count(getHonoraires()) != 0) : ?>
-                <p>Prix TTC, au <?= getHonoraireMaxModified()[0]['MAX(modified_at)']?> :</p>
+                <p>Prix TTC, mis à jour en  <?= getHonoraireMaxModified()?> :</p>
                 <table class="adminTable">
                     <thead>
                         <tr>
                             <th>Acte</th>
                             <th>Prix</th>
-                            <th>Date MAJ</th>
+                        
 
                         </tr>
                     </thead>
@@ -42,7 +42,7 @@
                             <tr>
                                 <td><?= $value['acte'] ?></td>
                                 <td><?= $value['prix'] ?> €</td>
-                                <td><?= $value['modified_at'] ?></td>
+                             
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

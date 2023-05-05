@@ -29,8 +29,8 @@ function getUrl(string $path)
 {
     $homeUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/EpiVeto';
     $homeUrl .= '/' . $path;
-   // dd($homeUrl);
-echo $homeUrl;
+    // dd($homeUrl);
+    echo $homeUrl;
 }
 
 function error404(): void
@@ -505,13 +505,18 @@ function getHonoraires(): array
     return $resultat->fetchAll();
 }
 
-function getHonoraireMaxModified(): array
+function getHonoraireMaxModified(): string
 {
     require 'pdo.php';
-    $sqlRequest = "SELECT MAX(modified_at)  FROM `honoraires` WHERE 1 ";
+    ini_set('intl.default_locale', 'fr_FR');
+    $sqlRequest = "SELECT MAX(modified_at) AS date FROM `honoraires` WHERE 1 ";
     $resultat = $conn->prepare($sqlRequest);
     $resultat->execute();
-    return $resultat->fetchAll();
+    $date = $resultat->fetch()['date'];
+    $cal = IntlCalendar::fromDateTime($date, "Europe/Paris");
+    //dd($cal);
+    $dateFR = IntlDateFormatter::formatObject($cal, "MMMM YYYY", 'fr_FR');
+    return $dateFR;
 }
 
 
