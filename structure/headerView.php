@@ -36,7 +36,7 @@
                 <div class="menu-category">
                     <a href="#" class="menu-item" id="conseils">Les Conseils <i class="fas fa-caret-down"></i></a>
                     <div class="menu-category-items">
-                        <div> <a href="#" class="menu-item">
+                        <div> <a href="<?= getUrl('conseils/index.php'); ?>" class="menu-item">
                                 Nos Conseils
                             </a></div>
                         <div> <a href="#" class="menu-item">
