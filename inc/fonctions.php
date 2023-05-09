@@ -562,3 +562,29 @@ function suppHonoraireById(int $idActe): bool
     $resultat->bindValue(':idActe', $idActe, PDO::PARAM_INT);
     return $resultat->execute();
 }
+
+/* fonctions sur BDD CONSEILS */
+
+function getConseils(): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT id_conseil, titre, article, image, categorie, sous_categorie, created_at, modified_at  FROM `conseils` WHERE 1 ORDER BY titre ASC";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->execute();
+    return $resultat->fetchAll();
+}
+function insertConseil(string $titre, string $article, string $categorie, string $sousCategorie, string $image ): int
+{
+    require 'pdo.php';
+
+    $requete = 'INSERT INTO conseils (`titre`,`article`,`categorie`, `sous_categorie`, `image`, `created_at`, `modified_at`) VALUES (:titre, :article, :categorie, :sous_categorie, :image, now(), now())';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $resultat->bindValue(':article', $article, PDO::PARAM_STR);
+    $resultat->bindValue(':categorie', $categorie, PDO::PARAM_STR);
+    $resultat->bindValue(':sous_categorie', $sousCategorie, PDO::PARAM_STR);
+    $resultat->bindValue(':image', $image, PDO::PARAM_STR);
+
+    $resultat->execute();
+    return $conn->lastInsertId();
+}
