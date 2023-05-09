@@ -53,7 +53,7 @@
                             <tr>
                                 <td>
                                     <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_conseil'] ?>">Modifier</a>
-                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_conseil'] ?>" onclick="return confirm('Confirmer la suppression de cet article ?');">Supprimer</a>
+                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_conseil'] ?>" onclick="return confirm('Confirmer la suppression de cette fiche conseils ?');">Supprimer</a>
                                 </td>
                                 <td><?= $value['titre'] ?></td>
                                 <td><?= $value['categorie'] ?></td>

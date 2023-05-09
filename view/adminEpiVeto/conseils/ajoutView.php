@@ -28,7 +28,8 @@
                 </div>
                 <div class="categoriesConseils">
                     <fieldset>
-                        <legend>Catégorie(s) :</legend>
+                        <legend>Catégorie(s) :</legend> 
+                        <span class="error"><?= isset($error['categorie']) ? $error['categorie'] : "" ?></span>
                         <div>
                             <input type="checkbox" id="categorie" name="categorie[]" value="chiens">
                             <label for="chiens">Chiens</label>
@@ -48,6 +49,7 @@
                     </fieldset>
                     <fieldset>
                         <legend>Sous-Catégorie(s) :</legend>
+                        <span class="error"><?= isset($error['sousCategorie']) ? $error['sousCategorie'] : "" ?></span>
                         <div>
                             <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="alimentation">
                             <label for="alimentation">Alimentation</label>

@@ -588,3 +588,12 @@ function insertConseil(string $titre, string $article, string $categorie, string
     $resultat->execute();
     return $conn->lastInsertId();
 }
+
+function suppConseilById(int $idConseil): bool
+{
+    require 'pdo.php';
+    $sqlRequest = "DELETE FROM conseils WHERE id_conseil = :idConseil";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':idConseil', $idConseil, PDO::PARAM_INT);
+    return $resultat->execute();
+}

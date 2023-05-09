@@ -21,7 +21,13 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
             $error = checkEmptyValue($value, $key, $error);
         endif;
     endforeach;
- //   dd($error);
+    if (!isset($_POST['categorie'])) :
+        $error['categorie'] = "Le champs Catégorie est vide.";
+    endif;
+    if (!isset($_POST['sousCategorie'])) :
+        $error['sousCategorie'] = "Le champs Sous-Catégorie est vide.";
+    endif;
+  // dd($error);
     if (count($error) === 0) :
         $titreArticle = checkXSSPostValue($_POST['titreArticle']);
         $article = checkXSSPostValue($_POST['article']);
@@ -38,6 +44,10 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         insertConseil($titreArticle,  $article,  $categorieAll,  $sousCategorieAll,  $image);
 
         redirectUrl('./adminEpiVeto/conseils');
+
+else : 
+   
+    $photoArticleUpload = '';
 
     endif;
 endif;
