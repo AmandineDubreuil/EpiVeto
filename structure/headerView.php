@@ -70,7 +70,7 @@
                             <div> <a href="<?= getUrl('adminEpiVeto/honoraires/index.php'); ?>" class="menu-item">
                                     Gestion des honoraires
                                 </a></div>
-                            <div> <a href="#" class="menu-item">
+                            <div> <a href="<?= getUrl('adminEpiVeto/conseils/index.php'); ?>" class="menu-item">
                                     Gestion des conseils
                                 </a></div>
                             <div>

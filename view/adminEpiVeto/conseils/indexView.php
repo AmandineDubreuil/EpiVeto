@@ -26,9 +26,9 @@
             <a href="../"><button class="btnGris" type="button">Retour</button></a>
         </div>
         <div class="adminEquipe">
-            <h3>Gestion des fiches conseils</h3>
+            <h3>Gestion des Fiches Conseils</h3>
 
-            <a href="./ajout.php" class="btnRouge">Ajouter une fiche conseils</a>
+            <a href="./ajout.php" class="btnRouge">Ajouter une Fiche Conseils</a>
 
             <?php
             if (count(getEmployes()) != 0) : ?>
@@ -39,7 +39,7 @@
                             <th>Titre</th>
                             <th>Catégorie(s)</th>
                             <th>Sous-Catégorie(s) </th>
-                            <th>Article</th>
+                            <th>Fiche Conseils</th>
                             <th>Image</th>
                             <th>Créé le</th>
                             <th>Modifié le</th>

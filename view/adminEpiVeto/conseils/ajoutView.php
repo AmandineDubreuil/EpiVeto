@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajout d'un article - Épi-Véto La Chaussée d'Ivry</title>
+    <title>Ajout d'une fiche conseils - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../../assets/js/scriptAdmin.js" defer></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -18,13 +18,13 @@
 
 
     <main class="container">
-        <h2>Nouvel Article</h2>
+        <h2>Nouvelle Fiche Conseils</h2>
         <form method="POST" action="" enctype="multipart/form-data" class="formConseils formCRUD" novalidate>
             <div class="blocTitre">
                 <div class="blocTitreArticle">
-                    <label for="titreArticle">Titre de l'article :</label>
-                    <input type="text" name="titreArticle" id="titreArticle" value="<?= $titreArticle ?>">
-                    <div><span class="error"><?= isset($error['titreArticle']) ? $error['titreArticle'] : "" ?></span></div>
+                    <label for="titre">Titre de la fiche :</label>
+                    <input type="text" name="titre" id="titre" value="<?= $titre ?>">
+                    <div><span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span></div>
                 </div>
                 <div class="categoriesConseils">
                     <fieldset>

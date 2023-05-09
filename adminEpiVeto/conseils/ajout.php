@@ -8,7 +8,7 @@ include '../../inc/fonctions.php';
 (isAdminConnected()) ?: redirectUrl('view/404.php');
 
 
-$titreArticle = $article = $photoArticleUpload  = '';
+$titre = $article = $photoArticleUpload  = '';
 
 $error = $categorie = $sousCategorie = [];
 
@@ -29,7 +29,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
     endif;
   // dd($error);
     if (count($error) === 0) :
-        $titreArticle = checkXSSPostValue($_POST['titreArticle']);
+        $titre = checkXSSPostValue($_POST['titre']);
         $article = checkXSSPostValue($_POST['article']);
         $categorie = $_POST['categorie'];
         //dd($categorie);
@@ -41,7 +41,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
 
         $image = insertPhoto($photoArticleUpload, $photoPath);
 
-        insertConseil($titreArticle,  $article,  $categorieAll,  $sousCategorieAll,  $image);
+        insertConseil($titre,  $article,  $categorieAll,  $sousCategorieAll,  $image);
 
         redirectUrl('./adminEpiVeto/conseils');
 
