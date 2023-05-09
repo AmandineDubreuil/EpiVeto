@@ -31,19 +31,19 @@
                         <legend>Catégorie(s) :</legend> 
                         <span class="error"><?= isset($error['categorie']) ? $error['categorie'] : "" ?></span>
                         <div>
-                            <input type="checkbox" id="categorie" name="categorie[]" value="chiens">
+                            <input type="checkbox" id="categorie" name="categorie[]" value="Chiens">
                             <label for="chiens">Chiens</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="categorie" name="categorie[]" value="chats">
+                            <input type="checkbox" id="categorie" name="categorie[]" value="Chats">
                             <label for="chats">Chats</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="categorie" name="categorie[]" value="nac">
+                            <input type="checkbox" id="categorie" name="categorie[]" value="Nac">
                             <label for="nac">NAC</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="categorie" name="categorie[]" value="infos">
+                            <input type="checkbox" id="categorie" name="categorie[]" value="Infos">
                             <label for="infos">Infos Pratiques</label>
                         </div>
                     </fieldset>
@@ -51,23 +51,23 @@
                         <legend>Sous-Catégorie(s) :</legend>
                         <span class="error"><?= isset($error['sousCategorie']) ? $error['sousCategorie'] : "" ?></span>
                         <div>
-                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="alimentation">
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Alimentation">
                             <label for="alimentation">Alimentation</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="sante">
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Santé">
                             <label for="sante">Santé</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="reproduction">
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Reproduction">
                             <label for="reproduction">Reproduction</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="education">
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Education">
                             <label for="education">Éducation</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="infos">
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Infos">
                             <label for="infos">Infos Pratiques</label>
                         </div>
                     </fieldset>
