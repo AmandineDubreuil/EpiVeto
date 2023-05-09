@@ -573,6 +573,16 @@ function getConseils(): array
     $resultat->execute();
     return $resultat->fetchAll();
 }
+
+function getConseilById(int $idConseil): array
+{
+    require 'pdo.php';
+    $sqlRequest = "SELECT *  FROM `conseils` WHERE id_conseil = :id_conseil";
+    $resultat = $conn->prepare($sqlRequest);
+    $resultat->bindValue(':id_conseil', $idConseil, PDO::PARAM_INT);
+    $resultat->execute();
+    return $resultat->fetch();
+}
 function insertConseil(string $titre, string $article, string $categorie, string $sousCategorie, string $image ): int
 {
     require 'pdo.php';
@@ -588,6 +598,23 @@ function insertConseil(string $titre, string $article, string $categorie, string
     $resultat->execute();
     return $conn->lastInsertId();
 }
+
+function updateConseil(int $idConseil, string $titre, string $article, string $categorie, string $sousCategorie, string $image): bool
+{
+    require 'pdo.php';
+    $requete = 'UPDATE conseils SET titre = :titre, article = :article, image = :image, categorie = :categorie, sous_categorie = :sous_categorie, modified_at = now() WHERE id_conseil = :id_conseil';
+    $resultat = $conn->prepare($requete);
+    $resultat->bindValue(':id_conseil', $idConseil, PDO::PARAM_INT);
+    $resultat->bindValue(':titre', $titre, PDO::PARAM_STR);
+    $resultat->bindValue(':article', $article, PDO::PARAM_STR);
+    $resultat->bindValue(':image', $image, PDO::PARAM_STR);
+    $resultat->bindValue(':categorie', $categorie, PDO::PARAM_STR);
+    $resultat->bindValue(':sous_categorie', $sousCategorie, PDO::PARAM_STR);
+
+    $resultat->execute();
+    return $resultat->execute();
+}
+
 
 function suppConseilById(int $idConseil): bool
 {
