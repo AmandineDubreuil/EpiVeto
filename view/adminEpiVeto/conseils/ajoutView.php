@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../../assets/js/scriptAdmin.js" defer></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <script src="../../assets/js/script.js" type="module" defer></script>
 
+    <script src="../../assets/js/script.js" type="module" defer></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="categoriesConseils">
                     <fieldset>
-                        <legend>Catégorie(s) :</legend> 
+                        <legend>Catégorie(s) :</legend>
                         <span class="error"><?= isset($error['categorie']) ? $error['categorie'] : "" ?></span>
                         <div>
                             <input type="checkbox" id="categorie" name="categorie[]" value="Chiens">
@@ -81,8 +81,11 @@
             </div>
             <div class="blocArticle">
                 <label for="article">Contenu de l'article :</label>
-                <textarea name="article" id="article" cols="70" rows="20"><?= $article ?></textarea>
+                <textarea name="article" id="article_editor" cols="70" rows="20"><?= $article ?></textarea>
                 <span class="error"><?= isset($error['article']) ? $error['article'] : "" ?></span>
+
+
+
             </div>
             <div class="photoArticle">
                 <div>
@@ -100,3 +103,8 @@
         </form>
     </main>
     <?php include_once '../../structure/footerView.php' ?>
+        <script src="../../ckeditor/ckeditor.js" ></script>
+
+    <script>
+        CKEDITOR.replace('article_editor');
+    </script>

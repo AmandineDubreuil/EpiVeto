@@ -30,7 +30,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
   // dd($error);
     if (count($error) === 0) :
         $titre = checkXSSPostValue($_POST['titre']);
-        $article = checkXSSPostValue($_POST['article']);
+        $article = checkXSSPostValueArticle($_POST['article']); //$_POST['article']; // 
         $categorie = $_POST['categorie'];
         //dd($categorie);
         $categorieAll = implode(',', $categorie);

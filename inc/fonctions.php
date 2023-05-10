@@ -78,6 +78,20 @@ function checkXSSPostValue($postEntrie)
 }
 
 /**
+ * checkXSSPostValue
+ * 
+ * Cette fonction sert à vérifier l'intégrité de la variable post transmise (faille XSS).
+ * 
+ * @param  mixed $postEntrie : entrée de formulaire à vérifier
+ * @return mixed variable post nettoyée de ses tags
+ */
+function checkXSSPostValueArticle($postEntrie)
+{
+    $postEntrie = strip_tags($postEntrie, ['<br>','<h2>','</h2>','<h3>','</h3>','<h3 style="color:#aaaaaa; font-style:italic">','<p>','</p>','<ol>','</ol>','<li>','</li>','<ul>','</ul>','<strong>','</strong>','<em>','</em>','<a>','</a>','<s>','</s>',]);
+    return $postEntrie;
+}
+
+/**
  * checkEmptyValue
  *
  * Cette fonction permet de vérifier si un champs obligatoire est vide. 

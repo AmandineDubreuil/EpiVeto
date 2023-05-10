@@ -42,3 +42,4 @@ subMenu("#clinique", "#blocClinique");
 subMenu("#conseils", '#blocConseils');
 subMenu("#admin", "#blocAdmin");
 
+// CKEDITOR
