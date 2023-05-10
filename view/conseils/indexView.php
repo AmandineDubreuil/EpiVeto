@@ -26,7 +26,7 @@
         <section class="conseils">
 
             <div class="cardAccueilConseil card">
-                <div class="imgRonde"><img src="../assets/img/animaux/chienChoune.jpg" alt="chien"></div>
+                <div class="imgRonde"><img src="../assets/img/animaux/Chiens.jpg" alt="chien"></div>
                 <div>
                     <h3>Nos conseils pour les chiens</h3>
                     <ul>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="cardAccueilConseil card">
-                <div class="imgRonde"><img src="../assets/img/animaux/chatChasse.jpg" alt="chat"></div>
+                <div class="imgRonde"><img src="../assets/img/animaux/Chats.jpg" alt="chat"></div>
                 <div>
                     <h3>Nos conseils pour les chats</h3>
                     <ul>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="cardAccueilConseil card">
-                <div class="imgRonde"><img src="../assets/img/animaux/lapins.jpg" alt="chat"></div>
+                <div class="imgRonde"><img src="../assets/img/animaux/NAC.jpg" alt="chat"></div>
                 <div>
                     <h3>Nos conseils pour les NAC</h3>
                     <ul>

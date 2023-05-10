@@ -937,8 +937,7 @@ button[aria-selected="true"] svg {
 .cardListeConseil h3 {
     padding: 0 0 .3rem 0;
 }
-
-.cardListeConseil .creeModifie {
+ .creeModifie {
     font-size: .8rem;
     font-style: italic;
 }
@@ -990,6 +989,21 @@ button[aria-selected="true"] svg {
     font-size: .5rem;
 }
 
+/* page Conseils / Fiche Conseils */
+
+#ficheConseils {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#ficheConseils p{
+    padding: 2rem;
+}
+#ficheConseils .creeModifie{
+    padding: 0 2rem;
+    align-self: flex-end;
+}
 /* ADMINISTRATION DU SITE */
 
 /*ADMIN Général tableaux*/

@@ -38,7 +38,7 @@
                             <p><?= substr($conseil['article'], 0, 100) ?>...</p>
 
                             <p class="creeModifie">créé le : <?= $conseil['created_at'] ?> - dernière modification le :<?= $conseil['modified_at'] ?> </p>
-                            <p class="droite"><a class="btnRouge" href="">Lire la suite</a></p>
+                            <p class="droite"><a class="btnRouge" href="ficheConseils.php?id=<?= $conseil['id_conseil'] ?>">Lire la suite</a></p>
 
                         </article>
                     <?php
