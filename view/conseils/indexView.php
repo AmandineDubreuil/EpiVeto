@@ -31,10 +31,10 @@
                     <h3>Nos conseils pour les chiens</h3>
                     <ul>
                         <li><a href="liste.php?cat=Chiens&souscat=Alimentation"><i class="fa-solid fa-paw"></i> Alimentation</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Santé</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Reproduction</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Education</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
+                        <li><a href="liste.php?cat=Chiens&souscat=Santé"><i class="fa-solid fa-paw"></i> Santé</a></li>
+                        <li><a href="liste.php?cat=Chiens&souscat=Reproduction"><i class="fa-solid fa-paw"></i> Reproduction</a></li>
+                        <li><a href="liste.php?cat=Chiens&souscat=Éducation"><i class="fa-solid fa-paw"></i> Éducation</a></li>
+                        <li><a href="liste.php?cat=Chiens&souscat=Infos"><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,11 +43,11 @@
                 <div>
                     <h3>Nos conseils pour les chats</h3>
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Alimentation</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Santé</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Reproduction</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Education</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
+                        <li><a href="liste.php?cat=Chats&souscat=Alimentation"><i class="fa-solid fa-paw"></i> Alimentation</a></li>
+                        <li><a href="liste.php?cat=Chats&souscat=Santé"><i class="fa-solid fa-paw"></i> Santé</a></li>
+                        <li><a href="liste.php?cat=Chats&souscat=Reproduction"><i class="fa-solid fa-paw"></i> Reproduction</a></li>
+                        <li><a href="liste.php?cat=Chats&souscat=Éducation"><i class="fa-solid fa-paw"></i> Éducation</a></li>
+                        <li><a href="liste.php?cat=Chats&souscat=Infos"><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,11 +56,11 @@
                 <div>
                     <h3>Nos conseils pour les NAC</h3>
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Alimentation</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Santé</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Reproduction</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Education</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
+                    <li><a href="liste.php?cat=NAC&souscat=Alimentation"><i class="fa-solid fa-paw"></i> Alimentation</a></li>
+                        <li><a href="liste.php?cat=NAC&souscat=Santé"><i class="fa-solid fa-paw"></i> Santé</a></li>
+                        <li><a href="liste.php?cat=NAC&souscat=Reproduction"><i class="fa-solid fa-paw"></i> Reproduction</a></li>
+                        <li><a href="liste.php?cat=NAC&souscat=Éducation"><i class="fa-solid fa-paw"></i> Éducation</a></li>
+                        <li><a href="liste.php?cat=NAC&souscat=Infos"><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
                     </ul>
                 </div>
             </div>
@@ -70,8 +70,8 @@
                 <div>
                     <h3>Nos conseils divers</h3>
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Lexique</a></li>
-                        <li><a href=""><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
+                        <li><a href="liste.php?cat=Divers&souscat=Lexique"><i class="fa-solid fa-paw"></i> Lexique</a></li>
+                        <li><a href="liste.php?cat=Divers&souscat=Infos"><i class="fa-solid fa-paw"></i> Infos Pratiques</a></li>
                     </ul>
                 </div>
             </div>

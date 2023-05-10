@@ -39,17 +39,14 @@
                         <div> <a href="<?= getUrl('conseils/index.php'); ?>" class="menu-item">
                                 Nos Conseils
                             </a></div>
-                        <div> <a href="#" class="menu-item">
+                        <div> <a href="<?= getUrl('conseils/listeCategorie.php?cat=Chiens'); ?>" class="menu-item">
                                 Chiens
                             </a></div>
-                        <div> <a href="#" class="menu-item">
+                        <div> <a href="<?= getUrl('conseils/listeCategorie.php?cat=Chats'); ?>" class="menu-item">
                                 Chats
                             </a></div>
-                        <div> <a href="#" class="menu-item">
+                        <div> <a href="<?= getUrl('conseils/listeCategorie.php?cat=NAC'); ?>" class="menu-item">
                                 NAC
-                            </a></div>
-                        <div> <a href="#" class="menu-item">
-                                Infos Utiles
                             </a></div>
                     </div>
                 </div>

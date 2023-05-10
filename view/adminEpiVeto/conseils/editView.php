@@ -43,8 +43,8 @@
                             <label for="nac">NAC</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="categorie" name="categorie[]" value="Infos">
-                            <label for="infos">Infos Pratiques</label>
+                            <input type="checkbox" id="categorie" name="categorie[]" value="Divers">
+                            <label for="divers">Divers</label>
                         </div>
                     </fieldset>
                     <fieldset>
@@ -63,13 +63,18 @@
                             <label for="reproduction">Reproduction</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Education">
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Éducation">
                             <label for="education">Éducation</label>
                         </div>
                         <div>
                             <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Infos">
                             <label for="infos">Infos Pratiques</label>
                         </div>
+                        <div>
+                            <input type="checkbox" id="sousCategorie" name="sousCategorie[]" value="Lexique">
+                            <label for="lexique">Lexique (uniquement pour Infos Pratiques)</label>
+                        </div>
+
                     </fieldset>
                 </div>
 

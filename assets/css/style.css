@@ -244,7 +244,7 @@ p {
 }
 
 .card {
- 
+
     margin: 1rem;
 
     display: flex;
@@ -252,17 +252,20 @@ p {
     justify-content: center;
     align-items: center;
 }
-.card div{
+
+.card div {
     position: relative;
 }
-figcaption{
+
+figcaption {
     position: absolute;
     left: 42%;
     bottom: -.2rem;
     font-size: .4rem;
-color: var(--color-twolight);
+    color: var(--color-twolight);
 }
-figcaption a{
+
+figcaption a {
     color: var(--color-twolight);
 }
 
@@ -892,9 +895,10 @@ button[aria-selected="true"] svg {
     flex-direction: row;
     border: 1px solid var(--color-three);
     border-radius: 5px;
-    -webkit-box-shadow: 5px 5px 7px 5px rgba(0,0,0,0.05); 
-    box-shadow: 5px 5px 7px 5px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
 }
+
 .conseils .card li {
     list-style-type: none;
     padding: .2rem 1rem;
@@ -906,34 +910,85 @@ button[aria-selected="true"] svg {
     color: #000;
 }
 
-.conseils .card a:visited{
+.conseils .card a:visited {
     text-decoration: none;
     color: var(--color-twodark);
 }
 
-.conseils .card i{
+.conseils .card i {
     font-size: .5rem;
 }
 
 /* page Conseils / Liste */
 
 
-.conseils .cardListeConseil img{
-    width: 100px;
+.cardListeConseil {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    width: 90%;
+    border: 1px solid var(--color-three);
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
 }
 
-.conseils .cardListeConseil  a{
-    color: var(--color-three);
-}
-.conseils .cardListeConseil a:visited{
-    color: var(--color-three);
+.cardListeConseil h3 {
+    padding: 0 0 .3rem 0;
 }
 
-.conseils .creeModifie {
+.cardListeConseil .creeModifie {
     font-size: .8rem;
     font-style: italic;
 }
 
+.cardListeConseil a {
+    color: var(--color-three);
+}
+
+.cardListeConseil a:visited {
+    color: var(--color-three);
+}
+
+
+.cardListeConseil .droite {
+    text-align: right;
+    padding-top: .5rem;
+}
+
+/* page Conseils / Catégorie */
+
+.conseilsCategorie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conseilsCategorie .imgRonde {
+    width: 50%;
+}
+
+.conseilsCategorie li {
+    list-style-type: none;
+    padding: .5rem 0 .2rem 3rem;
+}
+
+.conseilsCategorie a {
+    text-decoration: none;
+    color: #000;
+}
+
+.conseilsCategorie a:hover {
+    text-decoration: underline;
+}
+.conseilsCategorie a:visited {
+  color: var(--color-two);  
+}
+.conseilsCategorie i{
+    font-size: .5rem;
+}
 
 /* ADMINISTRATION DU SITE */
 
@@ -1128,10 +1183,11 @@ button[aria-selected="true"] svg {
 /* ADMIN Conseils / Ajout d'un conseil  */
 
 
-.formConseils .blocTitreArticle{
+.formConseils .blocTitreArticle {
     display: flex;
     flex-direction: column;
 }
+
 .formConseils #titreArticle {
     width: 30rem;
     max-width: 90%;
@@ -1140,7 +1196,7 @@ button[aria-selected="true"] svg {
 .formConseils .categoriesConseils {
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -1151,12 +1207,13 @@ button[aria-selected="true"] svg {
     padding: 1rem;
 }
 
-.formConseils .blocArticle{
+.formConseils .blocArticle {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
 }
-.formConseils .blocArticle textarea{
+
+.formConseils .blocArticle textarea {
     width: 95%;
     overflow: auto;
 }
@@ -1359,15 +1416,15 @@ button[aria-selected="true"] svg {
         min-width: 30%;
     }
 
-/* page conseils / index */
+    /* page conseils / index */
 
-.conseils {
-   display: flex;
-   justify-content: space-around;
-   flex-wrap: wrap;
+    .conseils {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
 
-  
-}
+
+    }
 
     /*fin*/
 }

@@ -58,7 +58,7 @@
                                 <td><?= $value['titre'] ?></td>
                                 <td><?= $value['categorie'] ?></td>
                                 <td><?= $value['sous_categorie'] ?></td>
-                                <td><?= $value['article'] ?></td>
+                                <td><?= substr($value['article'], 0, 50)?>...</td>
                                 <td><?= $value['image'] ?></td>
                                 <td><?= $value['created_at'] ?></td>
                                 <td><?= $value['modified_at'] ?></td>

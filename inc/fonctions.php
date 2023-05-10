@@ -587,11 +587,12 @@ function getConseilById(int $idConseil): array
 function getConseilByCategorieEtSousCategorie(string $categorie, string $sousCategorie): array
 {
     require 'pdo.php';
-    $sqlRequest = "SELECT * FROM `conseils` WHERE categorie LIKE :categorie AND sous_categorie LIKE :sous_categorie ORDER BY titre ASC";
+    $sqlRequest = "SELECT * FROM `conseils` WHERE categorie LIKE CONCAT ('%', :categorie, '%') AND sous_categorie LIKE CONCAT ('%', :sous_categorie, '%') ORDER BY titre ASC";
     $resultat = $conn->prepare($sqlRequest);
     $resultat->bindValue(':categorie', $categorie, PDO::PARAM_STR);
     $resultat->bindValue(':sous_categorie', $sousCategorie, PDO::PARAM_STR);
     $resultat->execute();
+    //dd($resultat);
     return $resultat->fetchAll();
 }
 

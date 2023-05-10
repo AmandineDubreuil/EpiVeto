@@ -18,41 +18,38 @@
     <?php require_once '../structure/headerView.php' ?>
 
 
-    <h1><?= $categorie ?> - <?= $sousCategorie ?></h1>
-
+    <h1><?= $categorie ?>
+        <?php if ($sousCategorie !== "*") : ?>
+            - <?= $sousCategorie ?>
+        <?php endif; ?>
+    </h1>
 
     <main>
 
-        <section class="conseils listeConseils">
+        <section>
             <a href="./index.php"><button class="btnGris" type="button">Retour</button></a>
-
-            <?php
-            if (count(getConseilByCategorieEtSousCategorie($categorie, $sousCategorie)) != 0) :
-                foreach (getConseilByCategorieEtSousCategorie($categorie, $sousCategorie) as $conseil) : ?>
-                    <article class="card cardListeConseil">
-                        <div class="imgRonde">
-                            <?php if (!empty($conseil['image'])) : ?>
-                                <img src="<?= $conseil['image'] ?>" alt="">
-                            <?php else : ?>
-                                <img src="./uploads/equipe/Image.jpg" alt="">
-                            <?php endif; ?>
-                        </div>
-                        <div class="cardListeConseil">
-                            <h3><?= $conseil['titre'] ?></h3>
-                            <p><?= substr($conseil['article'],0,100) ?>...</p>
-                            <p><a class="btnRouge" href="">Lire la suite</a></p>
-                            <p class="creeModifie">créé le : <?= $conseil['created_at'] ?> - dernière modification le :<?= $conseil['modified_at'] ?> </p>
-                        </div>
-                    </article>
+            <div class="conseils listeConseils">
                 <?php
+                if (count(getConseilByCategorieEtSousCategorie($categorie, $sousCategorie)) != 0) :
+                    foreach (getConseilByCategorieEtSousCategorie($categorie, $sousCategorie) as $conseil) : ?>
+                        <article class=" cardListeConseil">
 
-                endforeach;
-            else : ?>
-                <div>Aucune fiche conseils n'est présente dans cette section .</div>
-            <?php
-            endif;
-            ?>
+                            <h3><?= $conseil['titre'] ?></h3>
+                            <p><?= substr($conseil['article'], 0, 100) ?>...</p>
 
+                            <p class="creeModifie">créé le : <?= $conseil['created_at'] ?> - dernière modification le :<?= $conseil['modified_at'] ?> </p>
+                            <p class="droite"><a class="btnRouge" href="">Lire la suite</a></p>
+
+                        </article>
+                    <?php
+
+                    endforeach;
+                else : ?>
+                    <div>Aucune fiche conseils n'est présente dans cette section .</div>
+                <?php
+                endif;
+                ?>
+            </div>
 
 
             <?php include_once '../structure/sideView.php' ?>
