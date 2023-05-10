@@ -1,11 +1,11 @@
 <header>
     <nav>
         <div class="menuPrincipal">
-
-            <a id="logo" href="<?= getUrl(''); ?>"><img src="<?= getUrl('assets/img/logoVecto.png'); ?>" alt=""></a>
             <input type="checkbox" id="burgerSwitch" />
-            <label for="burgerSwitch" class="burger"><i class="fas fa-bars"></i></label>
+            <label for="burgerSwitch" class="burger"><i class="fas fa-bars"></i> Menu</label>
             <label for="burgerSwitch" class="cross"><i class="fas fa-times"></i></label>
+            <a id="logo" href="<?= getUrl(''); ?>"><img src="<?= getUrl('assets/img/logoVecto.png'); ?>" alt=""></a>
+
             <div class="menu">
                 <div class="menu-category">
                     <a href="<?= getUrl(''); ?>" class="menu-item" id="accueil">Accueil</a>
@@ -77,11 +77,12 @@
                         </div>
                     </div>
                 <?php endif ?>
-                <div class="reseauxNav">
-                    <div><a href="https://www.instagram.com/epiveto/" target="blank"><i class="fa-brands fa-square-instagram"></i></a></div>
 
-                    <div><a href="https://www.facebook.com/groups/1945557415617763" target="blank"><i class="fa-brands fa-square-facebook"></i></a></div>
-                </div>
+            </div>
+            <div class="reseauxNav">
+                <div><a href="https://www.instagram.com/epiveto/" target="blank"><i class="fa-brands fa-square-instagram"></i></a></div>
+
+                <div><a href="https://www.facebook.com/groups/1945557415617763" target="blank"><i class="fa-brands fa-square-facebook"></i></a></div>
             </div>
         </div>
     </nav>
