@@ -24,15 +24,15 @@
     </div>
     <div class="reassurance">
         <div class="reassuranceItem">
-            <div class="reassuranceImg"><img src="./assets/img/Image.jpg" alt=""></div>
+            <div class="reassuranceImg"><img src="<?= getUrl('assets/img/Image.jpg'); ?>" alt=""></div>
             <p>Chiens - Chats - NAC</p>
         </div>
         <div class="reassuranceItem">
-            <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>
+            <div class="reassuranceImg"><img src="<?= getUrl('assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg'); ?>" alt="main dans patte"></div>
             <p>Conseils</p>
         </div>
         <div class="reassuranceItem">
-            <div class="reassuranceImg"><img src="./assets/img/animaux/chien-pekinois-stethoscope-isole.jpg" alt="chien stéthoscope"></div>
+            <div class="reassuranceImg"><img src="<?= getUrl('assets/img/animaux/chien-pekinois-stethoscope-isole.jpg'); ?>" alt="chien stéthoscope"></div>
             <p>Qualité des soins</p>
         </div>
     </div>
