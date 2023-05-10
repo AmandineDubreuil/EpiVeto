@@ -3,38 +3,42 @@
  ************************************/
 
 // je crée une fonction
-function subMenu(menuButton) {
+function subMenu(menuButton, menuBloc) {
     const button = document.querySelector(menuButton);
+    const bloc = document.querySelector(menuBloc);
+    console.dir(menuBloc)
     // console.dir(button.nextElementSibling);
     const menuFrame = button.nextElementSibling;
     // console.log(button.childNodes);
     const icone = button.childNodes[1];
-    menuFrame.style.transition = "all .5s";
+    menuFrame.style.transition = "all 0s";
     menuFrame.style.maxHeight = "0";
     menuFrame.style.overflow = "hidden";
     menuFrame.classList.toggle("menu-category-items");
     icone.classList.toggle("fa-caret-down");
     icone.classList.toggle("fa-caret-right");
 
-    button.addEventListener("click", () => {
+    bloc.addEventListener("mouseenter", () => {
         icone.classList.toggle("fa-caret-down");
         icone.classList.toggle("fa-caret-right");
         menuFrame.classList.toggle("menu-category-items");
         console.dir(menuFrame)
-        if (menuFrame.style.maxHeight === "40rem") {
-            menuFrame.style.maxHeight = "0";
-            button.classList.toggle("category-active");
-        } else {
 
             menuFrame.style.maxHeight = "40rem";
             button.classList.toggle("category-active");
-        }
+    });
+    bloc.addEventListener("mouseleave", () => {
+        icone.classList.toggle("fa-caret-down");
+        icone.classList.toggle("fa-caret-right");
+        menuFrame.classList.toggle("menu-category-items");
+            menuFrame.style.maxHeight = "0";
+            button.classList.toggle("category-active");
     });
 }
 
 // j'appelle ma fonction
 
-subMenu("#clinique");
-subMenu("#conseils");
-subMenu("#admin");
+subMenu("#clinique", "#blocClinique");
+subMenu("#conseils", '#blocConseils');
+subMenu("#admin", "#blocAdmin");
 

@@ -10,8 +10,8 @@
                 <div class="menu-category">
                     <a href="<?= getUrl(''); ?>" class="menu-item" id="accueil">Accueil</a>
                 </div>
-                <div class="menu-category">
-                    <a href="#" class="menu-item" id="clinique">La Clinique <i class="fas fa-caret-down"></i></a>
+                <div class="menu-category" id="blocClinique">
+                    <a href="" class="menu-item" id="clinique">La Clinique <i class="fas fa-caret-down"></i></a>
                     <div class="menu-category-items">
                         <div>
                             <a href="<?= getUrl('clinique.php'); ?>" class="menu-item">
@@ -33,7 +33,7 @@
                 <div class="menu-category">
                     <a href="<?= getUrl('equipe.php'); ?>" class="menu-item" id="equipe">L'Équipe</a>
                 </div>
-                <div class="menu-category">
+                <div class="menu-category" id="blocConseils">
                     <a href="#" class="menu-item" id="conseils">Les Conseils <i class="fas fa-caret-down"></i></a>
                     <div class="menu-category-items">
                         <div> <a href="<?= getUrl('conseils/index.php'); ?>" class="menu-item">
@@ -55,7 +55,7 @@
                 </div>
                 <?php if (isAdminConnected()) : ?>
 
-                    <div class="menu-category">
+                    <div class="menu-category" id="blocAdmin">
                         <a href="#" class="menu-item" id="admin">Admin <i class="fas fa-caret-down"></i></a>
                         <div class="menu-category-items">
                             <div> <a href="<?= getUrl('adminEpiVeto/index.php'); ?>" class="menu-item">
