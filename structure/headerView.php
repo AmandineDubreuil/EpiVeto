@@ -2,7 +2,7 @@
     <nav>
         <div class="menuPrincipal">
 
-            <a id="logo" href="<?= getUrl(''); ?>"><img src="<?= getUrl('assets/img/logo.JPG'); ?>" alt=""></a>
+            <a id="logo" href="<?= getUrl(''); ?>"><img src="<?= getUrl('assets/img/logoVecto.png'); ?>" alt=""></a>
             <input type="checkbox" id="burgerSwitch" />
             <label for="burgerSwitch" class="burger"><i class="fas fa-bars"></i></label>
             <label for="burgerSwitch" class="cross"><i class="fas fa-times"></i></label>

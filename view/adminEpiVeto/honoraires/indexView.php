@@ -49,7 +49,7 @@
                             <tr>
                                 <td>
                                     <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_acte'] ?>">Modifier</a>
-                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_acte'] ?>" onclick="return confirm('Confirmer la suppression de cet acte ?');">Supprimer</a>
+                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_acte'] ?>" onclick="return confirm('Souhaitez-vous confirmer la suppression de cet acte ?');">Supprimer</a>
                                 </td>
                                 <td><?= $value['acte'] ?></td>
                                 <td><?= $value['prix'] ?> €</td>

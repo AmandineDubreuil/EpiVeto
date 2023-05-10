@@ -117,7 +117,7 @@
                     <span class="error"><?= isset($error['photo_troisUpload']) ? $error['photo_troisUpload'] : "" ?></span>
                 </div>
                 <div>
-                    <label for="photo_quatreUpload">Photo en bas à gauche :</label>
+                    <label for="photo_quatreUpload">Photo en bas à droite :</label>
                     <input type="file" name="photo_quatreUpload" id="photo_quatreUpload">
                     <span class="error"><?= isset($error['photo_quatreUpload']) ? $error['photo_quatreUpload'] : "" ?></span>
                 </div>

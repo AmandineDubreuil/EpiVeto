@@ -41,7 +41,7 @@
                     </thead>
                     <tbody>
 
-                        <?php //dd(getArticleLimit($limit, $offset)) 
+                        <?php  
                         ?>
                         <?php foreach (getUtilisateurs() as $key => $value) : ?>
                             <tr>
@@ -55,7 +55,7 @@
                                 <td><?= $value['modified_at'] ?></td>
                                 <td>
                                     <a class="btn" href="./edit.php?id=<?= $value['id_utilisateur'] ?>">Modifier</a>
-                                    <a class="btnInput"  href="./supp.php?id=<?= $value['id_utilisateur'] ?>" onclick="return confirm('Confirmer la suppression de cet utilisateur ?');">Supprimer</a>
+                                    <a class="btnInput"  href="./supp.php?id=<?= $value['id_utilisateur'] ?>" onclick="return confirm('Souhaitez-vous confirmer la suppression de cet utilisateur ?');">Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
