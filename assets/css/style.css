@@ -117,6 +117,7 @@ nav a {
 .menu-category:hover {
     background-color: var(--color-fivelight);
 }
+
 .menu-category-items>div:hover {
     background-color: var(--color-five);
 }
@@ -143,13 +144,14 @@ nav a {
     display: block;
 }
 
-.reseauxNav{
+.reseauxNav {
     display: flex;
     justify-content: space-between;
     padding: .7rem 1rem;
     width: 20%;
 }
-.reseauxNav a{
+
+.reseauxNav a {
     font-size: 1.3rem;
 }
 
@@ -242,12 +244,29 @@ p {
 }
 
 .card {
+
     margin: 1rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card div {
+    position: relative;
+}
+
+figcaption {
+    position: absolute;
+    left: 42%;
+    bottom: -.2rem;
+    font-size: .4rem;
+    color: var(--color-twolight);
+}
+
+figcaption a {
+    color: var(--color-twolight);
 }
 
 .card h3 {
@@ -730,7 +749,7 @@ button[aria-selected="true"] svg {
 }
 
 /* page Honoraires */
-#honoraires p{
+#honoraires p {
     padding: 1rem;
 }
 
@@ -869,6 +888,122 @@ button[aria-selected="true"] svg {
     width: 30%;
 }
 
+/* page Conseils / Index */
+.conseils .card {
+    margin: 1rem;
+    padding: 1rem;
+    flex-direction: row;
+    border: 1px solid var(--color-three);
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
+}
+
+.conseils .card li {
+    list-style-type: none;
+    padding: .2rem 1rem;
+
+}
+
+.conseils .card a {
+    text-decoration: none;
+    color: #000;
+}
+
+.conseils .card a:visited {
+    text-decoration: none;
+    color: var(--color-twodark);
+}
+
+.conseils .card i {
+    font-size: .5rem;
+}
+
+/* page Conseils / Liste */
+
+
+.cardListeConseil {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    width: 90%;
+    border: 1px solid var(--color-three);
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 5px 7px 5px rgba(0, 0, 0, 0.05);
+}
+
+.cardListeConseil h3 {
+    padding: 0 0 .3rem 0;
+}
+ .creeModifie {
+    font-size: .8rem;
+    font-style: italic;
+}
+
+.cardListeConseil a {
+    color: var(--color-three);
+}
+
+.cardListeConseil a:visited {
+    color: var(--color-three);
+}
+
+
+.cardListeConseil .droite {
+    text-align: right;
+    padding-top: .5rem;
+}
+
+/* page Conseils / Catégorie */
+
+.conseilsCategorie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conseilsCategorie .imgRonde {
+    width: 50%;
+}
+
+.conseilsCategorie li {
+    list-style-type: none;
+    padding: .5rem 0 .2rem 3rem;
+}
+
+.conseilsCategorie a {
+    text-decoration: none;
+    color: #000;
+}
+
+.conseilsCategorie a:hover {
+    text-decoration: underline;
+}
+.conseilsCategorie a:visited {
+  color: var(--color-two);  
+}
+.conseilsCategorie i{
+    font-size: .5rem;
+}
+
+/* page Conseils / Fiche Conseils */
+
+#ficheConseils {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#ficheConseils p{
+    padding: 2rem;
+}
+#ficheConseils .creeModifie{
+    padding: 0 2rem;
+    align-self: flex-end;
+}
 /* ADMINISTRATION DU SITE */
 
 /*ADMIN Général tableaux*/
@@ -925,14 +1060,17 @@ button[aria-selected="true"] svg {
 }
 
 .adminEquipe .btnRougeClair,
-.adminEquipe .btnRougeFonce, .adminHonoraires .btnRougeClair, .adminHonoraires .btnRougeFonce {
+.adminEquipe .btnRougeFonce,
+.adminHonoraires .btnRougeClair,
+.adminHonoraires .btnRougeFonce {
     margin: 0 .2rem;
     padding: .2rem;
     font-weight: 100;
     border-radius: 5px;
 }
 
-.adminEquipe .adminTable, .adminHonoraires .adminTable {
+.adminEquipe .adminTable,
+.adminHonoraires .adminTable {
     white-space: nowrap;
 }
 
@@ -1040,20 +1178,63 @@ button[aria-selected="true"] svg {
 
 /* ADMIN Honoraires / Ajout d'un acte  */
 
-.formCRUD #acte{
+.formCRUD #acte {
     width: 30rem;
     max-width: 90%;
 }
-.formCRUD #prix{
+
+.formCRUD #prix {
     width: 5rem;
     max-width: 90%;
 }
-.actePrix div{
-display: flex;
-flex-direction: column;
-padding: 1rem;
+
+.actePrix div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
+/* ADMIN Conseils / Ajout d'un conseil  */
+
+
+.formConseils .blocTitreArticle {
+    display: flex;
+    flex-direction: column;
+}
+
+.formConseils #titreArticle {
+    width: 30rem;
+    max-width: 90%;
+}
+
+.formConseils .categoriesConseils {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.formConseils .categoriesConseils fieldset {
+    border: 1px solid var(--color-twolight);
+    border-radius: 5px;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.formConseils .blocArticle {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formConseils .blocArticle textarea {
+    width: 95%;
+    overflow: auto;
+}
+
+.formConseils .photoArticle {
+    margin: 2rem 0;
+}
 
 /* *********************** 
    RESPONSIVE DESKTOP
@@ -1101,7 +1282,7 @@ padding: 1rem;
         box-shadow: 0px 10px 13px -7px #4e4e4e, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     }
 
-    .reseauxNav{
+    .reseauxNav {
         justify-content: space-around;
         width: 7%;
     }
@@ -1247,6 +1428,16 @@ padding: 1rem;
 
     .descriptionGenerale .ImgPrincipale {
         min-width: 30%;
+    }
+
+    /* page conseils / index */
+
+    .conseils {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+
     }
 
     /*fin*/

@@ -35,10 +35,10 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
     endforeach;
 
     if (!isset($_POST['titre'])) :
-        $error['titre'] = "Le champ Titre est vide.";
+        $error['titre'] = "Le champs Titre est vide.";
     endif;
     if (!isset($_POST['fonction'])) :
-        $error['fonction'] = "Le champ Fonction est vide.";
+        $error['fonction'] = "Le champs Fonction est vide.";
     endif;
 
 
@@ -75,7 +75,9 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
 
         redirectUrl('./adminEpiVeto/equipe');
 
+    
     endif;
+
 endif;
 
 require '../../view/adminEpiVeto/equipe/ajoutView.php';

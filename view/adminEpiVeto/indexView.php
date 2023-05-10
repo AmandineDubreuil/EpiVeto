@@ -54,16 +54,26 @@
         </section>
         
         <section class="adminAccueilSection">
-            <a href="./equipe/index.php">
+            <a href="./honoraires/index.php">
                 <h3>Gestion des honoraires</h3>
             </a>
             <p>Permet l'ajout, la modification ou la suppression d'un acte et de son prix.</p>
 
-            <a class="btnRougeClair" href="./equipe/index.php">
+            <a class="btnRougeClair" href="./honoraires/index.php">
                 <p>Aller</p>
             </a>
         </section>
 
+        <section class="adminAccueilSection">
+            <a href="./conseils/index.php">
+                <h3>Gestion des fiches conseils</h3>
+            </a>
+            <p>Permet l'ajout, la modification ou la suppression d'une fiche conseils.</p>
+
+            <a class="btnRougeClair" href="./conseils/index.php">
+                <p>Aller</p>
+            </a>
+        </section>
 
 
     </main>
