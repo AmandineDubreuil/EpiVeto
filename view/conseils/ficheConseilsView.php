@@ -20,7 +20,7 @@
 
 
     <main id="styleCKEditor">
-         <a href="./">Retour</a>
+         <a class="btnVarianteGris" href="./">Retour</a>
         <section id="ficheConseils">
                        
             <div class="imgRonde"><img src=".<?= $image ?>" alt=""></div>

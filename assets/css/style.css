@@ -170,8 +170,9 @@ nav a:hover {
 
 .messagedefilant {
     width: 100%;
-    background-color: var(--color-fivelight);
-    color: var(--color-three);
+    background-color: var(--color-three);
+    color: var(--color-five);
+    font-weight: bold;
     display: block;
     padding: 0;
     overflow: hidden;
@@ -455,7 +456,7 @@ figcaption a {
     box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
     border-radius: 10px;
     background-color: var(--color-five);
-    /* border: 5px double var(--color-fivelight); */
+    border: none;
     display: inline-block;
     cursor: pointer;
     color: var(--color-three);
@@ -1230,6 +1231,33 @@ button[aria-selected="true"] svg {
     font-size: 1rem;
     border: var(--color-twolight) 1px solid;
     border-radius: 5px;
+}
+.formCRUD .annulAjout input{
+ 
+       margin: .5rem;
+    -webkit-box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
+    box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background-color: var(--color-five);
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.formCRUD .annulAjout input:hover {
+    text-decoration: none;
+    background-color: var(--color-fivedark);
+}
+
+.formCRUD .annulAjout input:active {
+    position: relative;
+    top: 1px;
 }
 
 .formCRUD label {

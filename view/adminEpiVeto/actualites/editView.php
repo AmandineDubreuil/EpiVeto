@@ -42,8 +42,8 @@
 
           
             <div class="annulAjout">
-                <a href="../"><button class="btnInput" type="button">Annuler</button></a>
-                <input class="btn" type="submit" name="ajout" value="Modifier">
+                <a href="./"><button class="btnVarianteGris" type="button">Annuler</button></a>
+                <input class="btnVarianteRouge" type="submit" name="ajout" value="Modifier">
             </div>
 
         </form>

@@ -22,7 +22,7 @@
 
     <main>
 
-        <a href="./index.php"><button class="btnGris" type="button">Retour</button></a>
+        <a href="./index.php"><button class="btnVarianteGris" type="button">Retour</button></a>
 
         <section class="conseilsCategorie">
 

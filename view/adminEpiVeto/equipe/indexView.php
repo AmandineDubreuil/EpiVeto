@@ -20,15 +20,13 @@
 
     <main>
         <div class="accueilAdminEquipe">
-            <a href="../">
-                <h2 id="admin">Administration du site</h2>
-            </a>
-            <a href="../"><button class="btnGris" type="button">Retour</button></a>
+             <h3>Gestion des membres de l'équipe</h3>
+            <a href="./"><button class="btnVarianteGris" type="button">Retour</button></a>
         </div>
         <div class="adminEquipe">
-            <h3>Gestion des membres de l'équipe</h3>
+       
 
-            <a href="./ajout.php" class="btnRouge">Ajouter une personne</a>
+            <a href="./ajout.php" class="btnVarianteRouge">Ajouter une personne</a>
 
             <?php
             if (count(getEmployes()) != 0) : ?>

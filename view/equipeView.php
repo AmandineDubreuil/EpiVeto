@@ -49,7 +49,7 @@
                                 <?php endif; ?>
                             </div>
                             <?php if (!empty($veterinaire['description_pro'])) : ?>
-                                <a href="collaborateur.php?id=<?= $veterinaire['id_employe'] ?>" class="btnRouge">En savoir plus</a>
+                                <a href="collaborateur.php?id=<?= $veterinaire['id_employe'] ?>" class="btnVarianteRouge">En savoir plus</a>
                             <?php endif; ?>
                         </div>
                     </article>
@@ -87,7 +87,7 @@
                                 <?php endif; ?>
                             </div>
                             <?php if (!empty($asv['description_pro'])) : ?>
-                                <a href="collaborateur.php?id=<?= $asv['id_employe'] ?>" class="btnRouge">En savoir plus</a>
+                                <a href="collaborateur.php?id=<?= $asv['id_employe'] ?>" class="btnVarianteRouge">En savoir plus</a>
                             <?php endif; ?>
                         </div>
                     </article>

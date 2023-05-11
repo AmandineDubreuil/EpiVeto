@@ -14,20 +14,18 @@
 </head>
 
 <body>
-<?php require_once '../../structure/headerView.php' ?>
+    <?php require_once '../../structure/headerView.php' ?>
 
 
     <main>
         <div class="accueilAdminHonoraires">
-            <a href="../">
-                <h2 id="admin">Administration du site</h2>
-            </a>
-            <a href="../"><button class="btnGris" type="button">Retour</button></a>
+            <h3>Gestion des honoraires</h3>
+            <a href="./"><button class="btnVarianteGris" type="button">Retour</button></a>
         </div>
         <div class="adminHonoraires">
-            <h3>Gestion des honoraires</h3>
 
-            <a href="./ajout.php" class="btnRouge">Ajouter un acte</a>
+
+            <a href="./ajout.php" class="btnVarianteRouge">Ajouter un acte</a>
 
             <?php
             if (count(getHonoraires()) != 0) : ?>
@@ -70,5 +68,3 @@
 
     </main>
     <?php include_once '../../structure/footerView.php' ?>
-
-  

@@ -28,7 +28,7 @@
                 <input type="password" name="pwd" id="pwd" >
             </div>
             <div>
-                <input class="btn" type="submit" value="Connexion">
+                <input class="btnVarianteRouge" type="submit" value="Connexion">
             </div>
             <div class="errors">
                 <ul class="errors">

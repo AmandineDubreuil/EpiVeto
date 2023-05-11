@@ -36,7 +36,7 @@
                 <input type="password" name="confPwdNew" id="confPwdNew" >
             </div>
             <div>
-                <input class="btn" type="submit" value="Modification">
+                <input class="btnVarianteRouge" type="submit" value="Modification">
             </div>
           
         </form>

@@ -14,21 +14,22 @@
 </head>
 
 <body>
-<?php require_once '../../structure/headerView.php' ?>
+    <?php require_once '../../structure/headerView.php' ?>
 
 
-   <main>
-        <a href="../"><h2 id="admin">Administration du site</h2></a>
-        <a href="../"><button class="btnInput" type="button">Retour</button></a>
+    <main>
+        <h3>Gestion des utilisateurs</h3>
+        <a href="./"><button class="btnVarianteGris" type="button">Retour</button></a>
 
         <section class="utilisateurs">
-            <h3>Gestion des utilisateurs</h3>
-           
-            <?php 
+
+
+            <?php
             if (count(getUtilisateurs()) != 0) : ?>
                 <table class="adminTable">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>Id</th>
                             <th>Nom</th>
                             <th>Prénom</th>
@@ -41,10 +42,15 @@
                     </thead>
                     <tbody>
 
-                        <?php  
+                        <?php
                         ?>
                         <?php foreach (getUtilisateurs() as $key => $value) : ?>
                             <tr>
+                                <td>
+                                    <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_utilisateur'] ?>">Modifier</a>
+                                    <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_utilisateur'] ?>" onclick="return confirm('Souhaitez-vous confirmer la suppression de cet utilisateur ?');">Supprimer</a>
+                                </td>
+
                                 <td><?= $value['id_utilisateur'] ?></td>
                                 <td><?= $value['nom'] ?></td>
                                 <td><?= $value['prenom'] ?></td>
@@ -53,10 +59,6 @@
                                 <td><?= $value['role'] ?></td>
                                 <td><?= $value['created_at'] ?></td>
                                 <td><?= $value['modified_at'] ?></td>
-                                <td>
-                                    <a class="btn" href="./edit.php?id=<?= $value['id_utilisateur'] ?>">Modifier</a>
-                                    <a class="btnInput"  href="./supp.php?id=<?= $value['id_utilisateur'] ?>" onclick="return confirm('Souhaitez-vous confirmer la suppression de cet utilisateur ?');">Supprimer</a>
-                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

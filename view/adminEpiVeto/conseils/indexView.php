@@ -20,15 +20,15 @@
 
     <main>
         <div class="accueilAdminEquipe">
-            <a href="../">
-                <h2 id="admin">Administration du site</h2>
-            </a>
-            <a href="../"><button class="btnBlancGris" type="button">Retour</button></a>
+         
+                <h3 id="admin">Gestion des fiches Conseils</h3>
+    
+            <a href="./"><button class="btnVarianteGris" type="button">Retour</button></a>
         </div>
         <div class="adminEquipe">
-            <h3>Gestion des Fiches Conseils</h3>
+   
 
-            <a href="./ajout.php" class="btnRouge">Ajouter une Fiche Conseils</a>
+            <a href="./ajout.php" class="btnVarianteRouge">Ajouter une Fiche Conseils</a>
 
             <?php
             if (count(getEmployes()) != 0) : ?>

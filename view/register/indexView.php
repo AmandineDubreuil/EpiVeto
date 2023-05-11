@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div>
-                <input class="btn" type="submit" name="submitted" value="Inscription">
+                <input class="btnVarianteRouge" type="submit" name="submitted" value="Inscription">
             </div>
             <?php if (!empty($errors)) : ?>
                 <div class="errors">
