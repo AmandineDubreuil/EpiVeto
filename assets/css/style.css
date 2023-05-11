@@ -132,9 +132,11 @@ nav a {
     padding: 0 1rem;
     font-size: 1rem;
 }
+
 .menuPrincipal>label i {
     font-size: 1.5rem;
 }
+
 #burgerSwitch:checked~.menu {
     width: 100%;
 }
@@ -153,9 +155,11 @@ nav a {
     padding: .7rem 1rem;
     /* width: 100%; */
 }
-.reseauxNav div{
+
+.reseauxNav div {
     padding: 0 .5rem;
 }
+
 .reseauxNav a {
     font-size: 1.3rem;
 }
@@ -234,6 +238,13 @@ p {
     text-align: justify;
 }
 
+a {
+    text-decoration: none;
+    color: var(--color-one);
+}
+a:hover{
+    text-decoration: underline;
+}
 .gras {
     font-weight: bold;
 }
@@ -278,31 +289,55 @@ figcaption a {
     font-size: 1rem;
 }
 
-#styleCKEditor h1{
+#styleCKEditor h1 {
     padding: 1rem;
+    padding-left: 2rem;
     background-color: var(--color-four);
     color: var(--color-five);
     font-family: "raleway", Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
     text-align: left;
 }
-#styleCKEditor h3{
+
+#styleCKEditor h2 {
     text-align: left;
+    padding-left: 2rem;
 }
-#styleCKEditor h4{
-   font-weight: bold;
+
+#styleCKEditor h3 {
+    text-align: left;
+    padding-left: 2rem;
 }
-#styleCKEditor p{
+
+#styleCKEditor h4 {
+    font-weight: bold;
+    padding-left: 2rem;
+}
+
+#styleCKEditor h5 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#styleCKEditor h6 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#styleCKEditor p {
     padding: .5rem 2rem .5rem 2rem;
 }
-#styleCKEditor em{
+
+#styleCKEditor em {
     font-style: italic;
 }
-#styleCKEditor ul{
+
+#styleCKEditor ul {
     padding: 0 2rem 0 4rem;
     list-style-type: circle;
 }
-#styleCKEditor li{
+
+#styleCKEditor li {
     padding: 0 0 .5rem 1rem;
 
 }
@@ -969,7 +1004,8 @@ button[aria-selected="true"] svg {
 .cardListeConseil h3 {
     padding: 0 0 .3rem 0;
 }
- .creeModifie {
+
+.creeModifie {
     font-size: .8rem;
     font-style: italic;
 }
@@ -1015,10 +1051,12 @@ button[aria-selected="true"] svg {
 .conseilsCategorie a:hover {
     text-decoration: underline;
 }
+
 .conseilsCategorie a:visited {
-  color: var(--color-two);  
+    color: var(--color-two);
 }
-.conseilsCategorie i{
+
+.conseilsCategorie i {
     font-size: .5rem;
 }
 
@@ -1034,10 +1072,11 @@ button[aria-selected="true"] svg {
 /* #ficheConseils p{
     padding: 2rem;
 } */
-#ficheConseils .creeModifie{
+#ficheConseils .creeModifie {
     padding: 0 2rem;
     align-self: flex-end;
 }
+
 /* ADMINISTRATION DU SITE */
 
 /*ADMIN Général tableaux*/
