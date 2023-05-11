@@ -87,7 +87,7 @@ function checkXSSPostValue($postEntrie)
  */
 function checkXSSPostValueArticle($postEntrie)
 {
-    $postEntrie = strip_tags($postEntrie, ['<br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h3 style="color:#aaaaaa; font-style:italic">','<p>','</p>','<ol>','</ol>','<li>','</li>','<ul>','</ul>','<strong>','</strong>','<em>','</em>','<a>','</a>','<s>','</s>',]);
+    $postEntrie = strip_tags($postEntrie, ['<br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h3 style="color:#aaaaaa; font-style:italic">', '<h4>','</h4>','<h5>','</h5>', '<h6>','</h6>','<p>','</p>','<ol>','</ol>','<li>','</li>','<ul>','</ul>','<strong>','</strong>','<em>','</em>','<a>','</a>','<s>','</s>',]);
     return $postEntrie;
 }
 

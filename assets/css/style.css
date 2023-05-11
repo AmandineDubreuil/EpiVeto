@@ -278,7 +278,34 @@ figcaption a {
     font-size: 1rem;
 }
 
+#styleCKEditor h1{
+    padding: 1rem;
+    background-color: var(--color-four);
+    color: var(--color-five);
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: left;
+}
+#styleCKEditor h3{
+    text-align: left;
+}
+#styleCKEditor h4{
+   font-weight: bold;
+}
+#styleCKEditor p{
+    padding: .5rem 2rem .5rem 2rem;
+}
+#styleCKEditor em{
+    font-style: italic;
+}
+#styleCKEditor ul{
+    padding: 0 2rem 0 4rem;
+    list-style-type: circle;
+}
+#styleCKEditor li{
+    padding: 0 0 .5rem 1rem;
 
+}
 
 /* BOUTONS */
 
@@ -1004,9 +1031,9 @@ button[aria-selected="true"] svg {
     align-items: center;
 }
 
-#ficheConseils p{
+/* #ficheConseils p{
     padding: 2rem;
-}
+} */
 #ficheConseils .creeModifie{
     padding: 0 2rem;
     align-self: flex-end;

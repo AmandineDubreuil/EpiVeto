@@ -19,11 +19,10 @@
 
 
 
-    <main>
+    <main id="styleCKEditor">
         
         <section id="ficheConseils">
-            <h2><?= $titre ?></h2>
-            <a href=""><button class="btnGris" type="button">Retour</button></a>
+                        <a href=""><button class="btnGris" type="button">Retour</button></a>
             <div class="imgRonde"><img src=".<?= $image ?>" alt=""></div>
             <p><?= $article ?></p>
             <p class="creeModifie">créé le : <?= $cree ?> - modifié le : <?= $modifie ?></p>

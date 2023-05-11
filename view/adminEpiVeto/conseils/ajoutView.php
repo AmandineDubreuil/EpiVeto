@@ -23,6 +23,7 @@
             <div class="blocTitre">
                 <div class="blocTitreArticle">
                     <label for="titre">Titre de la fiche :</label>
+                    <p class="creeModifie">Non visible sur la fiche</p>
                     <input type="text" name="titre" id="titre" value="<?= $titre ?>">
                     <div><span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span></div>
                 </div>
@@ -80,7 +81,7 @@
 
             </div>
             <div class="blocArticle">
-                <label for="article">Contenu de l'article :</label>
+                <label for="article">Contenu de la fiche :</label>
                 <textarea name="article" id="article_editor" cols="70" rows="20"><?= $article ?></textarea>
                 <span class="error"><?= isset($error['article']) ? $error['article'] : "" ?></span>
             </div>

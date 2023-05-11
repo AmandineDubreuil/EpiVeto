@@ -26,7 +26,7 @@
 
     <main>
 
-        <section>
+        <section   id="styleCKEditor">
             <a href="./index.php"><button class="btnGris" type="button">Retour</button></a>
             <div class="conseils listeConseils">
                 <?php
@@ -34,7 +34,7 @@
                     foreach (getConseilByCategorieEtSousCategorie($categorie, $sousCategorie) as $conseil) : ?>
                         <article class=" cardListeConseil">
 
-                            <h3><?= $conseil['titre'] ?></h3>
+                        
                             <p><?= substr($conseil['article'], 0, 100) ?>...</p>
 
                             <p class="creeModifie">créé le : <?= $conseil['created_at'] ?> - dernière modification le :<?= $conseil['modified_at'] ?> </p>

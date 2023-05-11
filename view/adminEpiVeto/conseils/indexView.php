@@ -32,7 +32,7 @@
 
             <?php
             if (count(getEmployes()) != 0) : ?>
-                <table class="adminTable">
+                <table class="adminTable"  id="styleCKEditor">
                     <thead>
                         <tr>
                             <th>Action</th>
