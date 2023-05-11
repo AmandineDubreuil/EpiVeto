@@ -25,7 +25,7 @@ require './inc/fonctions.php';
 
     <main class="container">
         <h2>Page non trouvée</h2>
-        <p>La page que vous cherchiez ne semble pas être là. Elle a peut-être été déplacée ou supprimée, ou il est possible que l'URL que vous avez saisie était incorrecte.</p>
+        <p>La page que vous cherchiez ne semble pas être là. Elle a peut-être été déplacée ou supprimée, ou il est possible que l'URL saisie était incorrecte.</p>
         <p><a class="btnVarianteGris" href="./">Retour</a></p>
     </main>
 </body>

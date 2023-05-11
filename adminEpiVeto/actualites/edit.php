@@ -1,7 +1,8 @@
 <?php
 session_start();
 include '../../inc/fonctions.php';
-//dd($_SESSION);
+
+(isAdminConnected()) ?: redirectUrl('404.php');
 
 $idActualite = 1;
 
@@ -14,19 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
 $bandeau = checkXSSPostValue($_POST['bandeau']);
 $carouselPath ='carousel/';
-// carousel Un
 
 $carouselUnName = $_FILES["carouselUn"];
 $carouselUn = updatePhoto($carouselUnName, $carouselUnDb, $carouselPath);
 
-//dd($carouselUn);
+
 
 $carouselDeuxName = $_FILES["carouselDeux"];
 $carouselDeux = updatePhoto($carouselDeuxName, $carouselDeuxDb, $carouselPath);
 
 
 updateActualite($idActualite, $bandeau, $carouselUn, $carouselDeux);
-//dd($carouselUn);
+
 redirectUrl('adminEpiVeto');
 endif;
 

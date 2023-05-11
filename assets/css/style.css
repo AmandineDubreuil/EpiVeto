@@ -1232,9 +1232,10 @@ button[aria-selected="true"] svg {
     border: var(--color-twolight) 1px solid;
     border-radius: 5px;
 }
-.formCRUD .annulAjout input{
- 
-       margin: .5rem;
+
+.formCRUD .annulAjout input {
+
+    margin: .5rem;
     -webkit-box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
     box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
     border-radius: 10px;
@@ -1405,6 +1406,53 @@ button[aria-selected="true"] svg {
 
 .formConseils .photoArticle {
     margin: 2rem 0;
+}
+
+/*ADMIN Mon compte*/
+
+.modifPwd .modifPwdChamps {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 1rem;
+}
+
+#pwdOld,
+#pwdNew,
+#confPwdNew {
+    width: 15rem;
+    height: 1.5rem;
+    max-width: 90%;
+}
+
+.modifPwd span {
+    color: red;
+}
+
+.formConnexion .annulModif input {
+    margin: .5rem;
+    -webkit-box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
+    box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background-color: var(--color-five);
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.formCRUD .annulAjout input:hover {
+    text-decoration: none;
+    background-color: var(--color-fivedark);
+}
+
+.formCRUD .annulAjout input:active {
+    position: relative;
+    top: 1px;
 }
 
 /* *********************** 

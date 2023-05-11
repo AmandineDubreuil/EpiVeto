@@ -5,15 +5,13 @@
 session_start();
 include '../inc/fonctions.php';
 
-(isConnected()) ?: redirectUrl('view/404.php');
 
-//dd($_GET['id']);
+(isConnected()) ?: redirectUrl('404.php');
 
-(isGetIdValid()) ? $id = $_GET['id'] : error404();
+ $id = $_SESSION['id_utilisateur'] ;
+// // dd($id);
+// (isGetIdValid()) ?: error404();
 $verifPwd = getUtilisateurById($id)['pwd'];
-
-
-
 $error = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
@@ -27,17 +25,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
         $error = checkPwdValid($_POST['pwdNew'], 'pwdNew', $error);
         $error = checkPwdConfirm($_POST['pwdNew'], $_POST['confPwdNew'], 'confPwdNew', $error);
-
+//
         if (count($error) === 0) :
 
             $pwd = $_POST['pwdNew'];
 
             $modifPwd = updatePwd($id, $pwd);
 
-        redirectUrl();
+            redirectUrl('./');
 
         endif;
-    
+
+        else : 
+            $error['pwdOld'] = 'Votre mot de passe n\'est pas reconnu.';
+
+          //  dd($error);
     endif;
 
 

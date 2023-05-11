@@ -5,7 +5,7 @@
 session_start();
 include '../../inc/fonctions.php';
 
-(isAdminConnected()) ?: redirectUrl('view/404.php');
+(isAdminConnected()) ?: redirectUrl('404.php');
 
 
 $associe = $prenom = $nom = $titre = $fonction = $diplome = $description_pro = $description_perso = $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $photo_unUpload = $photo_deuxUpload = $photo_troisUpload = $photo_quatreUpload = $insta = $facebook = '';
