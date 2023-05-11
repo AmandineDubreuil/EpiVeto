@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modification d'une Fiche Conseils - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="../../assets/js/scriptAdmin.js" defer></script>
+
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script.js" type="module" defer></script>
 
@@ -18,7 +18,8 @@
 
 
     <main class="container">
-        <h2>Modification de la Fiche Conseils</h2>
+                <h2>Modification de la Fiche Conseils</h2>
+               
         <form method="POST" action="" enctype="multipart/form-data" class="formConseils formCRUD" novalidate>
             <div class="blocTitre">
                 <div class="bloctitreArticle">
@@ -81,7 +82,7 @@
             </div>
             <div class="blocArticle">
                 <label for="article">Contenu de l'article :</label>
-                <textarea name="article" id="article" cols="70" rows="20"><?= $article ?></textarea>
+                <textarea name="article" id="article_editor_edit" cols="70" rows="20"><?= $article ?></textarea>
                 <span class="error"><?= isset($error['article']) ? $error['article'] : "" ?></span>
             </div>
             <div class="photoArticle">
@@ -100,3 +101,8 @@
         </form>
     </main>
     <?php include_once '../../structure/footerView.php' ?>
+    <script src="../../ckeditor/ckeditor.js" ></script>
+
+<script>
+    CKEDITOR.replace('article_editor_edit');
+</script>

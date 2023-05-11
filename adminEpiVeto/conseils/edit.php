@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
 
     $titre = checkXSSPostValue($_POST['titre']);
-    $article = checkXSSPostValue($_POST['article']);
+    $article = checkXSSPostValueArticle($_POST['article']);
 
 
     if (isset($_POST['categorie']) && $_POST['categorie'] !== $categorieDb) :

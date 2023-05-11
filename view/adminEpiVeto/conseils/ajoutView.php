@@ -83,9 +83,6 @@
                 <label for="article">Contenu de l'article :</label>
                 <textarea name="article" id="article_editor" cols="70" rows="20"><?= $article ?></textarea>
                 <span class="error"><?= isset($error['article']) ? $error['article'] : "" ?></span>
-
-
-
             </div>
             <div class="photoArticle">
                 <div>
