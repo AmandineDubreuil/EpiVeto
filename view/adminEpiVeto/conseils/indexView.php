@@ -23,7 +23,7 @@
             <a href="../">
                 <h2 id="admin">Administration du site</h2>
             </a>
-            <a href="../"><button class="btnGris" type="button">Retour</button></a>
+            <a href="../"><button class="btnBlancGris" type="button">Retour</button></a>
         </div>
         <div class="adminEquipe">
             <h3>Gestion des Fiches Conseils</h3>

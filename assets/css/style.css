@@ -74,7 +74,7 @@ nav a {
     color: var(--color-three);
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration: none;
 }
 
@@ -244,17 +244,19 @@ a {
     text-decoration: none;
     color: var(--color-one);
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
 }
-figcaption{
-font-size: .4rem;
-color: var(--color-twolight);
-/* box-sizing: ; */
+
+figcaption {
+    font-size: .4rem;
+    color: var(--color-twolight);
+    /* box-sizing: ; */
 }
 
 figcaption a {
-color: var(--color-twolight);
+    color: var(--color-twolight);
 }
 
 
@@ -361,7 +363,7 @@ color: var(--color-twolight);
     display: inline-block;
     cursor: pointer;
     color: var(--color-three);
-    font-family: Arial;
+    font-family: "raleway", Arial, Helvetica, sans-serif;
     font-size: 1rem;
     padding: .5rem 1rem;
     text-decoration: none;
@@ -379,6 +381,38 @@ color: var(--color-twolight);
     top: 1px;
 }
 
+/* Bouton VarianteGris : fond gris moyen écriture gris clair */
+/* utilisé pour : retour*/
+
+.btnVarianteGris {
+    margin: .5rem;
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.13);
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    /* border-style: inset ; */
+    border: 1px outset var(--color-twolight);
+
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-two);
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+.btnVarianteGris:hover {
+
+    text-decoration: none;
+}
+
+.btnVarianteGris:active {
+    position: relative;
+    top: 1px;
+}
+
+
 /* bouton rouge : fond rouge écriture gris très clair*/
 /* utilisé pour : message du side */
 
@@ -394,7 +428,7 @@ color: var(--color-twolight);
     display: inline-block;
     cursor: pointer;
     color: var(--color-three);
-    font-family: Arial;
+    font-family: "raleway", Arial, Helvetica, sans-serif;
     font-size: 1rem;
     padding: .5rem 1rem;
     text-decoration: none;
@@ -412,32 +446,60 @@ color: var(--color-twolight);
     top: 1px;
 }
 
+/* bouton Varianterouge : fond rouge écriture gris très clair*/
+/* utilisé pour : message du side */
+
+.btnVarianteRouge {
+    margin: .5rem;
+    -webkit-box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
+    box-shadow: 4px 3px 10px 6px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background-color: var(--color-five);
+    /* border: 5px double var(--color-fivelight); */
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-three);
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btnVarianteRouge:hover {
+    text-decoration: none;
+    background-color: var(--color-fivedark);
+}
+
+.btnVarianteRouge:active {
+    position: relative;
+    top: 1px;
+}
+
+
+
 /* bouton rouge foncé : fond rouge foncé écriture gris clair*/
 /* utilisé pour : bouton suppression */
 
 .btnRougeFonce {
     margin: .5rem;
-    box-shadow: 1px 2px 6px -2px var(--color-one);
-    background: linear-gradient(to bottom,
-            var(--color-fivedark) 5%,
-            var(--color-fivedark) 100%);
-    background-color: var(--color-five);
-    border-radius: 15px;
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.13);
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background-color: var(--color-fivedark);
     border: none;
     display: inline-block;
     cursor: pointer;
     color: var(--color-three);
-    font-family: Arial;
-    font-size: 1rem;
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: .8rem;
     padding: .5rem 1rem;
     text-decoration: none;
 }
 
 .btnRougeFonce:hover {
-    background: linear-gradient(to bottom,
-            var(--color-five) 5%,
-            var(--color-five) 100%);
-    background-color: var(--color-fivelight);
+    background-color: var(--color-five);
+    text-decoration: none;
 }
 
 .btnRougeFonce:active {
@@ -450,27 +512,23 @@ color: var(--color-twolight);
 
 .btnRougeClair {
     margin: .5rem;
-    box-shadow: 1px 2px 6px -2px var(--color-one);
-    background: linear-gradient(to bottom,
-            var(--color-fivelight) 5%,
-            var(--color-fivelight) 100%);
-    background-color: var(--color-five);
-    border-radius: 15px;
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.13);
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background-color: var(--color-fivelight);
     border: none;
     display: inline-block;
     cursor: pointer;
     color: var(--color-three);
-    font-family: Arial;
-    font-size: 1rem;
+    font-family: "raleway", Arial, Helvetica, sans-serif;
+    font-size: .8rem;
     padding: .5rem 1rem;
     text-decoration: none;
 }
 
 .btnRougeClair:hover {
-    background: linear-gradient(to bottom,
-            var(--color-five) 5%,
-            var(--color-five) 100%);
-    background-color: var(--color-fivelight);
+    background-color: var(--color-five);
+    text-decoration: none;
 }
 
 .btnRougeClair:active {
@@ -531,9 +589,10 @@ color: var(--color-twolight);
 .reassuranceImg img {
     border-radius: 50%;
 }
-.reassuranceImg figcaption{
-   text-align: center; 
-   padding: 0;    
+
+.reassuranceImg figcaption {
+    text-align: center;
+    padding: 0;
 }
 
 .reassurance p {
@@ -723,7 +782,7 @@ button[aria-selected="true"] svg {
 
 .accueil {
     /*h1 accueil*/
-    font-family: "raleway";
+    font-family: "raleway", Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: 800;
     padding-left: 1rem;
@@ -773,7 +832,9 @@ button[aria-selected="true"] svg {
 .cliniqueImg {
     margin: 1rem;
 }
-.cliniqueImg figcaption, .cliniqueImg figcaption a{
+
+.cliniqueImg figcaption,
+.cliniqueImg figcaption a {
     color: var(--color-twodark);
 }
 
@@ -1521,7 +1582,8 @@ button[aria-selected="true"] svg {
 
 
     }
-    .cardAccueilConseil{
+
+    .cardAccueilConseil {
         max-width: 44%;
     }
 
