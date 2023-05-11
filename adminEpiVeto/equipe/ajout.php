@@ -11,6 +11,7 @@ include '../../inc/fonctions.php';
 $associe = $prenom = $nom = $titre = $fonction = $diplome = $description_pro = $description_perso = $question_1 = $question_2 = $question_3 = $question_4 = $question_5 = $photo_unUpload = $photo_deuxUpload = $photo_troisUpload = $photo_quatreUpload = $insta = $facebook = '';
 
 $error = [];
+$errorUpload =[];
 
 if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
     $photo_unUpload =  $_FILES["photo_unUpload"];
@@ -44,6 +45,7 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
 
     // dd($error);
     if (count($error) === 0) :
+
         $associe = $_POST['associe'];
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];

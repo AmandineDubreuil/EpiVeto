@@ -111,6 +111,11 @@ function checkEmptyValue($postEntrie, $key, $error)
     return $error;
 }
 
+function checkNumericValue($postEntrie, $error)
+{
+    
+}
+
 function checkTelephone($telephone, $key, $error)
 {
 
@@ -303,6 +308,7 @@ function uploadPhoto($photo, $photoPath)
     // dd($target_file);
     // Check if image file is a actual image or fake image
     if (isset($_POST["ajout"])) {
+        //dd($photo);
         $check = getimagesize($photo["tmp_name"]);
 
         if ($check !== false) {

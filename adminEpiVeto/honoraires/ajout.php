@@ -22,13 +22,16 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         $error = checkEmptyValue($value, $key, $error);
     endforeach;
 
+    if (!is_numeric($_POST['prix'])) :
+        $error['prix'] = "Merci d'entrer une valeur numérique sans chiffre après la virgule.";
+    endif;
     // dd($error);
     if (count($error) === 0) :
         $acte = $_POST['acte'];
         $prix = $_POST['prix'];
 
         insertHonoraire($acte, $prix);
-     //   dd(insertHonoraire($acte, $prix));
+        //   dd(insertHonoraire($acte, $prix));
 
         redirectUrl('./adminEpiVeto/honoraires');
 

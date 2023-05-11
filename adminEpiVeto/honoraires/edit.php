@@ -12,19 +12,24 @@ include '../../inc/fonctions.php';
 
 $acte = getHonoraireById($id)['acte'];
 $prix = getHonoraireById($id)['prix'];
+$error = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
     // traitement des failles XSS
-    
+
     $acte = checkXSSPostValue($_POST['acte']);
     $prix = checkXSSPostValue($_POST['prix']);
 
+    if (!is_numeric($_POST['prix'])) :
+        $error['prix'] = "Merci d'entrer une valeur numérique sans chiffre après la virgule.";
+    endif;
 
-   
-    updateHonoraire($id, $acte, $prix);
-    redirectUrl('adminEpiVeto/honoraires');
+    if (count($error) === 0) :
 
+        updateHonoraire($id, $acte, $prix);
+        redirectUrl('adminEpiVeto/honoraires');
+    endif;
 endif;
 
 require '../../view/adminEpiVeto/honoraires/editView.php';

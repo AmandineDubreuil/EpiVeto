@@ -9,6 +9,7 @@ $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $email = checkXSSPostValue($_POST['email']);
+    
     $pwd = checkXSSPostValue($_POST['pwd']);
 
     if ($email) :
