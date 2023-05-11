@@ -42,7 +42,8 @@
                 <h3>Gestion de la douleur</h3>
                 <p>La gestion de la douleur, préventive ou curative, est une préoccupation permanente. Les antalgiques sont utilisés systématiquement : anti-inflammatoires stéroïdiens ou non stéroïdiens, et surtout antalgiques majeurs opiacés.</p>
             </div>
-            <div class="cliniqueImg"><img src="./assets/img/clinique/gros-plan-veterinaire-prenant-soin-animal-compagnie.jpg" alt="Freepik gros plan vétérinaire prenant soin animal compagnie"></div>
+            <div class="cliniqueImg"><img src="./assets/img/clinique/gros-plan-veterinaire-prenant-soin-animal-compagnie.jpg" alt="Freepik gros plan vétérinaire prenant soin animal compagnie">                    <figcaption>Image de <a href="https://www.freepik.com/free-photo/close-up-veterinarian-taking-care-pet_21080885.htm#query=chien%20m%C3%A9dicament&position=3&from_view=search&track=ais">Freepik</a></figcaption>
+</div>
         </section>
         <section class="hospitalisation">
             <div class="cliniqueText">
@@ -61,7 +62,7 @@
                     <p>Les médicaments à prescription sans ordonnance et tous les autres produits vétérinaires (aliments, jouets...) sont à votre disposition à l'accueil.</p>
                 </div>
             </div>
-            <div class="cliniqueImg"><img src="./assets/img/clinique/pills-stethoscope-syringe.jpg" alt="Freepik pills-sthethoscope-syringe"></div>
+            <div class="cliniqueImg"><img src="./assets/img/clinique/pills-stethoscope-syringe.jpg" alt="Freepik pills-sthethoscope-syringe"><figcaption>Image de<a href="https://www.freepik.com/free-photo/cute-persian-cat-with-recovery-cone-after-surgery-veterinarian-woman-man-vet-putting-bandage-sick-fluffy-pet-animal-clinic_27999756.htm#query=chat%20v%C3%A9t%C3%A9rinaire&position=2&from_view=search&track=ais"> tonodiaz sur Freepik</a> </figcaption></div>
         </section>
         <?php include_once 'structure/sideView.php' ?>
     </main>

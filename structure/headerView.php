@@ -24,7 +24,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="#" class="menu-item">
+                            <a href="<?= getUrl('honoraires.php'); ?>" class="menu-item">
                                 Nos Honoraires
                             </a>
                         </div>

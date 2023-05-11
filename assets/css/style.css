@@ -74,7 +74,9 @@ nav a {
     color: var(--color-three);
 }
 
-
+nav a:hover{
+    text-decoration: none;
+}
 
 .menu {
     position: absolute;
@@ -245,6 +247,17 @@ a {
 a:hover{
     text-decoration: underline;
 }
+figcaption{
+font-size: .4rem;
+color: var(--color-twolight);
+/* box-sizing: ; */
+}
+
+figcaption a {
+color: var(--color-twolight);
+}
+
+
 .gras {
     font-weight: bold;
 }
@@ -273,17 +286,6 @@ a:hover{
     position: relative;
 }
 
-figcaption {
-    position: absolute;
-    left: 42%;
-    bottom: -.2rem;
-    font-size: .4rem;
-    color: var(--color-twolight);
-}
-
-figcaption a {
-    color: var(--color-twolight);
-}
 
 .card h3 {
     font-size: 1rem;
@@ -507,7 +509,7 @@ figcaption a {
 .reassurance {
     padding: 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     font-size: .8rem;
     font-weight: bold;
@@ -528,6 +530,10 @@ figcaption a {
 
 .reassuranceImg img {
     border-radius: 50%;
+}
+.reassuranceImg figcaption{
+   text-align: center; 
+   padding: 0;    
 }
 
 .reassurance p {
@@ -766,6 +772,9 @@ button[aria-selected="true"] svg {
 
 .cliniqueImg {
     margin: 1rem;
+}
+.cliniqueImg figcaption, .cliniqueImg figcaption a{
+    color: var(--color-twodark);
 }
 
 .cliniqueImg img {
@@ -1413,7 +1422,7 @@ button[aria-selected="true"] svg {
     }
 
     .cliniqueText {
-        width: 55%;
+        width: 54%;
     }
 
     .hospitalisation {
@@ -1511,6 +1520,9 @@ button[aria-selected="true"] svg {
         flex-wrap: wrap;
 
 
+    }
+    .cardAccueilConseil{
+        max-width: 44%;
     }
 
     /*fin*/

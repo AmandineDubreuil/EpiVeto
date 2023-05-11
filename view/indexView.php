@@ -93,16 +93,23 @@
         <section class="reassuranceAccueil">
             <div class="reassurance">
                 <div class="reassuranceItem">
-                    <div class="reassuranceImg"><img src="./assets/img/Image.jpg" alt=""></div>
+                    <div class="reassuranceImg"><img src="./assets/img/animaux/chienChatNac.png" alt="chat lapin chien"></div>
                     <p>Chiens - Chats - NAC</p>
+                    <figcaption>Images de <a href="https://fr.freepik.com">Freepik</a></figcaption>
+
                 </div>
                 <div class="reassuranceItem">
-                    <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte"></div>
+                    <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte">
+                </div>
                     <p>Conseils</p>
+                    <figcaption>Image de <a href="https://fr.freepik.com/photos-gratuite/veterinaire-prenant-soin-chien-compagnie_20823300.htm#query=pate%20chien%20main&position=20&from_view=search&track=ais">Freepik</a></figcaption>
+
                 </div>
                 <div class="reassuranceItem">
                     <div class="reassuranceImg"><img src="./assets/img/animaux/chien-pekinois-stethoscope-isole.jpg" alt="chien stéthoscope"></div>
                     <p>Qualité des soins</p>
+                    <figcaption>Image de <a href="https://fr.freepik.com/photos-gratuite/chien-chiot-pekinois-stethoscope-pres-ses-pattes-posant_9083141.htm#query=pekinois%20docteur&position=12&from_view=search&track=ais">Freepik</a></figcaption>
+
                 </div>
             </div>
         </section>
