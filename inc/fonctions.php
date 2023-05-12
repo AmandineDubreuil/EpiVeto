@@ -113,7 +113,6 @@ function checkEmptyValue($postEntrie, $key, $error)
 
 function checkNumericValue($postEntrie, $error)
 {
-    
 }
 
 function checkTelephone($telephone, $key, $error)
@@ -317,6 +316,7 @@ function uploadPhoto($photo, $photoPath)
         } else {
             echo "Le fichier téléchargé n'est pas une image.";
             $uploadOk = 0;
+            exit;
         }
     }
 
@@ -330,6 +330,7 @@ function uploadPhoto($photo, $photoPath)
     if ($photo["size"] > 500000) {
         echo "Désolé, votre image est trop grande.";
         $uploadOk = 0;
+        exit;
     }
 
     // Allow certain file formats
@@ -339,11 +340,14 @@ function uploadPhoto($photo, $photoPath)
     ) {
         echo "Désolé, seuls les fichiers de type JPG, JPEG, PNG & GIF sont autorisés.";
         $uploadOk = 0;
+        exit;
     }
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Désolé, le fichier n'a pas été téléchargé.";
+        exit;
+
         // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($photo["tmp_name"], $target_file)) {
@@ -377,7 +381,9 @@ function updatePhoto($photo_Name, $photo_Db, $photoPath)
 {
     if (!empty($photo_Name["name"]) && $photo_Name["name"] !== $photo_Db) :
 
-        unlink('../.' . $photo_Db);
+        if (!empty($photo_Db)) :
+            unlink('../.' . $photo_Db);
+        endif;
         uploadPhoto($photo_Name, $photoPath);
         $photo = "./uploads/" . $photoPath . basename($photo_Name["name"]);
 
