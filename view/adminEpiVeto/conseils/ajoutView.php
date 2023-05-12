@@ -24,8 +24,9 @@
                 <div class="blocTitreArticle">
                     <label for="titre">Titre de la fiche :</label>
                     <p class="creeModifie">Non visible sur la fiche</p>
-                    <input type="text" name="titre" id="titre" value="<?= $titre ?>">
                     <div><span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span></div>
+                    <input type="text" name="titre" id="titre" value="<?= $titre ?>">
+
                 </div>
                 <div class="categoriesConseils">
                     <fieldset>
@@ -82,12 +83,14 @@
             </div>
             <div class="blocArticle">
                 <label for="article">Contenu de la fiche :</label>
-                <textarea name="article" id="article_editor" cols="70" rows="20"><?= $article ?></textarea>
                 <span class="error"><?= isset($error['article']) ? $error['article'] : "" ?></span>
+
+                <textarea name="article" id="article_editor" cols="70" rows="20"><?= $article ?></textarea>
             </div>
             <div class="photoArticle">
                 <div>
                     <label for="photoArticleUpload">Photo :</label>
+                    <p class="creeModifie">Choisir idéalement une photo carrée de dimensions 500 x 500 pixels. </p>
                     <input type="file" name="photoArticleUpload" id="photoArticleUpload" value="<?= $photoArticleUpload ?>">
                     <span class="error"><?= isset($error['photoArticleUpload']) ? $error['photoArticleUpload'] : "" ?></span>
                 </div>
@@ -101,7 +104,7 @@
         </form>
     </main>
     <?php include_once '../../structure/footerView.php' ?>
-        <script src="../../ckeditor/ckeditor.js" ></script>
+    <script src="../../ckeditor/ckeditor.js"></script>
 
     <script>
         CKEDITOR.replace('article_editor');

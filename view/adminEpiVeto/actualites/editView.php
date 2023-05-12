@@ -15,34 +15,36 @@
 
 <body>
 
-<?php require_once '../../structure/headerView.php' ?>
+    <?php require_once '../../structure/headerView.php' ?>
 
 
     <main class="container">
         <h2>Modification de la page d'accueil</h2>
-        <form method="POST" action="" enctype="multipart/form-data" class="formAjout" novalidate>
-           
+        <form method="POST" action="" enctype="multipart/form-data" class="formCRUD" novalidate>
 
-            <div>
+
+            <div class="formActualite">
                 <label for="bandeau">Nouveau bandeau :</label>
                 <textarea name="bandeau" id="bandeau" cols="100" rows="2"><?= $bandeau ?></textarea>
-                              <p>Rappel Le bandeau peut faire maximum 100 caractères.</p>
+                <p class="rappel">Attention, le bandeau peut faire maximum 100 caractères.</p>
 
             </div>
-            <div>
+            <div class="formActualite">
                 <label for="carouselUn">Carousel Un :</label>
-                <input type="file" name="carouselUn" id="carouselUn" >
-                <span class="error"><?= isset($error['carouselUn']) ?$error['carouselUn'] : ""?></span>
+                <input type="file" name="carouselUn" id="carouselUn">
+                <p class="rappel">Attention, insérer une image au format 1000 x 562 pixels.</p>
+                <span class="error"><?= isset($error['carouselUn']) ? $error['carouselUn'] : "" ?></span>
             </div>
-            <div>
+            <div class="formActualite">
                 <label for="carouselDeux">Carousel Deux :</label>
-                <input type="file" name="carouselDeux" id="carouselDeux" >
-                <span class="error"><?= isset($error['carouselDeux']) ?$error['carouselDeux'] : ""?></span>
+                <input type="file" name="carouselDeux" id="carouselDeux">
+                <p class="rappel">Attention, insérer une image au format 1000 x 562 pixels.</p>
+                <span class="error"><?= isset($error['carouselDeux']) ? $error['carouselDeux'] : "" ?></span>
             </div>
 
-          
+
             <div class="annulAjout">
-                <a href="./"><button class="btnVarianteGris" type="button">Annuler</button></a>
+                <a href="../"><button class="btnVarianteGris" type="button">Annuler</button></a>
                 <input class="btnVarianteRouge" type="submit" name="ajout" value="Modifier">
             </div>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Épi-Véto La Chaussée d'Ivry</title>
+    <title>Admin Honoraires - Épi-Véto La Chaussée d'Ivry</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -19,11 +19,11 @@
 
 
     <main>
-        <div class="accueilAdminEquipe">
+        <div class="accueilAdminConseils">
          
                 <h3 id="admin">Gestion des fiches Conseils</h3>
     
-            <a href="./"><button class="btnVarianteGris" type="button">Retour</button></a>
+            <a href="../"><button class="btnVarianteGris" type="button">Retour</button></a>
         </div>
         <div class="adminEquipe">
    
@@ -55,7 +55,7 @@
                                     <a class="btnRougeClair" href="./edit.php?id=<?= $value['id_conseil'] ?>">Modifier</a>
                                     <a class="btnRougeFonce" href="./supp.php?id=<?= $value['id_conseil'] ?>" onclick="return confirm('Souhaitez-vous confirmer la suppression de cette fiche conseils ?');">Supprimer</a>
                                 </td>
-                                <td><?= $value['titre'] ?></td>
+                                <td><?= substr($value['titre'],0,40) ?></td>
                                 <td><?= $value['categorie'] ?></td>
                                 <td><?= $value['sous_categorie'] ?></td>
                                 <td><?= substr($value['article'], 0, 50)?>...</td>

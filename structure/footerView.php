@@ -2,7 +2,7 @@
 <footer>
         <p>2023 - Épi-Véto Clinique vétérinaire la Chaussée d’Ivry</p>
         <div class="legal">
-            <p><a href="#">Mentions légales</a> - <a href="">Politique de confidentialité</a></p>
+            <p><a href="<?= getUrl('mentionsLegales.php'); ?>">Mentions légales</a></p>
         </div>
         <p>
             <?php if (isConnected()) : ?>

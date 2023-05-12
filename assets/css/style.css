@@ -1156,6 +1156,7 @@ button[aria-selected="true"] svg {
     margin: 1rem;
     border-collapse: collapse;
     border: 1px solid var(--color-twolight);
+    table-layout: fixed;
 
 }
 
@@ -1177,27 +1178,66 @@ button[aria-selected="true"] svg {
 
 /* ADMIN / Index */
 .adminAccueilSection {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0 1rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.adminAccueilSection div {
     border: var(--color-twolight) 1px solid;
     border-radius: 5px;
+    margin: .5rem 1rem;
+    padding: .5rem;
+    width: 90%;
 
 }
 
-.adminAccueilSection a {
-    text-decoration: none;
+#adminh2 {
+    font-size: 1.5rem;
+}
+
+.adminAccueilSection h3 {
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.adminAccueilSection p {
+    font-size: .9rem;
+    padding: 0 1rem;
+}
+
+.adminAccueilSection .adminTable {
+    margin: .5rem 1rem;
+    font-size: .9rem;
+}
+
+/* ADMIN Actualité / Edit  */
+
+.formActualite {
+    padding: .5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.formActualite .rappel {
+    font-size: .8rem;
+    font-style: italic;
 }
 
 /* ADMIN Equipe / Index  */
-.accueilAdminEquipe {
+/* ADMIN Honoraires / Index*/
+/* ADMIN Conseils / Index*/
+
+.accueilAdminEquipe, .accueilAdminHonoraires, .accueilAdminConseils, .accueilAdminUtilisateurs {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.accueilAdminEquipe a {
-    text-decoration: none;
-}
 
 .adminEquipe .btnRouge {
     margin: 2rem;
@@ -1216,6 +1256,9 @@ button[aria-selected="true"] svg {
 .adminEquipe .adminTable,
 .adminHonoraires .adminTable {
     white-space: nowrap;
+    font-size: .8rem;
+   
+
 }
 
 
@@ -1341,12 +1384,6 @@ button[aria-selected="true"] svg {
     width: 16rem;
 }
 
-/* .formCRUD .reseaux{
-    padding: 1rem;
-    width: 90vw;
-    display: flex;
-
-} */
 
 /* ADMIN Honoraires / Ajout d'un acte  */
 
@@ -1455,6 +1492,19 @@ button[aria-selected="true"] svg {
     top: 1px;
 }
 
+/* MENTIONS LEGALES */
+
+
+#mentionsLegales{
+    padding: 1rem;
+    margin-right: 0;
+}
+#mentionsLegales p{
+    padding-top: 1rem;
+}
+#mentionsLegales ul{
+    padding-left: 2rem;
+}
 /* *********************** 
    RESPONSIVE DESKTOP
    ************************ */
@@ -1661,6 +1711,12 @@ button[aria-selected="true"] svg {
 
     .cardAccueilConseil {
         max-width: 44%;
+    }
+
+    /* page ADMIN / Index Général*/
+
+    .adminAccueilSection div {
+        max-width: 45%;
     }
 
     /*fin*/

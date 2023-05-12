@@ -18,19 +18,19 @@
 
 
     <main class="container">
-                <h2>Modification de la Fiche Conseils</h2>
-               
+        <h2>Modification de la Fiche Conseils</h2>
         <form method="POST" action="" enctype="multipart/form-data" class="formConseils formCRUD" novalidate>
             <div class="blocTitre">
                 <div class="bloctitreArticle">
                     <label for="titre">Titre de la fiche :</label>
                     <p class="creeModifie">Non visible sur la fiche</p>
-                    <input type="text" name="titre" id="titre" value="<?= $titre ?>">
                     <div><span class="error"><?= isset($error['titre']) ? $error['titre'] : "" ?></span></div>
+
+                    <input type="text" name="titre" id="titre" value="<?= $titre ?>">
                 </div>
                 <div class="categoriesConseils">
                     <fieldset>
-                        <legend>Catégorie(s) :</legend> 
+                        <legend>Catégorie(s) :</legend>
                         <span class="error"><?= isset($error['categorie']) ? $error['categorie'] : "" ?></span>
                         <div>
                             <input type="checkbox" id="categorie" name="categorie[]" value="Chiens">
@@ -89,7 +89,8 @@
             <div class="photoArticle">
                 <div>
                     <label for="photoArticleUpload">Photo :</label>
-                    <input type="file" name="photoArticleUpload" id="photoArticleUpload" >
+                    <p class="creeModifie">Choisir idéalement une photo carrée de dimensions 500 x 500 pixels. </p>
+                    <input type="file" name="photoArticleUpload" id="photoArticleUpload">
                     <span class="error"><?= isset($error['photoArticleUpload']) ? $error['photoArticleUpload'] : "" ?></span>
                 </div>
             </div>
@@ -102,8 +103,8 @@
         </form>
     </main>
     <?php include_once '../../structure/footerView.php' ?>
-    <script src="../../ckeditor/ckeditor.js" ></script>
+    <script src="../../ckeditor/ckeditor.js"></script>
 
-<script>
-    CKEDITOR.replace('article_editor_edit');
-</script>
+    <script>
+        CKEDITOR.replace('article_editor_edit');
+    </script>
