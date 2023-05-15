@@ -1,7 +1,7 @@
-// width="600" height="338" 
 /*
 * @Adilade Slideshow/Carousel
 * @See www.adilade.fr
+*https://www.adilade.fr/blog/carrousel-accessible-responsive-vanillajs/
 *
 * Keyboard : 
 * Previous : left arrow or ctrl + left arrow
@@ -15,7 +15,7 @@ let carousel = document.querySelector('#slides-items');
 let items = document.querySelectorAll('.slide-item');
 const slides = document.querySelector('#slides');
 
-let carouselWidth = document.querySelector('.sliderImg').naturalWidth; // 800 "340px";
+let carouselWidth = document.querySelector('.sliderImg').naturalWidth; 
 let carouselNaturalHeight = document.querySelector('.sliderImg').naturalHeight;
 let item = document.querySelector('.slide-item')
 

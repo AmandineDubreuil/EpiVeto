@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <script src="./assets/js/carousel.js" defer></script>
+    <script src="./assets/js/carrousel.js" defer></script>
     <script src="./assets/js/script.js" type="module" defer></script>
 </head>
 
@@ -43,27 +43,28 @@
                 </svg>
             </button>
         </div>
-        <?php //dd(getActualiteById(1)['carousel_deux']);?>
+        <?php 
+        ?>
         <div id="slides-items">
-            <!-- Slide 1 : image link + caption -->
+            <!-- Slide 1 : image -->
             <div id="slide-1" class="slide-item slideactive" role="group" aria-roledescription="Slide" aria-label="1 of 3">
                 <figure>
-                    <img  class="sliderImg"  src="./uploads/carousel/logoVectoAccueilLight.png" alt="EpiVeto" />
+                    <img class="sliderImg" src="./uploads/carousel/logoVectoAccueilLight.png" alt="EpiVeto" />
                 </figure>
             </div>
 
-            <!-- Slide 2 : image + caption -->
-           
+            <!-- Slide 2 : image -->
+
             <div id="slide-2" class="slide-item" role="group" aria-roledescription="Slide" aria-label="2 of 3">
                 <figure>
-                    <img class="sliderImg" src="<?php echo getActualiteById(1)['carousel_un'];?>" alt="carousel un"/>
+                    <img class="sliderImg" src="<?php echo getActualiteById(1)['carousel_un']; ?>" alt="carousel un" />
                 </figure>
             </div>
 
-            <!-- Slide 3 : image link -->
+            <!-- Slide 3 : image  -->
             <div id="slide-3" class="slide-item" role="group" aria-roledescription="Slide" aria-label="3 of 3">
                 <figure>
-                    <img class="sliderImg"  src="<?php echo getActualiteById(1)['carousel_deux'];?>" alt="carousel deux"/>
+                    <img class="sliderImg" src="<?php echo getActualiteById(1)['carousel_deux']; ?>" alt="carousel deux" />
                 </figure>
             </div>
         </div>
@@ -74,7 +75,7 @@
     <main>
         <section class="presentation">
             <h1 class="accueil"> Bienvenue à Épi-Véto !</h1>
-          
+
             <p>
                 Nous sommes une équipe de professionnels, dévoués à fournir des soins de qualité pour vos compagnons à quatre pattes. Notre clinique offre une gamme complète de services vétérinaires, allant de la médecine préventive à la chirurgie avancée.
             </p>
@@ -100,7 +101,7 @@
                 </div>
                 <div class="reassuranceItem">
                     <div class="reassuranceImg"><img src="./assets/img/animaux/veterinaire-prenant-soin-chien-compagnie.jpg" alt="main dans patte">
-                </div>
+                    </div>
                     <p>Conseils</p>
                     <figcaption>Image de <a href="https://fr.freepik.com/photos-gratuite/veterinaire-prenant-soin-chien-compagnie_20823300.htm#query=pate%20chien%20main&position=20&from_view=search&track=ais">Freepik</a></figcaption>
 

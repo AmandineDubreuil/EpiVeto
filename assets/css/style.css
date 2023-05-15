@@ -640,7 +640,7 @@ footer p {
 
 /* page accueil */
 
-/* carousel */
+/* carrousel */
 
 button {
     padding: 0;
@@ -693,17 +693,17 @@ figure {
 
 svg,
 g {
-    fill: #691616;
+    fill: var(--color-five);
 }
 
 g:hover,
 g:focus,
 g:active {
-    background-color: #691616;
+    background-color: var(--color-five);
 }
 
 svg {
-    fill: #474747;
+    fill: var(--color-twodark);
 }
 
 .slides-control button {
@@ -720,7 +720,7 @@ svg {
 .slides-next svg {
     width: 1.7rem;
     height: 1.7rem;
-    fill: #69161693;
+    fill: var(--color-fivedark);
 }
 
 .slides-prev {
@@ -775,7 +775,7 @@ button:hover svg,
 button:focus svg,
 button:active svg,
 button[aria-selected="true"] svg {
-    fill: #691616;
+    fill: var(--color-five);
 }
 
 /* page d'accueil */
