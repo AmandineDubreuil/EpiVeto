@@ -42,8 +42,6 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
         $error['fonction'] = "Le champs fonction est vide.";
     endif;
 
-
-    // dd($error);
     if (count($error) === 0) :
 
         $associe = $_POST['associe'];

@@ -70,7 +70,7 @@
                             <div> <a href="<?= getUrl('adminEpiVeto/conseils/index.php'); ?>" class="menu-item">
                                     Gestion des conseils
                                 </a></div>
-                                <div>
+                            <div>
                                 <a href="<?= getUrl('login/monCompte.php'); ?>" class="menu-item" id="deconnexion">Mon Compte</a>
 
                             </div>

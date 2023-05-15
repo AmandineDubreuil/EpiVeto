@@ -304,12 +304,10 @@ function uploadPhoto($photo, $photoPath)
     $target_file = $target_dir . basename($photo["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    // dd($target_file);
+   
     // Check if image file is a actual image or fake image
     if (isset($_POST["ajout"])) {
-        //dd($photo);
-        $check = getimagesize($photo["tmp_name"]);
-
+             $check = getimagesize($photo["tmp_name"]);
         if ($check !== false) {
             echo "Le fichier est une image - " . $check["mime"] . ".";
             $uploadOk = 1;
@@ -319,20 +317,17 @@ function uploadPhoto($photo, $photoPath)
             exit;
         }
     }
-
     // Check if file already exists
     if (file_exists($target_file)) {
         echo "Désolé, le fichier existe déjà.";
         $uploadOk = 0;
     }
-
     // Check file size
     if ($photo["size"] > 500000) {
         echo "Désolé, votre image est trop grande.";
         $uploadOk = 0;
         exit;
     }
-
     // Allow certain file formats
     if (
         $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -342,12 +337,10 @@ function uploadPhoto($photo, $photoPath)
         $uploadOk = 0;
         exit;
     }
-
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Désolé, le fichier n'a pas été téléchargé.";
         exit;
-
         // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($photo["tmp_name"], $target_file)) {
@@ -369,7 +362,7 @@ function insertPhoto($photo, $photoPath)
     endif;
     if ($photo_Name) :
         $photo = "./uploads/" . $photoPath . basename($photo["name"]);
-    //  dd($photo);
+   
 
     else :
         $photo = "";
@@ -428,7 +421,7 @@ function getEmployeById(int $idEmploye): array
 }
 
 
-function insertEmploye(string $associe, string $prenom, string $nom, string $titre, string $fonction, string $diplome, string $description_pro, string $description_perso, string $question_1, string $question_2, string $question_3, string $question_4, string $question_5, string $photo_un, string $photo_deux, string $photo_trois, string $photo_quatre, string $insta, string $facebook): int //string $description, string $photo, string $insta, string $facebook //, `description`, `photo`, `insta`, `facebook` //:description, :photo, :insta, :facebook,
+function insertEmploye(string $associe, string $prenom, string $nom, string $titre, string $fonction, string $diplome, string $description_pro, string $description_perso, string $question_1, string $question_2, string $question_3, string $question_4, string $question_5, string $photo_un, string $photo_deux, string $photo_trois, string $photo_quatre, string $insta, string $facebook): int 
 {
     require 'pdo.php';
 
