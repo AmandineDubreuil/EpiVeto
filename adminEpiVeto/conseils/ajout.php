@@ -27,12 +27,12 @@ if (isset($_POST['ajout']) && !empty($_POST['ajout'])) :
     if (!isset($_POST['sousCategorie'])) :
         $error['sousCategorie'] = "Le champs Sous-Catégorie est vide.";
     endif;
-  // dd($error);
+
     if (count($error) === 0) :
         $titre = checkXSSPostValue($_POST['titre']);
-        $article = checkXSSPostValueArticle($_POST['article']); //$_POST['article']; // 
+        $article = checkXSSPostValueArticle($_POST['article']); 
         $categorie = $_POST['categorie'];
-        //dd($categorie);
+     
         $categorieAll = implode(',', $categorie);
         $sousCategorie = $_POST['sousCategorie'];
         $sousCategorieAll = implode(',', $sousCategorie);

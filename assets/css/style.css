@@ -1000,10 +1000,16 @@ button[aria-selected="true"] svg {
 .collaborateur .descriptionPerso p {
     text-align: center;
 }
-
+.collaborateur .parentQuestions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .collaborateur .questions {
     padding: 1rem 0;
-    margin: 0 0 0 40%;
+    margin: 0;
+   
 }
 
 .collaborateur .questions div {

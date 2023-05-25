@@ -15,7 +15,7 @@
 
 <body>
 
-<?php require_once './structure/headerView.php' ?>
+    <?php require_once './structure/headerView.php' ?>
 
 
     <h1>L'Équipe</h1>
@@ -71,43 +71,44 @@
                 <?php endif; ?>
             </div>
             <?php if (!empty($question_1 || $question_2 || $question_3 || $question_4 || $question_5)) : ?>
+                <div class="parentQuestions">
+                    <div class="questions">
+                        <h3>Quelques questions...</h3>
+                        <div>
+                            <p>Au questionnaire Épi-Véto, <?= $prenom ?> <?= $nom ?> a répondu : </p>
+                        </div>
+                        <?php if (!empty($question_1)) : ?>
 
-                <div class="questions">
-                    <h3>Quelques questions...</h3>
-                    <div>
-                        <p>Au questionnaire Épi-Véto, <?= $prenom ?> <?= $nom ?> a répondu : </p>
+                            <div>
+                                <p class="gras"><i class="fa-solid fa-paw"></i> Qu'est-ce qui me plait le plus à Épi-Véto ?</p>
+                                <p><?= $question_1 ?></p>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($question_2)) : ?>
+                            <div>
+                                <p class="gras"><i class="fa-solid fa-paw"></i> Quel est mon mot médical préféré ?</p>
+                                <p><?= $question_2 ?></p>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($question_3)) : ?>
+                            <div>
+                                <p class="gras"><i class="fa-solid fa-paw"></i> Quel est l'animal (espèce) que je préfère ?</p>
+                                <p><?= $question_3 ?></p>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($question_4)) : ?>
+                            <div>
+                                <p class="gras"><i class="fa-solid fa-paw"></i> Quelle phrase idiote / expression m'agace ?</p>
+                                <p><?= $question_4 ?></p>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($question_5)) : ?>
+                            <div>
+                                <p class="gras"><i class="fa-solid fa-paw"></i> Quelle est ma devise personnelle ?</p>
+                                <p><?= $question_5 ?></p>
+                            </div>
                     </div>
-                    <?php if (!empty($question_1)) : ?>
-
-                        <div>
-                            <p class="gras"><i class="fa-solid fa-paw"></i> Qu'est-ce qui me plait le plus à Épi-Véto ?</p>
-                            <p><?= $question_1 ?></p>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (!empty($question_2)) : ?>
-                        <div>
-                            <p class="gras"><i class="fa-solid fa-paw"></i> Quel est mon mot médical préféré ?</p>
-                            <p><?= $question_2 ?></p>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (!empty($question_3)) : ?>
-                        <div>
-                            <p class="gras"><i class="fa-solid fa-paw"></i> Quel est l'animal (espèce) que je préfère ?</p>
-                            <p><?= $question_3 ?></p>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (!empty($question_4)) : ?>
-                        <div>
-                            <p class="gras"><i class="fa-solid fa-paw"></i> Quelle phrase idiote / expression m'agace ?</p>
-                            <p><?= $question_4 ?></p>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (!empty($question_5)) : ?>
-                        <div>
-                            <p class="gras"><i class="fa-solid fa-paw"></i> Quelle est ma devise personnelle ?</p>
-                            <p><?= $question_5 ?></p>
-                        </div>
-                    <?php endif; ?>
+                <?php endif; ?>
 
                 </div>
             <?php endif; ?>

@@ -2,7 +2,7 @@
 /*
 * Suppression d'un membre de l'équipe
 */
-session_start();
+session_start();https://fr.wikipedia.org/wiki/CKEditor
 include '../../inc/fonctions.php';
 
 (isAdminConnected()) ?: redirectUrl('404.php');
@@ -13,7 +13,6 @@ $id = $_GET['id'];
 
 (isGetIdValid()) ? $id = $_GET['id'] : error404();
 
-//dd(getEmployeById($id));
 
 if (!empty(getEmployeById($id)['photo_un'])) :
    unlink('../.' . getEmployeById($id)['photo_un']);
@@ -31,7 +30,7 @@ if (!empty(getEmployeById($id)['photo_quatre'])) :
    unlink('../.' . getEmployeById($id)['photo_quatre']);
 
 endif;
-//dd(getEmployeById($id)['photo']);
+
 if (suppEmployeById($id)) :
     redirectUrl('adminEpiVeto/equipe/');
    exit();

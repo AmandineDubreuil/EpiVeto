@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     endif;
 
 
-   // $fonctionModif = $_POST['fonction'];
+   
     $diplome = checkXSSPostValue($_POST['diplome']);
 
     $description_pro = checkXSSPostValue($_POST['description_pro']);
@@ -81,9 +81,10 @@ $photoPath = 'equipe/';
 
     $photo_deuxName = $_FILES["photo_deuxUpload"];
     $photo_deux = updatePhoto($photo_deuxName, $photo_deuxDb, $photoPath);
-    //  dd($photo_deux);
+   
     $photo_troisName = $_FILES["photo_troisUpload"];
     $photo_trois = updatePhoto($photo_troisName, $photo_troisDb, $photoPath);
+   
     $photo_quatreName = $_FILES["photo_quatreUpload"];
     $photo_quatre = updatePhoto($photo_quatreName, $photo_quatreDb, $photoPath);
 

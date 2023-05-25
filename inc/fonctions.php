@@ -385,8 +385,6 @@ function updatePhoto($photo_Name, $photo_Db, $photoPath)
     endif;
     return $photo;
 }
-// // fonctions Carousel
-
 
 
 // // fonctions équipe
