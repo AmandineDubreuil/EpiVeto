@@ -220,7 +220,7 @@ h1 {
     padding: 1rem;
     background-color: var(--color-five);
     color: var(--color-three);
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: "lora", 'Times New Roman', Times, serif;
     text-align: center;
 }
@@ -1343,6 +1343,12 @@ button[aria-selected="true"] svg {
 .formCRUD #diplome {
     width: 30rem;
     max-width: 80vw;
+}
+
+.formCRUD .champsObligatoires {
+    font-style: italic;
+    font-size: .9rem;
+    padding-bottom: 1rem;
 }
 
 .formCRUD .description textarea {

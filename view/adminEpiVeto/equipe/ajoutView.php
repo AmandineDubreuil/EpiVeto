@@ -26,7 +26,7 @@
             </div>
             <div class="civilite">
                 <div class="titre">
-                    <label for="type">Titre :</label>
+                    <label for="type">Titre * :</label>
 
                     Dr <input type="radio" name="titre" id="titre" value="Dr">
                     Mme <input type="radio" name="titre" id="titre" value="Mme">
@@ -35,31 +35,32 @@
                     </div>
                 </div>
                 <div>
-                    <label for="prenom">Prénom :</label>
+                    <label for="prenom">Prénom * :</label>
                     <input type="text" name="prenom" id="prenom" value="<?= $prenom ?>">
                     <div><span class="error"><?= isset($error['prenom']) ? $error['prenom'] : "" ?></span></div>
                 </div>
 
                 <div>
-                    <label for="nom">Nom :</label>
+                    <label for="nom">Nom * :</label>
                     <input type="text" name="nom" id="nom" value="<?= $nom ?>">
                     <div><span class="error"><?= isset($error['nom']) ? $error['nom'] : "" ?></span></div>
                 </div>
             </div>
             <div class="fonctionDiplome">
                 <div>
-                    <label for="fonction">Fonction :</label>
+                    <label for="fonction">Fonction * :</label>
                     Vétérinaire <input type="radio" name="fonction" id="fonction" value="Vétérinaire">
                     ASV <input type="radio" name="fonction" id="fonction" value="ASV">
                     <div><span class="error"><?= isset($error['fonction']) ? $error['fonction'] : "" ?></span>
                     </div>
                 </div>
                 <div>
-                    <label for="diplome">Diplôme :</label>
+                    <label for="diplome">Diplôme * :</label>
                     <input type="text" name="diplome" id="diplome" value="<?= $diplome ?>">
                     <div> <span class="error"><?= isset($error['diplome']) ? $error['diplome'] : "" ?></span></div>
                 </div>
             </div>
+            <div class="champsObligatoires"> * = champs obligatoires</div>
             <div class="description">
                 <div>
                     <label for="description_pro">Description Pro :</label>
@@ -101,10 +102,12 @@
 
             </div>
             <div class="photos">
+                <div class="champsObligatoires">Attention, les photos ne doivent pas dépasser 500 Ko, ou 0,5Mo.</div>
                 <div>
                     <label for="photo_unUpload">Photo Principale :</label>
                     <input type="file" name="photo_unUpload" id="photo_unUpload" value="<?= $photo_unUpload ?>">
                     <span class="error"><?= isset($error['photo_unUpload']) ? $error['photo_unUpload'] : "" ?></span>
+                <div  class="champsObligatoires">Idéalement une photo carrée de 500x500 pixels.</div>
                 </div>
                 <div>
                     <label for="photo_deuxUpload">Photo en haut à droite :</label>

@@ -101,10 +101,12 @@
 
             </div>
             <div class="photos">
+            <div class="champsObligatoires">Attention, les photos ne doivent pas dépasser 500 Ko, ou 0,5Mo.</div>
                 <div>
                     <label for="photo_unUpload">Photo Principale :</label>
                     <input type="file" name="photo_unUpload" id="photo_unUpload">
                     <span class="error"><?= isset($error['photo_unUpload']) ? $error['photo_unUpload'] : "" ?></span>
+                    <div  class="champsObligatoires">Idéalement une photo carrée de 500x500 pixels.</div>
                 </div>
                 <div>
                     <label for="photo_deuxUpload">Photo en haut à droite :</label>
